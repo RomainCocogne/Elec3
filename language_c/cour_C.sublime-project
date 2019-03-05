@@ -1,0 +1,18 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		},
+		{
+			"path": "td1"
+		}
+	],
+	"completions":[
+      ["main", "/*\n    ${1:comments}\n*/\n#include <stdlib.h>\n#include <stdio.h>\n#include <math.h>\n#include <assert.h>\n\nint main(void){\n	${2:code}\n\n	return EXIT_SUCCESS;\n}"],
+  	  ["printf", "printf(\"${1:text}\\n\",${2:arguments});"],
+  	  ["scanf", "scanf(\"${1:text}\",&${2:arguments});"],
+  	  ["comments","/*\n   Antecedant: ${1:antecedant}\n   Consequent: ${2:consequent}\n*/"]
+  ]
+}
+
