@@ -27,10 +27,10 @@ typedef struct noeud {
 */
 void afficherForme(forme f) {
 	switch(f) {
-		case carre    : printf("carre\n")   ; 		break; 
-		case rond     : printf("rond\n")    ; 		break;
-		case triangle : printf("triangle\n"); 		break;
-		default       : printf("forme  inconnue\n");
+		case carre    : printf("carre")   ; 		break; 
+		case rond     : printf("rond")    ; 		break;
+		case triangle : printf("triangle"); 		break;
+		default       : printf("forme  inconnue");
 	}
 }
 
@@ -38,7 +38,7 @@ void afficherForme(forme f) {
 	cree un nouvel element qui pointe vers un listedeforme
 */
 void *	initForme (forme f){
-	ListeDeFormes lf=malloc(sizeof(struct noeud)); //allocation espace memoire
+	struct noeud *lf=malloc(sizeof(struct noeud)); //allocation espace memoire
 	lf->f=f;			//initialise la forme
 	lf->suivant=NULL;	//pointe vers 'la terre'
 	return lf;
@@ -51,8 +51,10 @@ void afficherListedeForme (ListeDeFormes lf){
 	struct noeud *s= lf;		// noeud qui pointe vers la premiere forme
 	while(s){
 		afficherForme(s->f);	//on affiche chaque forme
+		printf(" ");
 		s=s->suivant;			//on passe a la forme suivante
 	}
+	printf("\n");
 }
 
 /*
@@ -83,11 +85,10 @@ forme ieme (ListeDeFormes lf, int r){
 */
 void inserer (ListeDeFormes *lf, int r, forme f){
 	assert(r>0 && r<=longueur(*lf)+1);		//verfification (longueur+1 pour pouvoir ajouter une forme a la fin)
-	ListeDeFormes newlf = initForme(f);		//creation d'une nouvelle forme
+	struct noeud *newlf = initForme(f);		//creation d'une nouvelle forme
 	while(--r) lf=&(**lf).suivant;			//on pointe sur la r'ieme position avec le pointeur lf
 	newlf->suivant=*lf;						//on insere la nouvelle forme
 	*lf=newlf;								
-	
 }
 
 /*
@@ -96,20 +97,21 @@ void inserer (ListeDeFormes *lf, int r, forme f){
 void supprimer (ListeDeFormes *lf, int r){
 	assert(r>0 && r<=longueur(*lf));	
 	while(--r) lf=&(**lf).suivant;		
+	struct noeud *suivant=(**lf).suivant; //on sauvegarde la forme suivante pour ne pas la perdre
 	free(*lf);				//on supprime la forme
-	*lf=(**lf).suivant;		//on racorde les deux bouts
+	*lf=suivant;			//on racorde les deux bouts
 	//free((**lf).suivant);
 }
 
 int main(int argc, char const *argv[]){
 //definition de la liste de forme
-	ListeDeFormes lf;
-	lf=initForme(rond);
-
+	ListeDeFormes lf=NULL;
+	//lf=initForme(rond);
+	inserer(&lf,1,rond);
 	inserer(&lf,2, carre);
 	inserer(&lf,3, triangle);
-	inserer(&lf,4, carre);
-	inserer(&lf,5, rond);
+	inserer(&lf,2, carre);
+	//inserer(&lf,, rond);
 //affichage de lf
 	printf("une liste de formes: \n");
 	afficherListedeForme(lf); 

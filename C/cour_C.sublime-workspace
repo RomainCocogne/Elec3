@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"ex",
+				"extract_operandes"
+			],
+			[
+				"de",
+				"depiler"
+			],
+			[
+				"ma",
+				"main"
+			],
+			[
+				"Pi",
+				"PileVide"
+			],
+			[
+				"P",
+				"PileVide"
+			],
+			[
 				"aff",
 				"afficherForme"
 			],
@@ -46,10 +66,6 @@
 			[
 				"ar",
 				"argc"
-			],
-			[
-				"ma",
-				"main"
 			],
 			[
 				"mai",
@@ -232,28 +248,45 @@
 	"buffers":
 	[
 		{
-			"file": "td12/exo1.c",
-			"settings":
-			{
-				"buffer_size": 924,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "td12/exo2.c",
-			"settings":
-			{
-				"buffer_size": 1328,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "td12/exo3.c",
 			"settings":
 			{
-				"buffer_size": 3429,
+				"buffer_size": 3567,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "td11/exo5.c",
+			"settings":
+			{
+				"buffer_size": 690,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "td13/pile.h",
+			"settings":
+			{
+				"buffer_size": 862,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "td13/pile.c",
+			"settings":
+			{
+				"buffer_size": 1193,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "td13/cal.c",
+			"settings":
+			{
+				"buffer_size": 1309,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -403,10 +436,13 @@
 	[
 		"/home/romain/Documents/C",
 		"/home/romain/Documents/C/td11",
-		"/home/romain/Documents/C/td12"
+		"/home/romain/Documents/C/td13"
 	],
 	"file_history":
 	[
+		"/home/romain/Documents/C/td12/exo2.c",
+		"/home/romain/Documents/C/td12/exo1.c",
+		"/home/romain/Documents/C/td13/exo1.c",
 		"/home/romain/Documents/C/td11/exo4.c",
 		"/home/romain/Documents/C/td12/td12.pdf",
 		"/home/romain/.config/sublime-text-3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
@@ -538,6 +574,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"y",
+			"empiler",
+			"break",
+			";\n",
+			"empiler",
+			"pile",
+			"isdigit",
 			"lf1",
 			"1",
 			"lf",
@@ -565,96 +608,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "td12/exo1.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 924,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								924,
-								924
-							]
-						],
-						"settings":
-						{
-							"SL.24.region_keys":
-							[
-							],
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "td12/exo2.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1328,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1328,
-								1328
-							]
-						],
-						"settings":
-						{
-							"SL.25.region_keys":
-							[
-							],
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "td12/exo3.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3429,
+						"buffer_size": 3567,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1583,
-								1583
+								2388,
+								2388
 							]
 						],
 						"settings":
@@ -676,7 +647,151 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 832.0,
+						"translation.y": 1315.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "td11/exo5.c",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 690,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								322,
+								322
+							]
+						],
+						"settings":
+						{
+							"SL.27.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 99.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "td13/pile.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 862,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								855,
+								855
+							]
+						],
+						"settings":
+						{
+							"SL.16.region_keys":
+							[
+							],
+							"SL.23.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "td13/pile.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1193,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								958,
+								958
+							]
+						],
+						"settings":
+						{
+							"SL.17.region_keys":
+							[
+							],
+							"SL.24.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 8.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "td13/cal.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1309,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								734,
+								734
+							]
+						],
+						"settings":
+						{
+							"SL.18.region_keys":
+							[
+							],
+							"SL.24.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 692.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -722,7 +837,7 @@
 	},
 	"output.Terminus":
 	{
-		"height": 166.0
+		"height": 205.0
 	},
 	"output.deviot":
 	{
@@ -768,7 +883,7 @@
 		[
 			[
 				"",
-				"~/Bureau/Elec3/micropro/GCC_ARM/GCC_ARM.sublime-project"
+				"~/Bureau/PROJET_ELEC_2018-2021/voiture_auto.sublime-project"
 			],
 			[
 				"c",

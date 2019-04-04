@@ -6,6 +6,6 @@
 		}
 	],
 	"completions":[
-      ["main", "@description: ${1:}\n							@ directives de compilation ------------- \n  		.text\n  		.align 4\n  		.global _start\n							@ Section de données --------------------------\n	${2:@variables}\n\n							@ Section de code --------------------------\n\n_start:\n\n\n			${0:@code}\n\n			BX LR		@fin du programme\n"],
+     // ["main", "@description: ${1:}\n							@ directives de compilation ------------- \n  		.text\n  		.align 4\n  		.global _start\n							@ Section de données --------------------------\n	${2:@variables}\n\n							@ Section de code --------------------------\n\n_start:\n\n\n			${0:@code}\n\n			BX LR		@fin du programme\n"],
   ]
 }
