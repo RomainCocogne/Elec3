@@ -37,17 +37,18 @@ void extract_operandes (Pile *p, int *x, int *y){
 }
 
 /*
-	effectue le calcul puis stock le 
-	resultat dans la pile
+	effectue le calcul entre x et y
+	en fonction de l'operateur
 */
-void calcul (Pile *p, int x, int y, const char *op){
+int calcul (int x, int y, const char *op){
 	switch(*op){
-		case '+': empiler(p,x+y);	break;
-		case '-': empiler(p,x-y);	break;
-		case 'x': empiler(p,x*y);	break;
-		case '/': empiler(p,x/y);	break;
+		case '+': return (x+y);	break;
+		case '-': return (x-y);	break;
+		case 'x': return (x*y);	break;
+		case '/': return (x/y);	break;
 		default: printf("error in operator\n");
 	}
+	return 0;
 }
 
 
@@ -60,7 +61,7 @@ int main(int argc, char const *argv[]){
 		else{
 			extract_operandes(&pile,&x,&y);
 			//printf("(%d%s%d)",x,*argv,y );
-			calcul(&pile,x,y,*argv++);
+			empiler(&pile,calcul(x,y,*argv++));
 		}
 	}
 	printf("%d\n", sommet(pile));

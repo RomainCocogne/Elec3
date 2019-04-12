@@ -3,6 +3,9 @@
 	pour la calculatrice
 */
 
+#include "liste.h"
+
+//#pragma once
 #ifndef _PILE_H_ 	//pour ne pas inclure le fichier plusieurs fois
 #define _PILE_H_
 
@@ -11,11 +14,7 @@
 /****************************/
 //			types 			//
 /****************************/
-typedef struct noeud					//structure suivant le principe de la structure chainee
-{
-	struct noeud *suivant;
-	int val;
-} * Pile;
+typedef Liste Pile;					//structure suivant le principe de la structure chainee 
 
 /****************************/
 //		  variables			//

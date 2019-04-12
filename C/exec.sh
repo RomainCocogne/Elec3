@@ -1,3 +1,6 @@
 #!/bin/bash
 
-compile/$1
+name=$1
+shift
+param=$*
+compile/$name $param

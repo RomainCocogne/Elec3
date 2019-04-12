@@ -8,16 +8,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
-
-
-/****************************/
-//			types 			//
-/****************************/
-typedef struct noeud
-{
-	struct noeud *suivant;
-	int val;
-} * Pile;
+#include "pile.h"
+#include "liste.h"
 
 /****************************/
 //		  variables			//
@@ -32,20 +24,13 @@ int estVide(Pile pile){
 }
 
 void empiler(Pile *pile, int val){
-	struct noeud *op =malloc(sizeof(struct noeud));
-	op->suivant=*pile;
-	op->val=val;
-	*pile=op;
+	inserer(pile,1,&val);
 }
 void depiler(Pile *pile){
-	assert(estVide(*pile)==0);
-	struct noeud *temp= (**pile).suivant;
-	free(*pile);
-	*pile=temp;
+	supprimer(pile,1);
 }
 int sommet(Pile pile){
-	assert(estVide(pile)==0);
-	return pile->val;
+	return *(int *)ieme(pile,1);
 }
 
 //decommenter ce code pour debuger la pile
