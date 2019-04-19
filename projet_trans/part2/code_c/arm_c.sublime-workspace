@@ -1,0 +1,1134 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fft",
+				"fft.h"
+			],
+			[
+				"ti",
+				"time_spend"
+			],
+			[
+				"print",
+				"printf\tprintf …"
+			],
+			[
+				"un",
+				"unsigned"
+			],
+			[
+				"f",
+				"for\tFor Loop"
+			],
+			[
+				"pr",
+				"printf"
+			],
+			[
+				"fo",
+				"for\tFor Loop"
+			],
+			[
+				"def",
+				"dft_directe"
+			],
+			[
+				"c",
+				"Ca va mieux en le disant 24.11.2015.wav"
+			],
+			[
+				"ma",
+				"main\tmain()"
+			],
+			[
+				"H",
+				"HIGH"
+			],
+			[
+				"S",
+				"SPEED"
+			],
+			[
+				"dela",
+				"delay\tDeviot delay()"
+			],
+			[
+				"digi",
+				"digitalWrite\tDeviot digitalWrite"
+			],
+			[
+				"spee",
+				"speed"
+			],
+			[
+				"co",
+				"command_car"
+			],
+			[
+				"IR",
+				"IR_L"
+			],
+			[
+				"I",
+				"IR_R"
+			],
+			[
+				"p",
+				"pinMode\tDeviot pinMode"
+			],
+			[
+				"serial",
+				"serial_port"
+			],
+			[
+				"ser",
+				"serial_port"
+			],
+			[
+				"ini",
+				"init_pin"
+			],
+			[
+				"R_",
+				"R_ECHO"
+			],
+			[
+				"di",
+				"digitalWrite\tDeviot digitalWrite"
+			],
+			[
+				"R",
+				"R_TRIG"
+			],
+			[
+				"wo",
+				"word_after〔function〕"
+			],
+			[
+				"tag_f",
+				"tags_file"
+			],
+			[
+				"l",
+				"line.begin(),line.end"
+			],
+			[
+				"run",
+				"run_command"
+			],
+			[
+				"lin",
+				"line_contents〔variable〕"
+			],
+			[
+				"func",
+				"func_pattern〔function〕"
+			],
+			[
+				"sel",
+				"self〔argument〕"
+			],
+			[
+				"all",
+				"allcontent〔variable〕"
+			],
+			[
+				"m",
+				"main"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "analyse_file.c",
+			"settings":
+			{
+				"buffer_size": 1554,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "fft.c",
+			"settings":
+			{
+				"buffer_size": 3928,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "makefile",
+			"settings":
+			{
+				"buffer_size": 339,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "fft.h",
+			"settings":
+			{
+				"buffer_size": 589,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "romain@romain-X751LJ:/media/romain/​‌​\nOS/Users/roco2/Desktop/Elec3/projet​‌​\n_trans/part2/code_c$ \nromain@romain-X751LJ:/media/romain/​‌​\nOS/Users/roco2/Desktop/Elec3/projet​‌​\n_trans/part2/code_c$               \nromain@romain-X751LJ:/media/romain/​‌​\nOS/Users/roco2/Desktop/Elec3/projet​‌​\n_trans/part2/code_c$ \nromain@romain-X751LJ:/media/romain/​‌​\nOS/Users/roco2/Desktop/Elec3/projet​‌​\n_trans/part2/code_c$               \n                                   ",
+			"settings":
+			{
+				"buffer_size": 463,
+				"line_ending": "Unix",
+				"name": "Login Shell",
+				"scratch": true
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ternu",
+				"Terminus: Open Default Shell in View"
+			],
+			[
+				"termi",
+				"Terminus: Open Default Shell in View"
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"pull",
+				"Git: Pull"
+			],
+			[
+				"comm",
+				"Git: Quick Commit (repo, only already added files)"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git com",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"git co",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"git comm",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"git pu",
+				"Git: Pull"
+			],
+			[
+				"pu",
+				"Git: Push"
+			],
+			[
+				"git",
+				"Git: Quick Commit (current file)"
+			],
+			[
+				"Deviot: ",
+				"Deviot: Start/Stop Monitor"
+			],
+			[
+				"deviot t",
+				"Deviot: Show Terminal"
+			],
+			[
+				"terminus",
+				"Terminus: Open Default Shell in View"
+			],
+			[
+				"ter",
+				"Terminus: List Shells"
+			],
+			[
+				"contr",
+				"Package Control: Enable Package"
+			],
+			[
+				"resso",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"cta",
+				"CTags: Rebuild Tags"
+			],
+			[
+				"ctags",
+				"CTags: Rebuild Tags"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"ctags ",
+				"CTags: Show Symbols (all)"
+			],
+			[
+				"packager",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"packagere",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"packageres",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"goto",
+				"Go To Definition"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"duplica",
+				"File: Duplicate"
+			],
+			[
+				"packageresource",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"package re",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"fun",
+				"Snippet: function_1arg"
+			],
+			[
+				"func",
+				"Snippet: function_1arg"
+			],
+			[
+				"funct",
+				"Snippet: Function"
+			],
+			[
+				"python",
+				"Build With: Python"
+			],
+			[
+				"pyt",
+				"Preferences: Terminus Key Bindings"
+			],
+			[
+				"py",
+				"Set Syntax: Python"
+			],
+			[
+				"f1 ",
+				"Snippet: function_1arg"
+			],
+			[
+				"f1",
+				"Snippet: function_1arg"
+			],
+			[
+				"commit",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"ignor",
+				"Git: Update Project Ignored Files"
+			],
+			[
+				"qui",
+				"Git: Quick Commit (current file)"
+			],
+			[
+				"commi",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"stat",
+				"Git: Status"
+			],
+			[
+				"git: push",
+				"Git: Push"
+			],
+			[
+				"git: comm",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"git: p",
+				"Git: Pull"
+			],
+			[
+				"ignore fil",
+				"Git: Update Project Ignored Files"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"gutter",
+				"GitGutter: Enable for View"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"git: pus",
+				"Git: Push"
+			],
+			[
+				"git: add",
+				"Git: Quick Commit (repo, only already added files)"
+			],
+			[
+				"git: ",
+				"Git: Commit"
+			],
+			[
+				"git: qu",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"git: co",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"pus",
+				"Git: Push"
+			],
+			[
+				"commit qu",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"add",
+				"Project: Add Folder"
+			],
+			[
+				"git: pu",
+				"Git: Pull"
+			],
+			[
+				"git: sh",
+				"Git: Show Previous Version of Current File"
+			],
+			[
+				"git: commit",
+				"Git: Quick Commit (current file)"
+			],
+			[
+				"git: c",
+				"Git: Commit"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"gith",
+				"GitHub: Open Gist in Editor"
+			],
+			[
+				"sftp",
+				"SFTP: Browse With FileZilla"
+			],
+			[
+				"ftp",
+				"SFTP: Download File"
+			],
+			[
+				"file",
+				"SublimeZilla: Import FileZilla Server"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"filez",
+				"SublimeZilla: Import FileZilla Server"
+			],
+			[
+				"filezi",
+				"SublimeZilla: Import FileZilla Server"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"Pa",
+				"Package Control: Install Package"
+			],
+			[
+				"git ",
+				"Git: Commit history"
+			],
+			[
+				"github",
+				"GitHub: Update Gist"
+			],
+			[
+				"gi",
+				"GitHub: Open Gist in Editor"
+			],
+			[
+				"",
+				"Bookmarks: Select Previous"
+			],
+			[
+				"pa in",
+				"Package Control: Install Package"
+			],
+			[
+				"P",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 150.0,
+		"history":
+		[
+			"view.run_command(\"search_for_definition\")",
+			"view.run_command(\"rebuild_tags\",{\"files\":view.window().folders()})",
+			"view.run_command(\"rebuild_tags\",{\"files\":\"PROJET_ELEC_2018-2021\"})",
+			"view.run_command(\"rebuild_tags\",{\"files\":\"PROJET_ELEC_2018_2019\"})",
+			"view.run_command(\"rebuild_tags\",{\"files\":\"run_motor.c\"})",
+			"view.run_command(\"rebuild_tags\",{\"files\":1})",
+			"view.run_command(\"rebuild_tags\",{\"files\":\"1\"})",
+			"view.run_command(\"rebuild_tags\",{'dirs':\"1\"})",
+			"view.run_command(\"rebuild_tags\",{'dirs':'1'})",
+			"view.run_command(\"rebuild_tags\",{'dirs':1})",
+			"view.run_command(\"rebuild_tags\")",
+			"view.run_command(\"navigate_to_definition\")",
+			"view.run_command(\"jump_to_definition\",{\"symbol\":'j'})",
+			"view.run_command(\"navigate_to_definition\",{\"args\":'j'})",
+			"view.run_command(\"navigate_to_definition\",{\"symbol\":'j'})",
+			"view.run_command(\"search_for_definition\",{\"symbol\":'j'})",
+			"view.run_command(\"search_for_definition\",{\"symbol\":j})",
+			"view.run_command(\"search_for_definition\")",
+			"view.run_command(\"navigate_to_definition\")",
+			"view.run_command(\"goto_line\",{\"line\": 1})",
+			"view.run_command(\"context_goto_definition\",{\"event\": })",
+			"view.run_command(\"context_goto_definition\",{\"event\": (0)})",
+			"view.run_command(\"context_goto_definition\",{\"event\": [0]})",
+			"view.run_command(\"context_goto_definition\",{\"event\": 0})",
+			"view.run_command(\"context_goto_definition\",{\"event\": 1})",
+			"view.run_command(\"goto_line\",{\"line\": 1})",
+			"view.run_command(\"goto_line\",1)",
+			"view.run_command(\"goto_line\",[1])",
+			"view.run_command(\"goto_line\",(1))",
+			"view.run_command(\"goto_line\",\"1\")",
+			"view.run_command(\"goto_line\",'1')",
+			"view.run_command(\"goto_line\",1)",
+			"view.run_command(\"goto_line\")",
+			"view.run_command(\"goto_line\",3)",
+			"view.run_command(\"context_goto_definition\")",
+			"view.run_command(\"context_goto_definition\",0)",
+			"view.run_command(\"context_goto_definition\",[0])",
+			"view.run_command(\"context_goto_definition\",[0,0])",
+			"view.run_command(\"context_goto_definition\",0)",
+			"view.run_command(\"context_goto_definition\",(0,0))",
+			"view.run_command(\"context_goto_definition\")",
+			"view.run_command(\"goto_definition\")",
+			"view.run_command(\"context_goto_definition\")",
+			"view.run_command(\"goto_symbol_in_index\")",
+			"view.run_command(\"goto_symbol_in_project\",\"t\")",
+			"view.run_command(\"goto_symbol_in_project\",t)",
+			"view.run_command(\"goto_symbol\")",
+			"view.run_command(\"goto_symbol_in_project\")",
+			"view.run_command(\"goto_symbol_in_project7\")",
+			"view.run_command(\"goto_definition\")",
+			"goto_definition",
+			"view.run_command(\"create_function\")",
+			"view.run_command(\"function\")",
+			"view.run_command(\"example\")",
+			"view.run_command(\"function\")",
+			"view.run_command(\"function.py\")",
+			"view.run_command(\"function\")",
+			"view.run_command(\"example\")",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c"
+	],
+	"file_history":
+	[
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/fft.h",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/blink.c",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/hello_world.c",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/cross_compile.sh",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/connect_sama.sh",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/arm_c.sublime-project",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/run_motor/run_motor.ino",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/test_serial.c",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/run_motor.c",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/run_servo.c",
+		"/home/romain/Bureau/projet_voiture_autonome/command_car/command_car.ino",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/run_servo/run_servo.ino",
+		"/home/romain/.config/sublime-text-3/Packages/User/function.py",
+		"/media/romain/OS/Users/roco2/Desktop/Elec3/micropro/GCC_ARM/arith.s",
+		"/home/romain/.config/sublime-text-3/Packages/CTags/ctags.py",
+		"/home/romain/.config/sublime-text-3/Packages/CTags/ctagsplugin.py",
+		"/home/romain/.config/sublime-text-3/Packages/CTags/test_ctags.py",
+		"/home/romain/.config/sublime-text-3/Packages/CTags/test_ctagsplugin.py",
+		"/home/romain/.config/sublime-text-3/Packages/User/function_1arg.sublime-snippet",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/wiringPi/examples/Makefile",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/wiringPi/wiringPi/bmp180.c",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/wiringPi/wiringPi/pcf8591.c",
+		"/home/romain/.config/sublime-text-3/Packages/CTags/Default.sublime-keymap",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/wiringPi/gpio/gpio.c",
+		"/home/romain/.config/sublime-text-3/Packages/User/CTags.sublime-settings",
+		"/home/romain/.config/sublime-text-3/Packages/Default/symbol.py",
+		"/home/romain/.config/sublime-text-3/Packages/Default/goto_line.py",
+		"/home/romain/.config/sublime-text-3/Packages/SublimeCodeIntel/Default (Linux).sublime-keymap",
+		"/home/romain/.config/sublime-text-3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/home/romain/.config/sublime-text-3/Packages/User/SublimeCodeIntel.sublime-settings",
+		"/home/romain/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/romain/.config/sublime-text-3/Packages/SublimeCodeIntel/Default (Linux).sublime-mousemap",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/sftp-config.json",
+		"/home/romain/.config/sublime-text-3/Packages/Default/duplicate_line.py",
+		"/home/romain/.config/sublime-text-3/Packages/Default/swap_line.py",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/README.md",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/.gitignore",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/voiture_auto.sublime-project",
+		"/etc/init.d/startup.sh",
+		"/home/romain/.bashrc",
+		"/etc/fstab",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/voiture_auto.sublime-workspace",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/test_ir/test_ir.ino",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/projet_voiture_autonome/run_motor.c",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/projet_voiture_autonome/test_serial.c",
+		"/home/romain/Bureau/PROJET_ELEC_2018-2021/projet_voiture_autonome/test",
+		"/home/romain/Bureau/projet_voiture_autonome/test_ir/test_ir.ino",
+		"/home/romain/.config/sublime-text-3/Packages/Git/Git.sublime-settings",
+		"/home/romain/Bureau/projet_voiture_autonome/program.o",
+		"/home/romain/Bureau/projet_voiture_autonome/run_motor.c",
+		"/home/romain/Bureau/projet_voiture_autonome/sftp-config.json",
+		"/home/romain/Bureau/projet_voiture_autonome/run_motor",
+		"/home/romain/Bureau/projet_voiture_auto/run_motor",
+		"/home/romain/Bureau/Elec3.sublime-project",
+		"/home/romain/Bureau/run_motor.c",
+		"/home/romain/Bureau/test2.txt",
+		"/usr/share/applications/defaults.list",
+		"/usr/share/applications/sublime_text.desktop",
+		"/home/romain/Documents/C/lettre.c",
+		"/home/romain/Documents/test_startuml/startuml",
+		"/tmp/untitled8afhjy.png",
+		"/home/romain/Documents/test_startuml/startuml.png",
+		"/home/romain/.config/sublime-text-3/Packages/User/GitHub.sublime-settings",
+		"/home/romain/.config/sublime-text-3/Packages/sublime_diagram_plugin/Default (Linux).sublime-keymap",
+		"/home/romain/.config/sublime-text-3/Packages/sublime_diagram_plugin/README.md",
+		"/home/romain/.config/sublime-text-3/Packages/sublime_diagram_plugin/Diagram.sublime-settings",
+		"/home/romain/.config/sublime-text-3/Packages/Terminality/README.md",
+		"/home/romain/.config/sublime-text-3/Packages/PlantUmlDiagrams/README.md",
+		"/tmp/untitledh14nvo.png",
+		"/tmp/untitled7srioy.png",
+		"/tmp/untitledhjywss.png",
+		"/tmp/untitled1fh4tj.png",
+		"/tmp/untitled49gmp8.png",
+		"/tmp/untitledzi7dqt.png",
+		"/tmp/untitledng0982.png",
+		"/tmp/untitledjdzuq4.png",
+		"/tmp/untitled5unpdk.png",
+		"/tmp/untitledrdtlc8.png",
+		"/home/romain/Documents/C/affichenombres.png",
+		"/home/romain/.config/sublime-text-3/Packages/PlantUmlDiagrams/PlantUmlDiagrams.sublime-settings",
+		"/home/romain/.config/sublime-text-3/Packages/User/PlantUmlDiagrams.sublime-settings",
+		"/home/romain/.config/sublime-text-3/Packages/PlantUmlDiagrams/samples/EXAMPLE.wsd",
+		"/home/romain/Documents/C/exec.sh",
+		"/home/romain/Documents/C/compile_and_exec.sh",
+		"/home/romain/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/romain/.config/sublime-text-3/Packages/AutoFileName/autofilename.sublime-settings",
+		"/home/romain/.config/sublime-text-3/Packages/Alignment/Base File.sublime-settings",
+		"/home/romain/Documents/info/td5/Resources/Photos/legendes.txt",
+		"/home/romain/Documents/info/td5/Resources/create_galerie3.sh",
+		"/home/romain/Documents/info/td5/Resources/galerie3.html",
+		"/home/romain/Documents/info/td5/Resources/liste_photo.sh",
+		"/home/romain/Documents/info/td5/Resources/create_galerie2.sh",
+		"/home/romain/Documents/info/td5/Resources/galerie2_bis.html",
+		"/home/romain/Documents/info/td5/Resources/galerie2.html",
+		"/home/romain/Documents/info/td5/Resources/create_galerie1.sh",
+		"/home/romain/Documents/info/td5/Resources/galerie1.html",
+		"/home/romain/Documents/info/td5/Resources/galerie1_bis.html",
+		"/home/romain/Documents/info/td5/liste_photo.sh",
+		"/home/romain/Documents/info/td5/create_galerie1.sh",
+		"/home/romain/Documents/info/td5/galerie1.html",
+		"/home/romain/Documents/info/td5/remplacer.sh",
+		"/home/romain/Documents/info/td4/getpage",
+		"/home/romain/Documents/info/td4/traduire.sh",
+		"/home/romain/Documents/info/td4/multi-trad.sh",
+		"/home/romain/Documents/info/td4/remplacer.sh",
+		"/home/romain/Documents/info/maps",
+		"/home/romain/Documents/info/simple",
+		"/home/romain/Documents/info/menu"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 158.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			");",
+			"min",
+			"max",
+			"dft_complex",
+			"->",
+			"int",
+			"           ",
+			"int"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "analyse_file.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1554,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								154,
+								154
+							]
+						],
+						"settings":
+						{
+							"SL.16.region_keys":
+							[
+							],
+							"SL.24.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 573.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "fft.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3928,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								696,
+								696
+							]
+						],
+						"settings":
+						{
+							"SL.25.region_keys":
+							[
+							],
+							"SL.54.region_keys":
+							[
+							],
+							"SL.69.region_keys":
+							[
+							],
+							"SL.87.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 347.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 339,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								256,
+								256
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "fft.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 589,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"SL.91.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 463,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								413,
+								413
+							]
+						],
+						"settings":
+						{
+							"__vi_external_disable": true,
+							"auto_complete": false,
+							"auto_complete_commit_on_tab": false,
+							"bracket_highlighter.clone_locations":
+							{
+							},
+							"bracket_highlighter.ignore": true,
+							"caret_style": "blink",
+							"color_scheme": "Terminus.sublime-color-scheme",
+							"default_dir": "/home/romain/Bureau/Elec3/projet_trans/part2/code_c",
+							"draw_centered": false,
+							"draw_indent_guides": false,
+							"draw_white_space": "none",
+							"git_gutter_is_enabled": false,
+							"gutter": false,
+							"highlight_line": false,
+							"incomplete_sync": null,
+							"is_widget": true,
+							"scroll_past_end": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"terminus.highlight_counter": 19,
+							"terminus_view": true,
+							"terminus_view.args":
+							{
+								"auto_close": true,
+								"cmd":
+								[
+									"/bin/bash",
+									"-i",
+									"-l"
+								],
+								"cwd": "/home/romain/Bureau/Elec3/projet_trans/part2/code_c",
+								"env":
+								{
+									"LANG": "fr_FR.UTF-8",
+									"TERM": "linux",
+									"TERMINUS_SUBLIME": "1",
+									"TERM_PROGRAM": "Terminus-Sublime"
+								},
+								"panel_name": null,
+								"tag": null,
+								"title": "Login Shell"
+							},
+							"terminus_view.key.ctrl+k": true,
+							"terminus_view.key.ctrl+p": true,
+							"terminus_view.natural_keyboard": true,
+							"terminus_view.panel_name": null,
+							"terminus_view.tag": null,
+							"terminus_view.viewport_y": 0.0,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 66.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 120.0
+	},
+	"output.Terminus":
+	{
+		"height": 205.0
+	},
+	"output.Terminus 2":
+	{
+		"height": 150.0
+	},
+	"output.deviot":
+	{
+		"height": 168.0
+	},
+	"output.exec":
+	{
+		"height": 138.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 138.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 120.0
+	},
+	"pinned_build_system": "",
+	"project": "arm_c.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ru",
+				"run_motor.c"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/C/cour_C.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 354.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 574.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 275.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
