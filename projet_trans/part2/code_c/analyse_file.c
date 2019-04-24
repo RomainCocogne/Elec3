@@ -6,28 +6,40 @@
 #include <math.h>
 #include <time.h>
 #include "fft.h"
+
 #define BUFFER_LEN 1024
+#define FILE_NAME "../Ca va mieux en le disant 24.11.2015.wav"
 
-
-
+/*
+	retourne les valeurs de n en db
+*/
 void db(double *n, unsigned int size){
 	for(int i=0; i<size; i++){
 	    n[i]=20*log10(n[i]);
 	}
 }
 
+/*
+	transforme un tableau de reels en tableau de complex
+*/
 void toComplex (double complex *resultat, double *data, unsigned int size){
 	for(int i=0; i<size; i++){
 	    *resultat++=CMPLX(*data++,0);
 	}
 }
 
+/*
+	transforme un tableau de complex en tableau de reels
+*/
 void toReal (double *resultat, double complex *data, unsigned int size){
 	for(int i=0; i<size; i++){
 	    *resultat++=cabs(*data++);
 	}
 }
 
+/*
+	calcule la valeur max du tableau
+*/
 double valmax(double *data,int size){
 	double max=-70;
 	for(int i=0; i<size; i++){
@@ -82,29 +94,29 @@ void analyseTiming(double *data, int count, int channels){
 
 int main(int argc, char const *argv[])
 {	
-	static double data [BUFFER_LEN] ;
+	static double data [BUFFER_LEN] ;	//tableau contenant les 1024 donnees
 
-	SNDFILE	*file;
-
-
+//variables pour utiliser le fichier
+	SNDFILE		*file;
 	SF_INFO		*sfinfo;
 	int			readcount ;
-	const char	*filename = "../Ca va mieux en le disant 24.11.2015.wav";
+	const char	*filename = FILE_NAME;
 	sfinfo =malloc(sizeof(SF_INFO));
 
+//si l'ouverture du fichier rencontre un probleme
 	if (! (file = sf_open (filename, SFM_READ, sfinfo)))
-	{	/* Open failed so print an error message. */
+	{
 		printf ("Not able to open input file %s.\n", filename) ;
-		/* Print the error message from libsndfile. */
 		puts (sf_strerror (NULL)) ;
 		return 1 ;
 	}
-	//int c=3;
+//tout le fichier
 	// while ((readcount = sf_read_double (file, data, BUFFER_LEN)))
 	// {	
-	// 	process_data (data, readcount, sfinfo->channels) ;
+	// 	analyseTiming(data,readcount,sfinfo->channels);
 	// 	printf("\n");
 	// } 
+//une seule itération (1024 elements)
 	readcount=sf_read_double (file, data, BUFFER_LEN);
 	sf_close (file) ;
 	analyseTiming(data,readcount,sfinfo->channels);

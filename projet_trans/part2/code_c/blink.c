@@ -1,11 +1,11 @@
-#include <stdio.h>   // pour printf
-#include <stdlib.h>  // pour exit 
-#include <fcntl.h>   // pour open, read, write et close
-#include <unistd.h>  // pour sleep
-#include <errno.h>   // pour perror
+// #include <stdio.h>   // pour printf
+// #include <stdlib.h>  // pour exit 
+// #include <fcntl.h>   // pour open, read, write et close
+// #include <unistd.h>  // pour sleep
+// #include <errno.h>   // pour perror
 
 
-#define LED_PATH "/sys/class/leds/d3/brightness"
+// #define LED_PATH "/sys/class/leds/d3/brightness"
 
 
 // int main(void) {

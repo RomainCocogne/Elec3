@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"com",
+				"compile"
+			],
+			[
+				"data",
+				"data_cbit"
+			],
+			[
+				"ff",
+				"fftrec_crec"
+			],
+			[
+				"to",
+				"toReal"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"anal",
+				"analyseTiming"
+			],
+			[
+				"cha",
+				"channels"
+			],
+			[
+				"pr",
+				"process_data"
+			],
+			[
+				"da",
+				"data_complex"
+			],
+			[
 				"fft",
 				"fft.h"
 			],
@@ -22,10 +58,6 @@
 			[
 				"f",
 				"for\tFor Loop"
-			],
-			[
-				"pr",
-				"printf"
 			],
 			[
 				"fo",
@@ -147,7 +179,7 @@
 			"file": "analyse_file.c",
 			"settings":
 			{
-				"buffer_size": 1554,
+				"buffer_size": 2604,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -162,10 +194,36 @@
 			}
 		},
 		{
+			"file": "cross_compile.sh",
+			"settings":
+			{
+				"buffer_size": 118,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blink.c",
+			"settings":
+			{
+				"buffer_size": 736,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "hello_world.c",
+			"settings":
+			{
+				"buffer_size": 177,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "makefile",
 			"settings":
 			{
-				"buffer_size": 339,
+				"buffer_size": 363,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -174,24 +232,39 @@
 			"file": "fft.h",
 			"settings":
 			{
-				"buffer_size": 589,
+				"buffer_size": 590,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "romain@romain-X751LJ:/media/romain/​‌​\nOS/Users/roco2/Desktop/Elec3/projet​‌​\n_trans/part2/code_c$ \nromain@romain-X751LJ:/media/romain/​‌​\nOS/Users/roco2/Desktop/Elec3/projet​‌​\n_trans/part2/code_c$               \nromain@romain-X751LJ:/media/romain/​‌​\nOS/Users/roco2/Desktop/Elec3/projet​‌​\n_trans/part2/code_c$ \nromain@romain-X751LJ:/media/romain/​‌​\nOS/Users/roco2/Desktop/Elec3/projet​‌​\n_trans/part2/code_c$               \n                                   ",
-			"settings":
-			{
-				"buffer_size": 463,
-				"line_ending": "Unix",
-				"name": "Login Shell",
-				"scratch": true
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/Makefile/Make.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Packages/C++/C Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		]
 	],
 	"build_varint": "",
 	"command_palette":
@@ -738,6 +811,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"d",
+			"fftrec",
 			");",
 			"min",
 			"max",
@@ -763,7 +838,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -772,19 +847,22 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1554,
+						"buffer_size": 2604,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								154,
-								154
+								772,
+								772
 							]
 						],
 						"settings":
 						{
+							"SL.14.region_keys":
+							[
+							],
 							"SL.16.region_keys":
 							[
 							],
@@ -795,14 +873,14 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax",
+							"syntax": "Packages/C++/C.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 573.0,
+						"translation.y": 510.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -818,12 +896,15 @@
 						"selection":
 						[
 							[
-								696,
-								696
+								3310,
+								3310
 							]
 						],
 						"settings":
 						{
+							"SL.15.region_keys":
+							[
+							],
 							"SL.25.region_keys":
 							[
 							],
@@ -840,61 +921,23 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/C++/C.sublime-syntax",
+							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 347.0,
+						"translation.y": 2142.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "makefile",
-					"semi_transient": false,
+					"file": "cross_compile.sh",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 339,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								256,
-								256
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 3,
-					"file": "fft.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 589,
+						"buffer_size": 118,
 						"regions":
 						{
 						},
@@ -907,14 +950,115 @@
 						],
 						"settings":
 						{
-							"SL.91.region_keys":
+							"git_gutter_is_enabled": true,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "blink.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 736,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								288,
+								288
+							]
+						],
+						"settings":
+						{
+							"SL.22.region_keys":
 							[
 							],
 							"git_gutter_is_enabled": true,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/C++/C++.sublime-syntax"
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "hello_world.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 177,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								31,
+								31
+							]
+						],
+						"settings":
+						{
+							"SL.24.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 363,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								77,
+								77
+							]
+						],
+						"settings":
+						{
+							"SL.16.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -922,81 +1066,49 @@
 					},
 					"stack_index": 2,
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
 				{
-					"buffer": 4,
+					"buffer": 6,
+					"file": "fft.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 463,
+						"buffer_size": 590,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								413,
-								413
+								379,
+								379
 							]
 						],
 						"settings":
 						{
-							"__vi_external_disable": true,
-							"auto_complete": false,
-							"auto_complete_commit_on_tab": false,
-							"bracket_highlighter.clone_locations":
-							{
-							},
-							"bracket_highlighter.ignore": true,
-							"caret_style": "blink",
-							"color_scheme": "Terminus.sublime-color-scheme",
-							"default_dir": "/home/romain/Bureau/Elec3/projet_trans/part2/code_c",
-							"draw_centered": false,
-							"draw_indent_guides": false,
-							"draw_white_space": "none",
-							"git_gutter_is_enabled": false,
-							"gutter": false,
-							"highlight_line": false,
+							"SL.17.region_keys":
+							[
+							],
+							"SL.91.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
 							"incomplete_sync": null,
-							"is_widget": true,
-							"scroll_past_end": true,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"terminus.highlight_counter": 19,
-							"terminus_view": true,
-							"terminus_view.args":
-							{
-								"auto_close": true,
-								"cmd":
-								[
-									"/bin/bash",
-									"-i",
-									"-l"
-								],
-								"cwd": "/home/romain/Bureau/Elec3/projet_trans/part2/code_c",
-								"env":
-								{
-									"LANG": "fr_FR.UTF-8",
-									"TERM": "linux",
-									"TERMINUS_SUBLIME": "1",
-									"TERM_PROGRAM": "Terminus-Sublime"
-								},
-								"panel_name": null,
-								"tag": null,
-								"title": "Login Shell"
-							},
-							"terminus_view.key.ctrl+k": true,
-							"terminus_view.key.ctrl+p": true,
-							"terminus_view.natural_keyboard": true,
-							"terminus_view.panel_name": null,
-							"terminus_view.tag": null,
-							"terminus_view.viewport_y": 0.0,
-							"word_wrap": false
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1030,7 +1142,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.725826346919,
 			1.0
 		],
 		"rows":
@@ -1046,7 +1158,7 @@
 	},
 	"output.Terminus":
 	{
-		"height": 205.0
+		"height": 232.0
 	},
 	"output.Terminus 2":
 	{

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"fo",
+				"for\tfor_loop"
+			],
+			[
 				"valeur",
 				"valeur"
 			],
@@ -76,10 +80,6 @@
 				"allcontent〔variable〕"
 			],
 			[
-				"fo",
-				"function\tfunction_1arg"
-			],
-			[
 				"f",
 				"function\tfunction_1arg"
 			],
@@ -110,28 +110,19 @@
 			}
 		},
 		{
-			"file": "TD3/scripts/exo6.s",
+			"file": "TD4/scripts/exo2.s",
 			"settings":
 			{
-				"buffer_size": 682,
+				"buffer_size": 861,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "TD4/scripts/exo1.s",
+			"file": "TD5/scripts/exo1.s",
 			"settings":
 			{
-				"buffer_size": 447,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/romain/.config/sublime-text-3/Packages/User/main_arm.sublime-snippet",
-			"settings":
-			{
-				"buffer_size": 567,
+				"buffer_size": 357,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -149,6 +140,26 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"sparc",
+				"Set Syntax: SPARC"
+			],
+			[
+				"termi",
+				"Terminus: Open Default Shell in View"
+			],
+			[
 				"package r",
 				"PackageResourceViewer: Open Resource"
 			],
@@ -163,10 +174,6 @@
 			[
 				"set ar",
 				"Set Syntax: ARM Assembly"
-			],
-			[
-				"ins",
-				"Package Control: Install Package"
 			],
 			[
 				"push",
@@ -199,10 +206,6 @@
 			[
 				"contr",
 				"Package Control: Enable Package"
-			],
-			[
-				"termi",
-				"Terminality: Browse Commands..."
 			],
 			[
 				"resso",
@@ -239,10 +242,6 @@
 			[
 				"packageres",
 				"PackageResourceViewer: Open Resource"
-			],
-			[
-				"rem",
-				"Package Control: Remove Package"
 			],
 			[
 				"goto",
@@ -550,10 +549,12 @@
 	],
 	"file_history":
 	[
+		"/home/romain/Bureau/Elec3/micropro/GCC_ARM/TD3/scripts/exo6.s",
+		"/home/romain/Bureau/Elec3/micropro/GCC_ARM/TD4/scripts/exo1.s",
+		"/home/romain/.config/sublime-text-3/Packages/User/main_arm.sublime-snippet",
 		"/home/romain/.config/sublime-text-3/Packages/User/ARM Assembly.sublime-settings",
 		"/home/romain/.config/sublime-text-3/Packages/User/ARM",
 		"/media/romain/OS/Users/roco2/Desktop/Elec3/micropro/GCC_ARM/TD4/Assembly.sublime-settings",
-		"/home/romain/.config/sublime-text-3/Packages/User/main_arm.sublime-snippet",
 		"/home/romain/Bureau/Elec3/micropro/GCC_ARM/GCC_ARM.sublime-project",
 		"/media/romain/OS/Users/roco2/Desktop/Elec3/.gitignore",
 		"/home/romain/Bureau/Elec3/micropro/GCC_ARM/TD3/scripts/exo5.s",
@@ -706,7 +707,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -739,7 +740,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -775,64 +776,28 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "TD3/scripts/exo6.s",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 682,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								353,
-								353
-							]
-						],
-						"settings":
-						{
-							"SL.60.region_keys":
-							[
-							],
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"syntax": "Packages/ARM Assembly/Syntaxes/ARM Assembly.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "TD4/scripts/exo1.s",
+					"buffer": 2,
+					"file": "TD4/scripts/exo2.s",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 447,
+						"buffer_size": 861,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								447,
-								447
+								377,
+								377
 							]
 						],
 						"settings":
 						{
-							"SL.28.region_keys":
-							[
-							],
 							"git_gutter_is_enabled": true,
 							"incomplete_sync": null,
 							"syntax": "Packages/ARM Assembly/Syntaxes/ARM Assembly.tmLanguage"
@@ -845,29 +810,30 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/home/romain/.config/sublime-text-3/Packages/User/main_arm.sublime-snippet",
+					"buffer": 3,
+					"file": "TD5/scripts/exo1.s",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 567,
+						"buffer_size": 357,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								218,
-								218
+								357,
+								357
 							]
 						],
 						"settings":
 						{
-							"git_gutter_is_enabled": false,
+							"SL.26.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
 							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/XML/XML.sublime-syntax"
+							"syntax": "Packages/ARM Assembly/Syntaxes/ARM Assembly.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -974,7 +940,7 @@
 		[
 			[
 				"",
-				"~/Bureau/PROJET_ELEC_2018-2021/voiture_auto.sublime-project"
+				"~/Bureau/Elec3/projet_trans/part2/code_c/arm_c.sublime-project"
 			]
 		],
 		"width": 380.0

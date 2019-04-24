@@ -9,6 +9,7 @@ all: $(EXEC)
 
 compile/analyse_file: $(OBJ)
 	@$(CC) -o $@ $^ $(LDFLAGS)
+	@rm -rf ./*.o
 
 compile/analyse_file.o: fft.h
 
@@ -18,7 +19,8 @@ compile/analyse_file.o: fft.h
 .PHONY: clean mrproper
 
 clean:
-	@rm -rf *.o
+	@rm -rf compile/*.o
+
 
 mrproper: clean
 	@rm -rf $(EXEC)
