@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=-Wall -pedantic
-LDFLAGS=-lsndfile -lm
+LDFLAGS=-lsndfile -lm -lncurses 
 EXEC=compile/analyse_file
 SRC= $(wildcard *.c)
 OBJ= $(SRC:.c=.o)

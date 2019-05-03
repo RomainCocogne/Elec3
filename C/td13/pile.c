@@ -23,14 +23,14 @@ int estVide(Pile pile){
 	return (pile==PileVide);
 }
 
-void empiler(Pile *pile, int val){
-	inserer(pile,1,&val);
+void empiler(Pile *pile, void *val){
+	inserer(pile,1,val);
 }
 void depiler(Pile *pile){
 	supprimer(pile,1);
 }
-int sommet(Pile pile){
-	return *(int *)ieme(pile,1);
+void* sommet(Pile pile){
+	return ieme(pile,1);
 }
 
 //decommenter ce code pour debuger la pile

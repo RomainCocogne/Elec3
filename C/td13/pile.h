@@ -25,8 +25,8 @@ extern const Pile PileVide;				//pile vide elementaire
 //		  fonctions			//
 /****************************/
 int estVide(Pile pile);					//verifie si la pile est vide
-void empiler(Pile *pile, int val);		//ajouter un entier au sommet de la pile
+void empiler(Pile *pile, void* val);		//ajouter un entier au sommet de la pile
 void depiler(Pile *pile);				//enlever l'element au sommet de la pile
-int sommet(Pile pile);					//renvoie la valeur presente au sommet de la pile
+void *sommet(Pile pile);					//renvoie la valeur presente au sommet de la pile
 
 #endif

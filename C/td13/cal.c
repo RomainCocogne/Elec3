@@ -29,10 +29,10 @@ int isnumber(char const *str){
 */
 void extract_operandes (Pile *p, int *x, int *y){
 	assert(estVide(*p)==0);
-	*y= sommet(*p);
+	*y= *(int*)sommet(*p);
 	depiler(p);
 	assert(estVide(*p)==0);
-	*x= sommet(*p);
+	*x= *(int*)sommet(*p);
 	depiler(p);
 }
 
@@ -54,16 +54,27 @@ int calcul (int x, int y, const char *op){
 
 int main(int argc, char const *argv[]){
 	argv++;
-	Pile pile=NULL;
+	Pile pile=PileVide;
 	int x,y;
 	while(--argc){
-		if (isnumber(*argv)) empiler(&pile,atoi(*argv++));
+		if (isnumber(*argv)) {
+			int *i;
+			i=malloc(sizeof(int));
+			*i=atoi(*argv++);
+			empiler(&pile,i);
+		}
 		else{
 			extract_operandes(&pile,&x,&y);
 			//printf("(%d%s%d)",x,*argv,y );
-			empiler(&pile,calcul(x,y,*argv++));
+			int *c;
+			c=malloc(sizeof(int));
+			*c=calcul(x,y,*argv++);
+			empiler(&pile,c);
 		}
 	}
-	printf("%d\n", sommet(pile));
+	int *s;
+	s=malloc(sizeof(int));
+	s=sommet(pile);
+	printf("%d\n", *s);
 	return EXIT_SUCCESS;
 }

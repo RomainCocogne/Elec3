@@ -5,10 +5,20 @@
 #include <complex.h>
 #include <math.h>
 #include <time.h>
+#include <ncurses.h>
+#include <unistd.h>
 #include "fft.h"
+#include "plot.h"
 
 #define BUFFER_LEN 1024
-#define FILE_NAME "../Ca va mieux en le disant 24.11.2015.wav"
+#define FILE_NAME file_name
+char *file_name="../lapur_400Hz.wav";
+
+
+void sleep_u(clock_t duree){
+	clock_t time_out = clock();
+	while((time_out + duree) > clock());
+}
 
 /*
 	retourne les valeurs de n en db
@@ -37,19 +47,6 @@ void toReal (double *resultat, double complex *data, unsigned int size){
 	}
 }
 
-/*
-	calcule la valeur max du tableau
-*/
-double valmax(double *data,int size){
-	double max=-70;
-	for(int i=0; i<size; i++){
-	    if(data[i]>=max)max=data[i];
-	}
-	return max;
-}
-
-
-
 int process_data (double *data, int count, int channels, int mode)
 {	
 	double dft [BUFFER_LEN];
@@ -75,25 +72,32 @@ int process_data (double *data, int count, int channels, int mode)
 	    default:
 	    	return 1;
 	}
-	//printf(" %lf ",dft[0]);
+	//printf(" %lf ",dft[100]);
+	//db(dft,BUFFER_LEN);
+	double *dftbis=dft+20;
+	plot(Size,dftbis);
 	return 0;
 } 
 
 
 void analyseTiming(double *data, int count, int channels){
-	for(int mode=0; mode<3; mode++){
+	for(int mode=2; mode<3; mode++){
 		clock_t begin =clock();
 
 	    process_data(data,count,channels,mode);
 
 		clock_t end =clock();
 		double time_spend= (double)(end-begin)/CLOCKS_PER_SEC;
-		printf("Mode: %d 	time of execution: %lf sec\n",mode,time_spend);
+		sleep_u(2300-time_spend*1000);
+		clock_t newend =clock();
+		double newtime_spend= (double)(newend-begin)/CLOCKS_PER_SEC;
+		printf("Mode: %d 	time of execution: %lf sec\n",mode,newtime_spend);
 	}
 }
 
 int main(int argc, char const *argv[])
 {	
+	FILE_NAME=argv[1];
 	static double data [BUFFER_LEN] ;	//tableau contenant les 1024 donnees
 
 //variables pour utiliser le fichier
@@ -111,15 +115,16 @@ int main(int argc, char const *argv[])
 		return 1 ;
 	}
 //tout le fichier
-	// while ((readcount = sf_read_double (file, data, BUFFER_LEN)))
-	// {	
-	// 	analyseTiming(data,readcount,sfinfo->channels);
-	// 	printf("\n");
-	// } 
+	while ((readcount = sf_read_double (file, data, BUFFER_LEN)))
+	{	
+		analyseTiming(data,readcount,sfinfo->channels);
+		//printf("\n");
+	} 
 //une seule itération (1024 elements)
-	readcount=sf_read_double (file, data, BUFFER_LEN);
+	//readcount=sf_read_double (file, data, BUFFER_LEN);
 	sf_close (file) ;
-	analyseTiming(data,readcount,sfinfo->channels);
+	endwin();
+	//analyseTiming(data,readcount,sfinfo->channels);
 } 
 
 
