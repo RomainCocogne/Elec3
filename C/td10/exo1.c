@@ -1,5 +1,5 @@
 /*
-    jouer avec les strucs, avec une date et des fonctions 
+    jouer avec les structs, avec une date et des fonctions 
     initDate, lireDate, ecrirelndate, dateValide
 */
 #include <stdlib.h>
