@@ -1,0 +1,13 @@
+Systeme de jeu : 
+	-Creer une organisation pour les cartes 
+	-Generer les cartes dans un ordre random 
+	-Gerer la condition de victoire 
+	-Gerer le scores 
+	-Stocker les scores dans un fichier externe 
+
+Affichage : 
+	-Apprendre à utiliser la librairie de Granet 
+	-Placer les cartes au bon endroit
+	-Gerer les clicks 
+
+
