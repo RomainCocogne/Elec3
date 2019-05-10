@@ -1,6 +1,6 @@
 CC=gcc
-CFLAGS=-Wall -pedantic
-LDFLAGS=-lm 
+CFLAGS=-Wall -pedantic -std=c99
+LDFLAGS=-lsndfile -lm 
 EXEC=compile/main
 SRC= $(wildcard *.c)
 OBJ= $(SRC:.c=.o)

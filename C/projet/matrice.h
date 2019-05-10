@@ -2,19 +2,13 @@
 	header du module du type matrice
 */
 
+#pragma once
 #include <stdlib.h>
 #include <stdio.h>
-#include <math.h>
-
-#pragma once
-
-
+#include "carte.h"
 /****************************/
 //			types 			//
 /****************************/
-typedef struct{
-	int id,mode,posX,posY;
-	} Card;
 
 typedef struct 
 {
@@ -33,7 +27,7 @@ typedef struct
 //		  fonctions			//
 /****************************/
 Matrice initMatrice(int n, int m);
-void delete_matrix(Matrice * mat);
-void printElement(Card elt);
-void printMat(Matrice mat);
-void ajoutElement(Matrice *mat, Card c, int n, int m);
+extern void delete_matrix(Matrice * mat);
+extern void printElement(Card elt);
+extern void printMat(Matrice mat);
+extern void ajoutElement(Matrice *mat, Card c, int n, int m);

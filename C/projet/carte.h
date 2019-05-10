@@ -23,4 +23,3 @@ extern void setCardY(Card *cardPointer, int newY);
 
 extern Card initCard(int id, int mode, int posX, int posY);
 
- 

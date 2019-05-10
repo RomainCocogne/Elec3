@@ -12,3 +12,6 @@ Affichage :
 
 
 <3
+
+liens utiles:
+http://www-lisic.univ-littoral.fr/~teytaud/anciennePage/files/Cours/LangC/pacman.pdf
