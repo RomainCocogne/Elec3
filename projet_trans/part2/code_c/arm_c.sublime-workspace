@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"math",
+				"mathematique.h"
+			],
+			[
+				"ana",
+				"analyse_file.h"
+			],
+			[
+				"inc",
+				"inc\t#include \"…\""
+			],
+			[
+				"in",
+				"inc\t#include \"…\""
+			],
+			[
+				"pr",
+				"printf"
+			],
+			[
+				"to",
+				"toComplex"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"siz",
+				"sizefin"
+			],
+			[
+				"S",
+				"SNDFILE"
+			],
+			[
 				"h",
 				"height"
 			],
@@ -48,10 +84,6 @@
 				"fftrec_crec"
 			],
 			[
-				"to",
-				"toReal"
-			],
-			[
 				"re",
 				"return"
 			],
@@ -62,10 +94,6 @@
 			[
 				"cha",
 				"channels"
-			],
-			[
-				"pr",
-				"process_data"
 			],
 			[
 				"da",
@@ -106,10 +134,6 @@
 			[
 				"H",
 				"HIGH"
-			],
-			[
-				"S",
-				"SPEED"
 			],
 			[
 				"dela",
@@ -204,19 +228,19 @@
 	"buffers":
 	[
 		{
-			"file": "analyse_file.c",
+			"file": "main.c",
 			"settings":
 			{
-				"buffer_size": 3071,
+				"buffer_size": 1099,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "plot.c",
+			"file": "analyse_file.c",
 			"settings":
 			{
-				"buffer_size": 2080,
+				"buffer_size": 2092,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -225,34 +249,43 @@
 			"file": "fft.c",
 			"settings":
 			{
-				"buffer_size": 3928,
+				"buffer_size": 1976,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "blink.c",
+			"file": "mathematique.c",
 			"settings":
 			{
-				"buffer_size": 736,
+				"buffer_size": 722,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "hello_world.c",
+			"file": "plot.c",
 			"settings":
 			{
-				"buffer_size": 177,
+				"buffer_size": 552,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "makefile",
+			"file": "header.h",
 			"settings":
 			{
-				"buffer_size": 374,
+				"buffer_size": 298,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "analyse_file.h",
+			"settings":
+			{
+				"buffer_size": 945,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -261,7 +294,16 @@
 			"file": "fft.h",
 			"settings":
 			{
-				"buffer_size": 590,
+				"buffer_size": 1899,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "mathematique.h",
+			"settings":
+			{
+				"buffer_size": 973,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -270,7 +312,7 @@
 			"file": "plot.h",
 			"settings":
 			{
-				"buffer_size": 765,
+				"buffer_size": 527,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -724,10 +766,19 @@
 	],
 	"file_history":
 	[
-		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/PLOTspectrum_limitedEdition.c",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/makefile",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/analyse_file.c",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/header.h",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/analyse_file.h",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/mathematique.h",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/mathematique.c",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/plot.c",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/plot.h",
 		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/fft.h",
-		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/blink.c",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/fft.c",
 		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/hello_world.c",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/blink.c",
+		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/PLOTspectrum_limitedEdition.c",
 		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/cross_compile.sh",
 		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/connect_sama.sh",
 		"/home/romain/Bureau/Elec3/projet_trans/part2/code_c/arm_c.sublime-project",
@@ -850,6 +901,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"size",
+			"Size",
+			"size",
+			"SIZE",
+			"min_mag",
+			"FILE_NAME",
+			"file_name",
+			"LIGNES",
+			"COLONNES",
+			"dft",
+			"printf",
+			"23000",
+			"usleep",
 			"sleep",
 			"(step+=8);",
 			"printw(\"%d\\n\", step);",
@@ -895,95 +959,106 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "analyse_file.c",
+					"file": "main.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3071,
+						"buffer_size": 1099,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								28,
-								28
+								695,
+								695
 							]
 						],
 						"settings":
 						{
-							"SL.14.region_keys":
-							[
-							],
-							"SL.16.region_keys":
-							[
-							],
-							"SL.24.region_keys":
-							[
-							],
-							"SL.25.region_keys":
-							[
-							],
-							"SL.44.region_keys":
-							[
-							],
-							"SL.45.region_keys":
+							"SL.68.region_keys":
 							[
 							],
 							"git_gutter_is_enabled": true,
 							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/C++/C.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 30.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "plot.c",
+					"file": "analyse_file.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2080,
+						"buffer_size": 2092,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1649,
-								1649
+								363,
+								363
 							]
 						],
 						"settings":
 						{
-							"SL.15.region_keys":
-							[
-							],
-							"SL.46.region_keys":
-							[
-							],
-							"SL.51.region_keys":
+							"SL.80.region_keys":
 							[
 							],
 							"git_gutter_is_enabled": true,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "fft.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1976,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								339,
+								339
+							]
+						],
+						"settings":
+						{
+							"SL.81.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -993,150 +1068,69 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "fft.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3928,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								874,
-								874
-							]
-						],
-						"settings":
-						{
-							"SL.15.region_keys":
-							[
-							],
-							"SL.25.region_keys":
-							[
-							],
-							"SL.54.region_keys":
-							[
-							],
-							"SL.69.region_keys":
-							[
-							],
-							"SL.87.region_keys":
-							[
-							],
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1835.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
 					"buffer": 3,
-					"file": "blink.c",
+					"file": "mathematique.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 736,
+						"buffer_size": 722,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								288,
-								288
+								552,
+								552
 							]
 						],
 						"settings":
 						{
-							"SL.22.region_keys":
+							"SL.82.region_keys":
 							[
 							],
 							"git_gutter_is_enabled": true,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
+							"syntax": "Packages/C++/C.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "hello_world.c",
+					"file": "plot.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 177,
+						"buffer_size": 552,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								31,
-								31
+								230,
+								230
 							]
 						],
 						"settings":
 						{
-							"SL.24.region_keys":
+							"SL.72.region_keys":
 							[
 							],
 							"git_gutter_is_enabled": true,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "makefile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 374,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								246,
-								246
-							]
-						],
-						"settings":
-						{
-							"SL.16.region_keys":
-							[
-							],
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1152,35 +1146,67 @@
 			"sheets":
 			[
 				{
-					"buffer": 6,
-					"file": "fft.h",
+					"buffer": 5,
+					"file": "header.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 590,
+						"buffer_size": 298,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								379,
-								379
+								298,
+								298
 							]
 						],
 						"settings":
 						{
-							"SL.17.region_keys":
-							[
-							],
-							"SL.91.region_keys":
+							"SL.76.region_keys":
 							[
 							],
 							"git_gutter_is_enabled": true,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "analyse_file.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 945,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								136,
+								136
+							]
+						],
+						"settings":
+						{
+							"SL.79.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1191,37 +1217,108 @@
 				},
 				{
 					"buffer": 7,
-					"file": "plot.h",
+					"file": "fft.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 765,
+						"buffer_size": 1899,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								367,
-								367
+								372,
+								372
 							]
 						],
 						"settings":
 						{
-							"SL.52.region_keys":
+							"SL.75.region_keys":
 							[
 							],
 							"git_gutter_is_enabled": true,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "mathematique.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 973,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								552,
+								552
+							]
+						],
+						"settings":
+						{
+							"SL.77.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "plot.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 527,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								435,
+								435
+							]
+						],
+						"settings":
+						{
+							"SL.78.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
 					"type": "text"
 				}
 			]
@@ -1255,7 +1352,7 @@
 		"cols":
 		[
 			0.0,
-			0.547387418927,
+			0.446167358463,
 			1.0
 		],
 		"rows":
@@ -1351,7 +1448,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 275.0,
+	"side_bar_width": 169.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

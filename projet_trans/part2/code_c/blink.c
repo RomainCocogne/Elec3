@@ -1,4 +1,4 @@
-// #include <stdio.h>   // pour printf
+#include <stdio.h>   // pour printf
 // #include <stdlib.h>  // pour exit 
 // #include <fcntl.h>   // pour open, read, write et close
 // #include <unistd.h>  // pour sleep

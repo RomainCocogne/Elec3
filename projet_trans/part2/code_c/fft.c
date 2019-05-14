@@ -1,16 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <complex.h>
-#include <math.h>
+/*
+	implementation des fonctions de fft.h
+*/
+
 #include "fft.h"
 
-#define SIZE 8
-
-/*Calcule les expo complexes pour la fft 
-Paramètres : 
-	- *TW : tableau dans lequel stocker les expo
-	- size : taille du tableau 
-*/
 void twiddle(complex *TW, unsigned int size){
 	complex phi = cexp(2*I*M_PI/ size );
 	TW[0]=1;
@@ -18,12 +11,7 @@ void twiddle(complex *TW, unsigned int size){
 		TW[i]=TW[i-1]*phi;
 }
 
-/*FFt en appliquant directement la formule
-Paramètres :
-	- *data : tableau de complexes , entrée de la FFT
-	- *result: tableau de complexes de la même aille que *data , sortie de la FFT
-	- size : taille des tableaux *data et *result  
-*/
+
 void dft_directe(double *result, double *data, unsigned int size){
 	double complex r [size];
 	for (int k = 0; k < size; ++k)
@@ -37,12 +25,7 @@ void dft_directe(double *result, double *data, unsigned int size){
 	}
 }
 
-/*FFt version recursive. Fonctionne uniquement si size est une puisance de 2
-Paramètres :
-	- *data : tableau de complexes , entrée de la FFT
-	- *result: tableau de complexes de la même aille que *data , sortie de la FFT
-	- size : taille des tableaux *data et *result. Doit être une puissance de 2   
-*/
+
 void fftrec(complex *data, complex *result, unsigned int size){
 	complex ypair[size], yimpair[size],Fimpair[size], Fpair[size];
 	int n,N2;
@@ -64,16 +47,7 @@ void fftrec(complex *data, complex *result, unsigned int size){
 	}
 }
 
-/*
-Fonction de reverse bit à bit pour la fonction fftiterTW
-Paramètres : 
-	- input ; nombre à inverser 
-	- nbits : sur combien de bits faire le reverse
 
-Exemple : bitrev de 1 sur 4 bits 
-		  1 --> sur 4 bits : 0001 --> reverse : 1000 --> 8
-		  donc bitrev(1,4) = 8
-*/
 int bitrev(int inp, int numbits)
 {
     int i, rev = 0;
@@ -84,13 +58,7 @@ int bitrev(int inp, int numbits)
     return rev;
 }
 
-/*FFt version iterative avec bit reverse. Fonctionne uniquement si size est une puisance de 2
-Paramètres :
-	- *data : tableau de complexes , entrée de la FFT et resultat de la FFT
-	- size : taille du tableau *data . Doit être une puissance de 2
-	- log2n : log2 de la taille du tableau
-	- *TW : tableau "tweedle" qui contient les exponentielles
-*/
+
 void fftiterTW(complex *data, unsigned int size, int log2n, complex *TW){
 	int j,N2,Bpair,Bimpair,Bp=1,N=size;
 	complex impair, pair, ctmp;
@@ -133,26 +101,3 @@ void print_fft(complex *data, int n){
 	}
 	printf("\n");
 }
-
-
-// int main(int argc, char const *argv[])
-// {
-// 	complex data[SIZE] = {1,1,1,0};
-// 	//Calcul de la dft par la formule classique 
-// 	complex result[SIZE];
-// 	dft_directe(data,result,SIZE);
-// 	printf("FFT directe : \n");
-// 	print_fft(result,SIZE);
-// 	//Calcul par la methode recursive 
-// 	complex result2[SIZE];
-// 	fftrec(data,result2,SIZE);
-// 	printf("FFT recursive : \n");
-// 	print_fft(result2,SIZE);
-// 	//Calcul par la methode du bit-reverse
-// 	complex TW[SIZE];
-// 	twiddle(TW,SIZE);
-// 	fftiterTW(data,SIZE,3,TW);
-// 	printf("FFT avec bit-reverse : \n");
-// 	print_fft(data,SIZE);
-// 	return 0;
-// }

@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -pedantic -std=c99
+CFLAGS=-Wall -pedantic 
 LDFLAGS=-lsndfile -lm 
 EXEC=compile/main
 SRC= $(wildcard *.c)
