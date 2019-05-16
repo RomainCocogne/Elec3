@@ -1,0 +1,102 @@
+
+//eco 
+1 président chinois avions
+	https://www.boursier.com/actualites/economie/visite-de-xi-jinping-en-france-des-milliards-d-euros-d-accords-airbus-fait-le-plein-41120.html
+2 chine et lafayette
+	https://www.lemonde.fr/economie/article/2019/03/23/les-galeries-lafayette-veulent-profiter-de-l-essor-du-luxe-en-chine_5440240_3234.html
+	http://www.marketing-chine.com/analyse-marketing/le-luxe-en-chine
+3 nutella et coca augmentation prix pour producteurs
+
+4 FDJ privatisée
+5 google & amande
+6 nutella & intermarché
+	https://www.lemonde.fr/economie/article/2019/03/26/vente-a-perte-du-nutella-intermarche-a-paye-375-000-euros-d-amende_5441515_3234.html
+
+//techno
+1 président chinois fusées 
+2 voiture autonome
+	https://www.auto-moto.com/actualite/high-tech/voiture-autonome-psa-jette-leponge-207495.html
+3 maison en 3d
+	https://www.ouest-france.fr/leditiondusoir/data/47016/reader/reader.html#!preferred/1/package/47016/pub/68194/page/5
+4 asus piraté
+5 nvidia & raspberry
+	https://www.clubic.com/ordinateur-pc/mini-pc/actualite-852320-nvidia-jetson-nano-rasberry-like-booste-ia-99.html
+6 nouveau brevet iphone
+
+/********** lafayette *********/
+Shangaï 23 mars -> ouvrir ses portes avant l'inauguration en octobre
+déjà un premier magasin à Pékin
+Secteur du luxe en chine augmente de 20%
+1/3 des achats de produit de luxe ds le monde
+objectif lafayette -> ~+10 magasins pour ~1milliard€ de CA. 
+public cible -> jeunes qui pourront voyager en france (Haussman: 30% des achats =chinois)
+Le moment semble d’autant plus opportun de se développer en Chine que les consommateurs achètent de plus en plus de produits de luxe chez eux. En 2018, une baisse de taxe sur les produits importés, couplée à la lutte contre les activités de ventes illégales par des Chinois installés à l’étranger, a accéléré la tendance : les clients ont fait 27 % de leurs achats dans leur pays, contre 23 % en 2015, selon Bain & Company. En 2025, cette proportion passera à 50 % selon le cabinet de conseil.
+Selon une étude de B&C (Bain & Company), le marché des produits de luxe en Chine a atteint un peu moins de 10 milliards USD, soit un peu plus de+12% de croissance. La Chine deviendra le plus grand marché de produits de luxe du monde.
+
+
+/******************************/
+
+/***** vente à perte de nutella a intermarché ****/
+
+promotion à -70% (bousculades, bagarre,...) ds toute la france
+Il s’agissait de revente à perte, a établi la Direction générale de la concurrence, de la consommation et de la répression des fraudes (DGCCRF), ce qu’a également reconnu le groupe de grande distribution. Intermarché a reconnu les faits et « a accepté le paiement d’une transaction pénale de 375 000 euros »
+-> amande max possible pour cette peine
+=> loi alimentation permet d'encadrer promotions des produits de grande consommation
+
+/*************************************************/
+
+/******* PSA abandonne voiture auto *********/
+catégorie 4 -> trop couteux: ceux qui peuvent se la payer ont des chauffeurs
+pourtant bien parti: 2017 bonne lancée (prototype passant barrières de péage)
+//extrait article
+"Il proposera alors une technologie dite « hands off » (sans les mains), en ajoutant aux technologies évoquées plus haut la possibilité de changement de voie sans intervention du conducteur sur le volant (il suffira d’enclencher le clignotant). Le niveau suivant, dit « eyes off », attendu avant 2025, autorisera la conduite sans supervision du conducteur dans les embouteillages comme sur voie rapide. Celui-ci sera suivi des niveaux « mind off » (100% autonome) puis « voiture sans conducteur », à l’horizon 2030".
+
+Au salon de Genève, changement de plan. Carlos Tavares a confirmé que la technologie était bien trop coûteuse et que PSA n'irait pas au-delà du niveau 3 d'autonomie. En clair, la voiture qui ne demande pas d'assistance de l'être humain pour aller d'un point A à un point B ne verra pas le jour chez Citroën, Peugeot, DS ou Opel.
+
+"Entre le niveau 3 et le niveau 4, il y a une vraie divergence. Compte tenu du coût additionnel de la technologie, le coût de la voiture devient tel que celui qui peut se la payer n’est de toutes les façons pas derrière le volant, mais plutôt sur la banquette arrière" (source : Les Echos), a commenté Carlos Tavares qui met ainsi un terme net à un développement qui coûte, il est vrai, des milliards d'euros, et qui va fortement dépendre de paramètres non maîtrisés par les constructeurs (infrastructures, qualité de la connexion au réseau...).
+//
+Désormais, le groupe propriétaire de Peugeot, Citroën, DS et plus récemment Opel souhaite se limiter à la conduite autonome de niveau 3. Pour rappel, cela signifie que le véhicule peut assurer la conduite dans de nombreuses situations, telles que l’autoroute ou les embouteillages, et est également en mesure de changer de voie seul sur pression du clignotant, tout en obligeant quand même le conducteur à superviser les opérations. C’est donc à ce stade là que s’arrêteront les véhicules PSA, juste avant un niveau 4 permettant quant à lui à l’automobiliste de lire, dormir ou encore travailler en laissant la voiture conduire de manière totalement autonome.
+//
+
+
+/*********** maison 3d ************/
+//
+En mars 2018, la start-up texane Icon avait créé une maison « low cost » (d’un coût de 4 000 dollars selon l’entreprise, soit 3 540 €) en moins de 24 heures, grâce à l’impression 3D. 
+Icon a continué sur sa lancée, en mettant au point Vulcan II, une imprimante 3D capable de construire des sols et des murs en superposant des couches de béton, ce qui permet d’élaborer la structure d’une maison en une journée. Les constructeurs n’ont plus qu’à ajouter un toit et des fenêtres, nécessitant quelques heures de travail supplémentaires.
+
+Depuis 2017, la start-up s’est associée à New Story, une organisation à but non-lucratif basée dans la Silicon Valley, qui travaille sur la construction rapide de logements pour les personnes vivant dans l’extrême pauvreté. 
+L’organisation a décidé d’explorer le terrain de l’impression 3D, qui pourrait être une solution plus intéressante que la construction traditionnelle en raison de sa rapidité.
+//
+nouveau projet d’envergure cet été, annonce le magazine d’affaires américain Fast Company : la construction d’un quartier de plus de 50 maisons en Amérique latine. La localisation exacte n’a pas été dévoilée pour éviter que le chantier soit perturbé.
+
+Les maisons seront réservées aux familles gagnant moins de 200 dollars (175 €) par mois. « Nous apportons une technologie très futuriste aux familles qui en ont le plus besoin », a expliqué Brett Hagler, PDG et cofondateur de New Story.
+//
+
+/******* nvidia  ******/
+raspberry boostée pour l'ia. 99$
+Jetson Nano
+À l'instar du Raspberry Pi, le Jetson Nano se veut être une boîte à outils complète pour les développeurs, mais compte tenu de sa puissance de calcul largement supérieure, les possibilités sont bien plus grandes avec le nano-ordinateur proposé par Nvidia, à commencer pour les applications IA.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
