@@ -4,12 +4,12 @@
 
 
 
-int getCardForme(Card c){
-	return c.f;
+int getCardForme(Card *c){
+	return c->f;
 }
 
-int getCardMode(Card c){
-	return c.mode;
+int getCardMode(Card *c){
+	return c->mode;
 }
 
 void setCardMode(Card *cardPointer, int newMode){
