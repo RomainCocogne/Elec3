@@ -5,9 +5,9 @@ Matrice initMatrice(int n, int m){
 	Matrice mat;
 	mat.size_x=n;
 	mat.size_y=m;
-	mat.data = (Card **)malloc(n * sizeof(Card *)); 
+	mat.data = (void* **)malloc(n * sizeof(void* *)); 
     for (int i=0; i<n; i++) 
-         mat.data[i] = (Card *)malloc(m * sizeof(Card)); 
+         mat.data[i] = (void* *)malloc(m * sizeof(void*)); 
 	return mat;
 }
 
@@ -19,21 +19,6 @@ void delete_matrix(Matrice * mat){
 	free(mat); 
 } 
 
-void printElement(Card elt){
-	printf("%d ", elt.id);
-}
-
-void printMat(Matrice mat){
-	for (int i = 0; i < mat.size_x; ++i)
-	{
-		for (int j = 0; j < mat.size_y; ++j)
-		{
-			printElement(mat.data[i][j]);
-		}
-		printf("\n");
-	}
-}
-
-void ajoutElement(Matrice *mat, Card c, int n, int m){
+void ajoutElement(Matrice *mat, void* c, int n, int m){
 	mat->data[n][m]=c;
 }

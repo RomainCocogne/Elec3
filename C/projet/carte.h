@@ -1,25 +1,21 @@
 #pragma once 
 
+enum FORME {CARRE, ROND, TRIANGLE};
 
 typedef struct
 {
-	int id,mode,posX,posY;
+	int mode;
+	enum FORME f;
 
 } Card;
 
-extern int getCardId(Card c);
+extern int getCardForme(Card c);
 
 extern int getCardMode(Card c);
 
-extern int getCardX(Card c);
-
-extern int getCardY(Card c);
 
 extern void setCardMode(Card *cardPointer, int newMode);
+void setCardForme(Card *cardPointer, int newforme);
 
-extern void setCardX(Card *cardPointer, int newX);
-
-extern void setCardY(Card *cardPointer, int newY);
-
-extern Card initCard(int id, int mode, int posX, int posY);
+extern void initCard(Card *carte,int f, int mode);
 

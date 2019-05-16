@@ -34,15 +34,10 @@ void addScore(Player joueur){
 	while ((lenbuff=getdelim(&buffer, &sizebuff, ':',fscore)>0)) {
 		Player *jtemp=malloc(sizeof(Player));
 		initPlayer(jtemp);
-
 		buffer[strlen(buffer)-1]='\0';
-		
 		strcpy(jtemp->name,buffer);
-
 		lenbuff=getline(&buffer, &sizebuff,fscore);
-		
 		jtemp->score=atoi(buffer);
-		
 		inserer(&all_players,1,jtemp);
 		
 		free(buffer); 
