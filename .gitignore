@@ -1,3 +1,13 @@
 # Specify filepatterns you want git to ignore.
 
 insight-6.8-1/*
+
+C/crypt/
+
+micropro/GCC_ARM/insight-6\.8-1/
+
+micropro/GCC_ARM/build/
+
+projet_trans/ADC_SERIXMIT/
+
+projet_trans/ADC_SERXMIT_SIMONLY/
