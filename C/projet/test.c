@@ -13,6 +13,10 @@ int blanc;
 int card_width;
 int card_height; 
 
+// void initDrawArea(Widget w, int width, int height, void *data){
+//     SetColor(gris);
+//     // SetWidgetFont(w,GetFont("comicSansMS"));
+//     DrawFilledBox(0,0,CARD_WIDTH,CARD_HEIGHT);
 // void redisplay(Widget w, int width, int height, void *data){
 //     DrawImage((char*)data,0,0,iWidth,iHeight);
 // }
@@ -91,23 +95,23 @@ int main(int argc, char *argv[])
 		return EXIT_FAILURE;
 	}
     
-    int grilleWidth = 7;
-    int grilleHeight = 4;
-    int size = grilleWidth*grilleHeight;
+//     int grilleWidth = 7;
+//     int grilleHeight = 4;
+//     int size = grilleWidth*grilleHeight;
 
-    Card tabCartes[size];
-    initJeuCartes(tabCartes,size);
+//     Card tabCartes[size];
+//     initJeuCartes(tabCartes,size);
 
 	GetStandardColors();
     gris = GetRGBColor(20,20,20);
     blanc = GetRGBColor(250,250,250);
     initAffichage(tabCartes, grilleWidth, grilleHeight);
     
-	ShowDisplay();
-	MainLoop();
+// 	ShowDisplay();
+// 	MainLoop();
 
-	return 0;
-}
+// 	return 0;
+// }
 
 
 
