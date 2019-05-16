@@ -20,10 +20,9 @@ const Liste ListeVide=NULL;
 /****************************/
 
 
-void initListe (Liste *l,void *f){
+void initListe (Liste *l){
 	*l=malloc(sizeof(struct noeud)); //allocation espace memoire
-	(*l)->suivant=NULL;	//pointe vers 'la terre'
-	(*l)->val=f;
+	*l=ListeVide;
 }
 
 int longueur (Liste l){
@@ -45,8 +44,9 @@ void *ieme (Liste l, int r){
 
 void inserer (Liste *l, int r, void *f){
 	assert(r>0 && r<=longueur(*l)+1);		//verfification (longueur+1 pour pouvoir ajouter un element a la fin)
-	Liste newl;
-	initListe(&newl,f);						//creation d'un nouveau element
+	Liste newl=malloc(sizeof(struct noeud));	
+	newl->suivant=NULL;	//pointe vers 'la terre'
+	newl->val=f;					//creation d'un nouveau element
 	while(--r) l=&(**l).suivant;			//on pointe sur la r'ieme position avec le pointeur l
 	newl->suivant=*l;						//on insere le nouveau element
 	*l=newl;								

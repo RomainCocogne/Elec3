@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "carte.h"
 
+
+
 int getCardForme(Card c){
 	return c.f;
 }
@@ -21,3 +23,4 @@ void initCard(Card *carte, int f, int mode){
 	carte->f = f;
 	carte->mode = mode;
 }
+

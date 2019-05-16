@@ -12,6 +12,7 @@ compile/main: $(OBJ)
 	@rm -rf ./*.o
 
 compile/main.o: matrice.h
+compile/main.o: shuffle.h
 
 %.o: %.c
 	@$(CC) -o $@ -c $< $(CFLAGS)

@@ -1,7 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include <time.h>
 #include "carte.h"
 #include "matrice.h"
 #include "player.h"
 #include "liste.h"
+#include "grille.h"
+#include "shuffle.h"

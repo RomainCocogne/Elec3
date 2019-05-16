@@ -1,6 +1,7 @@
 /*
 	header du module de la gestion de joueurs
 */
+#pragma once
 #include <string.h>
 #include <errno.h>
 #include <stdio.h>
@@ -8,7 +9,6 @@
 #include <errno.h>
 #include <limits.h>  
 #include "liste.h"
-#pragma once
 
 /****************************/
 //			types 			//
@@ -30,5 +30,8 @@ typedef struct{
 /****************************/
 
 void initPlayer(Player *j);
+void setPlayerName(Player *j, char *name);
+void setPlayerScore(Player *j, int score);
 void addScore(Player joueur);
 void insertAndSort(Player *joueur, Liste *tabjoueurs);
+void getScore(Liste *joueurs);

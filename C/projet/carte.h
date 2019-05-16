@@ -1,6 +1,6 @@
 #pragma once 
 
-enum FORME {CARRE, ROND, TRIANGLE};
+enum FORME {CARRE, ROND, TRIANGLE,ETOILE};
 
 typedef struct
 {
