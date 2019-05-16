@@ -2,25 +2,23 @@
 #include <stdlib.h>
 #include "carte.h"
 
+// #define CACHEE		0
+// #define RETOURNEE	1
 
-
-int getCardForme(Card c){
-	return c.f;
+int getCardId(Card *cardPointer){
+	return cardPointer->id;
 }
 
-int getCardMode(Card c){
-	return c.mode;
+int getCardMode(Card *cardPointer){
+	return cardPointer->mode;
 }
 
 void setCardMode(Card *cardPointer, int newMode){
 	cardPointer->mode = newMode;
 }
-void setCardForme(Card *cardPointer, int newforme){
-	cardPointer->f=newforme;
-}
 
-void initCard(Card *carte, int f, int mode){
-	carte->f = f;
-	carte->mode = mode;
-}
 
+void initCard(Card *cartep, int id, int mode){
+	cartep->id = id;
+	cartep->mode = mode;
+}
