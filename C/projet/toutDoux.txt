@@ -6,12 +6,10 @@ Systeme de jeu :
 	-Stocker les scores dans un fichier externe 
 
 Affichage : 
-	-Apprendre à utiliser la librairie de Granet 
-	-Placer les cartes au bon endroit
-	-Gerer les clicks 
+	-Apprendre à utiliser la librairie de Granet (OK)
+	-Placer les cartes au bon endroit (OK)
+	-Gerer les clicks (Presque OK)
+	-Afficher des images (lol non)
+	-Changer la taille du texte (même ça c'est dur sans deconner)
+	-Choisir la tête des cartes
 
-
-<3
-
-liens utiles:
-http://www-lisic.univ-littoral.fr/~teytaud/anciennePage/files/Cours/LangC/pacman.pdf
