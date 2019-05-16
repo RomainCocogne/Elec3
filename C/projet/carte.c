@@ -12,6 +12,10 @@ int getCardMode(Card *c){
 	return c->mode;
 }
 
+int getCardId(Card *c){
+	return c->id;
+}
+
 void setCardMode(Card *cardPointer, int newMode){
 	cardPointer->mode = newMode;
 }
@@ -19,8 +23,9 @@ void setCardForme(Card *cardPointer, int newforme){
 	cardPointer->f=newforme;
 }
 
-void initCard(Card *carte, int f, int mode){
+void initCard(Card *carte, int id , int mode, int f){
 	carte->f = f;
 	carte->mode = mode;
+	carte->id = id;
 }
 

@@ -1,4 +1,5 @@
 #include "test.h"
+#include "shuffle.h"
 
 #define DEFAULT_CARD_WIDTH 100
 #define DEFAULT_CARD_HEIGHT 200
@@ -19,11 +20,13 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
     int mode = getCardMode(data);
     if (mode == CACHEE){
         char str[3];
-        sprintf(str,"%d",getCardForme(data));
+        sprintf(str,"%d",getCardId(data));
         printf("%s\n",str );
         SetColor(blanc);
-        SetBgColor(w,gris);
-        DrawText(str,CARD_WIDTH/2,CARD_HEIGHT/2);
+        DrawFilledBox(0,0,card_width,card_height);
+        SetColor(gris);
+        SetBgColor(w,blanc);
+        DrawText(str,card_width/2,card_height/2);
         setCardMode(data,RETOURNEE);
     }
     else{
@@ -37,24 +40,27 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
 }
 
 void initJeuCartes(Card *TabCartes,int nbCartes){
-    for (int k=0; k<nbCartes; k++){
-        initCard(TabCartes+k,k,CACHEE);
+    for(int i=0; i<nbCartes/2; i+=1){
+         initCard(TabCartes+2*i,i,0,0);
+         initCard(TabCartes+2*i+1,i,0,0);
     }
+    shuffle(TabCartes,nbCartes,sizeof(Card));
 }
 
 void initDrawArea(Widget w, int width, int height, void *data){
     SetColor(gris);
-    // SetWidgetFont(w,GetFont("comicSansMS"));
-    DrawFilledBox(0,0,CARD_WIDTH,CARD_HEIGHT);
+    DrawFilledBox(0,0,width,height);
+    card_width = width;
+    card_height = height;
 }
 
 void initAffichage(Card *tabCartes, int grilleWidth, int grilleHeight){
     Widget tabWidget[grilleHeight*grilleWidth];
 
     for (int k=0; k<grilleHeight*grilleWidth;k++){
-        tabWidget[k] = MakeDrawArea(CARD_WIDTH,CARD_HEIGHT,initDrawArea,tabCartes+k);
+        tabWidget[k] = MakeDrawArea(card_width,card_height,initDrawArea,tabCartes+k);
         SetButtonDownCB(tabWidget[k],retournerCarte);
-        // initDrawArea(tabWidget[k]);
+
     }
 
     Widget yposWidget = NULL;

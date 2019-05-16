@@ -2,6 +2,7 @@
     
 */
 #include "header.h"
+#include "test.h"
 
 #define NELEMS(x)  (sizeof(x) / sizeof(x[0]))
 
@@ -24,6 +25,8 @@ const char *forme[] = { "carre", "rond", "triangle", "etoile", NULL };
 
 int main(int argc, char *argv[])
 {
+  card_height = DEFAULT_CARD_HEIGHT;
+  card_width = DEFAULT_CARD_WIDTH;
 
     if (OpenDisplay(argc, argv)==0){
         fprintf(stderr, "Can't open display\n");
