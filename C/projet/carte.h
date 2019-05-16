@@ -1,7 +1,8 @@
 #pragma once 
 
 enum FORME {CARRE, ROND, TRIANGLE,ETOILE};
-
+#define CACHEE 0
+#define RETOURNEE 1
 typedef struct
 {
 	int mode;
@@ -9,9 +10,9 @@ typedef struct
 
 } Card;
 
-extern int getCardForme(Card c);
+extern int getCardForme(Card *c);
 
-extern int getCardMode(Card c);
+extern int getCardMode(Card *c);
 
 
 extern void setCardMode(Card *cardPointer, int newMode);

@@ -8,3 +8,4 @@
 #include "liste.h"
 #include "grille.h"
 #include "shuffle.h"
+#include "test.h"

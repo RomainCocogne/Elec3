@@ -22,22 +22,31 @@ struct cmplex {
 
 const char *forme[] = { "carre", "rond", "triangle", "etoile", NULL };
 
-int main(int argc, char const *argv[]){
+int main(int argc, char *argv[])
+{
 
-   	int nbCards=8;
-   	Card grille[nbCards];
-   	initGrid(nbCards,grille);
-   	//shuffle(grille,nbCards,sizeof(Card));
-   	print_type(NELEMS(grille),printf("%s  ",forme[grille[i].f]));
+    if (OpenDisplay(argc, argv)==0){
+        fprintf(stderr, "Can't open display\n");
+        return EXIT_FAILURE;
+    }
+    
+    int grilleWidth = 7;
+    int grilleHeight = 4;
+    int size = grilleWidth*grilleHeight;
 
-   	Liste joueurs;
-   	initListe(&joueurs);
-   	getScore(&joueurs);
-   	print_type(longueur(joueurs),printf("%s:%d\n",((Player *)ieme(joueurs,i+1))->name,((Player *)ieme(joueurs,i+1))->score));
+    Card tabCartes[size];
+    initJeuCartes(tabCartes,size);
 
-	return EXIT_SUCCESS;
+    GetStandardColors();
+    gris = GetRGBColor(20,20,20);
+    blanc = GetRGBColor(230,230,230);
+    initAffichage(tabCartes, grilleWidth, grilleHeight);
+    
+    ShowDisplay();
+    MainLoop();
+
+    return 0;
 }
-
 
 //test du shuffle
     // print_type(NELEMS(intarr), printf("%d,", intarr[i]));
@@ -54,3 +63,17 @@ int main(int argc, char const *argv[]){
     // print_type(NELEMS(intarr), printf("{%d %f},", cmparr[i].foo, cmparr[i].bar));
     // shuffle(cmparr, NELEMS(cmparr), sizeof(cmparr[0]));
     // print_type(NELEMS(intarr), printf("{%d %f},", cmparr[i].foo, cmparr[i].bar));
+
+//tests
+ //   	int nbCards=8;
+ //   	Card grille[nbCards];
+ //   	initGrid(nbCards,grille);
+ //   	//shuffle(grille,nbCards,sizeof(Card));
+ //   	print_type(NELEMS(grille),printf("%s  ",forme[grille[i].f]));
+
+ //   	Liste joueurs;
+ //   	initListe(&joueurs);
+ //   	getScore(&joueurs);
+ //   	print_type(longueur(joueurs),printf("%s:%d\n",((Player *)ieme(joueurs,i+1))->name,((Player *)ieme(joueurs,i+1))->score));
+
+	// return EXIT_SUCCESS;
