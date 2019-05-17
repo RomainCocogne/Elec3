@@ -2,7 +2,6 @@
     
 */
 #include "header.h"
-#include "test.h"
 
 #define NELEMS(x)  (sizeof(x) / sizeof(x[0]))
 
@@ -16,39 +15,32 @@
     printf("]\n"); \
     } while (0)
 
-struct cmplex {
-    int foo;
-    double bar;
-};
 
-const char *forme[] = { "carre", "rond", "triangle", "etoile", NULL };
+// const char *forme[] = { "carre", "rond", "triangle", "etoile", NULL };
 
 int main(int argc, char *argv[])
 {
-  card_height = DEFAULT_CARD_HEIGHT;
-  card_width = DEFAULT_CARD_WIDTH;
+  if (OpenDisplay(argc, argv)==0){
+      fprintf(stderr, "Can't open display\n");
+      return EXIT_FAILURE;
+  }
+  
+  int grilleWidth = 6;
+  int grilleHeight = 2;
+  int size = grilleWidth*grilleHeight;
 
-    if (OpenDisplay(argc, argv)==0){
-        fprintf(stderr, "Can't open display\n");
-        return EXIT_FAILURE;
-    }
-    
-    int grilleWidth = 7;
-    int grilleHeight = 4;
-    int size = grilleWidth*grilleHeight;
+  Card tabCartes[size];
+  initJeuCartes(tabCartes,size);
 
-    Card tabCartes[size];
-    initJeuCartes(tabCartes,size);
+  GetStandardColors();
+  gris = GetRGBColor(20,20,20);
+  blanc = GetRGBColor(230,230,230);
+  initAffichage(tabCartes, grilleWidth, grilleHeight);
+  
+  ShowDisplay();
+  MainLoop();
 
-    GetStandardColors();
-    gris = GetRGBColor(20,20,20);
-    blanc = GetRGBColor(230,230,230);
-    initAffichage(tabCartes, grilleWidth, grilleHeight);
-    
-    ShowDisplay();
-    MainLoop();
-
-    return 0;
+  return 0;
 }
 
 //test du shuffle
