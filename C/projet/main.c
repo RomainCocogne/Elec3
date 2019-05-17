@@ -29,13 +29,13 @@ int main(int argc, char *argv[])
   int grilleHeight = 2;
   int size = grilleWidth*grilleHeight;
 
-  Card tabCartes[size];
-  initJeuCartes(tabCartes,size);
+  Jeu jeu;
+  initJeu(&jeu,size);
 
   GetStandardColors();
   gris = GetRGBColor(20,20,20);
   blanc = GetRGBColor(230,230,230);
-  initAffichage(tabCartes, grilleWidth, grilleHeight);
+  initAffichage(&jeu, grilleWidth, grilleHeight);
   
   ShowDisplay();
   MainLoop();

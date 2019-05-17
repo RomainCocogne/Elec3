@@ -4,16 +4,16 @@
 
 
 
-int getCardForme(Card *c){
-	return c->f;
+int getCardForme(Card c){
+	return c.f;
 }
 
-int getCardMode(Card *c){
-	return c->mode;
+int getCardMode(Card c){
+	return c.mode;
 }
 
-int getCardId(Card *c){
-	return c->id;
+int getCardId(Card c){
+	return c.id;
 }
 
 void setCardMode(Card *cardPointer, int newMode){
@@ -29,3 +29,6 @@ void initCard(Card *carte, int id , int mode, int f){
 	carte->id = id;
 }
 
+int compareCard(Card carteA, Card carteB){
+	return carteA.id == carteB.id;
+}

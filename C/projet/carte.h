@@ -12,11 +12,11 @@ typedef struct
 
 } Card;
 
-extern int getCardForme(Card *c);
+extern int getCardForme(Card c);
 
-extern int getCardMode(Card *c);
+extern int getCardMode(Card c);
 
-extern int getCardId(Card *c);
+extern int getCardId(Card c);
 
 extern void setCardMode(Card *cardPointer, int newMode);
 void setCardForme(Card *cardPointer, int newforme);
