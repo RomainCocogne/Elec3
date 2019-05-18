@@ -33,10 +33,10 @@ int main(int argc, char *argv[])
   initJeu(&jeu,size);
 
   GetStandardColors();
-  gris = GetRGBColor(20,20,20);
+  gris = GetRGBColor(20,20,20); //Pas sur que ce soit propre de init les couleurs comme ça
   blanc = GetRGBColor(230,230,230);
   initAffichage(&jeu, grilleWidth, grilleHeight);
-  
+  printf("Gris = %d\nBlanc = %d\n",gris,blanc );
   ShowDisplay();
   MainLoop();
 

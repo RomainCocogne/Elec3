@@ -1,14 +1,22 @@
-Systeme de jeu : 
+FAIT : 
 	-Creer une organisation pour les cartes 
-	-Generer les cartes dans un ordre random 
-	-Gerer la condition de victoire 
-	-Gerer le scores 
+	-Generer les cartes dans un ordre random
 	-Stocker les scores dans un fichier externe 
-
-Affichage : 
-	-Apprendre à utiliser la librairie de Granet 
 	-Placer les cartes au bon endroit
 	-Gerer les clicks 
+	-Gerer la condition de victoire
+
+
+A FAIRE :
+	Systeme de jeu :  
+		-Gerer le calcul du score 
+		
+
+	Affichage : 
+		-Faire des zolies formes pour les cartes
+		-Faire un menu pour lancer une partie
+		-Faire un menu aprés une partie pour afficher les scroes/rejouer
+		-Faire un zone "info box" pour afficher des trucs pendant la partie
 
 
 <3

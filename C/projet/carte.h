@@ -18,8 +18,6 @@ extern int getCardMode(Card c);
 
 extern int getCardId(Card c);
 
-extern void setCardMode(Card *cardPointer, int newMode);
-void setCardForme(Card *cardPointer, int newforme);
 
 extern void initCard(Card *carte, int id , int mode, int f);
 
