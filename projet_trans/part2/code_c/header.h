@@ -9,7 +9,7 @@
 #include <complex.h>
 #include <math.h>
 #include <time.h>
-#include <ncurses.h>
+#include <sys/time.h>
 #include <unistd.h>
 #include "fft.h"
 #include "plot.h"

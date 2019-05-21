@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <sys/time.h>
 
 /****************************/
 //		  variables			//
@@ -21,7 +22,7 @@
 	(des taches peuvent tourner ne arriere plan)
 	duree est en microsecondes
 */
-void sleep_u(clock_t duree);
+void sleep_u(long int duree);
 /*
 	affiche sous formes de barrettes data sur stdout
 */

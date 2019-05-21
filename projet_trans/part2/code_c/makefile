@@ -1,4 +1,4 @@
-CC=CC
+CC=gcc
 CFLAGS=-Wall -pedantic
 LDFLAGS=-lsndfile -lm -lncurses 
 EXEC=compile/analyse_file

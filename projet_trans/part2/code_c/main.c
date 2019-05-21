@@ -28,16 +28,24 @@ int main(int argc, char const *argv[])
 	while ((readcount = fx_mix_mono_read_double (file, data, BUFFER_LEN)))
 	{	
 		clock_t begin =clock();
-
+		struct timeval tstart, tend;
+		gettimeofday(&tstart, NULL);
 		double dataout[SIZE];
-		if(process_data(dataout,data,readcount,sfinfo->channels,2)) plot(dataout,SIZE);
+		if(process_data(dataout,data,readcount,sfinfo->channels,2)) 
+		{
+			// printf("\e[;1H\e[2J");
+			printf("\e[2J");
+			plot(dataout,SIZE);
+		}
 
+		gettimeofday(&tend, NULL);
+		long seconds = (tend.tv_sec - tstart.tv_sec);
+		long micros = ( tend.tv_usec) - (tstart.tv_usec);
 		clock_t end =clock();
 		double time_spend= (double)(end-begin)/CLOCKS_PER_SEC;
-		sleep_u(23000-10000*time_spend);
-		system("clear");
+		printf("%ld\n%ld\n",clock(),micros);
+		sleep_u(23000-micros);
 	} 
 
 	sf_close (file) ;
-	endwin();
 } 
