@@ -1,14 +1,16 @@
 #pragma once 
+// #include "forme.h"
 
-enum FORME {CARRE, ROND, TRIANGLE,ETOILE};
 #define CACHEE		0
 #define RETOURNEE	1
 #define DECOUVERTE	2
 
+
+// enum FORME {CARRE, ROND, TRIANGLE,ETOILE};
 typedef struct
 {
 	int id,mode;
-	enum FORME f;
+	int f;
 
 } Card;
 

@@ -1,6 +1,8 @@
 #pragma once
 #include <stdlib.h>
 #include <stdio.h>
+#include <assert.h>
+#include <string.h> 
 #include "carte.h"
 #include "matrice.h"
 #include "player.h"
@@ -8,3 +10,4 @@
 #include "jeu.h"
 #include "shuffle.h"
 #include "affichage.h"
+#include "image.h"

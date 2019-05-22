@@ -4,6 +4,7 @@
 #include "carte.h"
 #include "shuffle.h"
 
+
 #define CARTE1	1
 #define CARTE2	2
 #define VERIFICATION 3

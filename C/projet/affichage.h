@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "jeu.h"
+#include "image.h"
 #include <libsx.h>
 #include <string.h>
 
