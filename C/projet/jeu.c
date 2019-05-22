@@ -33,6 +33,10 @@ void initJeu(Jeu *jeu, int nbCartes){
 	initTabCartes(jeu->TabCartes,nbCartes);
 }
 
+void freeJeu(Jeu *jeu){
+	free(jeu->TabCartes);
+}
+
 /*
 	Retourne une carte et enregistre sa valeur
 	Lorsque le jeu est à l'étape VERIFICATION, il faut appeler 

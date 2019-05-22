@@ -10,6 +10,10 @@
 */
 int gris;
 int blanc;
+int bleu;
+int rouge;
+int vert;
+int orange;
 
 /*
 	Variables pour l'accés à l'etat actuel du jeu

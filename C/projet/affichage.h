@@ -16,6 +16,11 @@ extern char *forme[];
 //Pour la couleur des cartes
 extern int gris;
 extern int blanc;
+extern int bleu;
+extern int rouge;
+extern int vert;
+extern int orange;
+
 
 extern void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight);
 

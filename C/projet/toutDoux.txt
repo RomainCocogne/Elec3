@@ -15,7 +15,8 @@ A FAIRE :
 	Affichage : 
 		-Faire des zolies formes pour les cartes
 		-Faire un menu pour lancer une partie
-		-Faire un menu aprés une partie pour afficher les scroes/rejouer
+		-Faire un menu aprés une partie pour afficher les scores/rejouer
+		-Faire une fonction pour rejouer
 		-Faire un zone "info box" pour afficher des trucs pendant la partie
 
 
