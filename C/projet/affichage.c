@@ -27,7 +27,10 @@ Widget widget2;
 //Trouver comment comment en faire un const sans faire de warning
 char *forme[] = { "Carre", "Rond", "Triangle", "Etoile", "Losange", "Ellipse" ,NULL };
 
-
+void quit(Widget w, void *d)
+{
+    exit(EXIT_SUCCESS);
+}
 
 /*
 	Fonction de callback des zones de dessin qui représentent les cartes. 
@@ -35,8 +38,17 @@ char *forme[] = { "Carre", "Rond", "Triangle", "Etoile", "Losange", "Ellipse" ,N
 	chaque fois que l'utilisateur change la taille de la fenêtre
 */
 void displayDrawArea(Widget w, int width, int height, void *data){
-    SetColor(gris);
-    DrawFilledBox(0,0,width,height);
+    if (((Card *)data)->mode >= RETOURNEE) {
+        SetColor(blanc);
+        DrawFilledBox(0,0,width,height);
+        SetColor(gris);
+        SetBgColor(w,blanc);
+        DrawText(forme[((Card *)data)->f],width/2,height/2);
+    }
+    else{
+        SetColor(gris);
+        DrawFilledBox(0,0,width,height);
+    }
 }
 
 
@@ -79,6 +91,25 @@ void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight){
 }
 
 
+void fenetreDeFin(){
+    MakeWindow(NULL,SAME_DISPLAY,EXCLUSIVE_WINDOW);
+    Widget congrats = MakeLabel("Felicitations, vous avez gagne !\nVotre score est :");
+    char str[4];
+    sprintf(str,"%d",board->nbCoups);
+    Widget score = MakeLabel(str);
+    Widget nomJoueur = MakeStringEntry("Votre Nom",400,NULL,NULL);
+    Widget boutonEnregistrer = MakeButton("Enregister le score",NULL,NULL);
+    Widget boutonRejouer = MakeButton("\n     Rejouer      \n\n",NULL,NULL);
+    Widget boutonQuitter = MakeButton("\n     Quitter      \n\n",quit,NULL); 
+    SetWidgetPos(score,PLACE_UNDER,congrats,NO_CARE,NULL);
+    SetWidgetPos(nomJoueur,PLACE_UNDER,score,NO_CARE,NULL);
+    SetWidgetPos(boutonEnregistrer,PLACE_UNDER,nomJoueur,NO_CARE,NULL);
+    SetWidgetPos(boutonRejouer,PLACE_UNDER,boutonEnregistrer,NO_CARE,NULL);
+    SetWidgetPos(boutonQuitter,PLACE_UNDER,boutonEnregistrer,PLACE_RIGHT,boutonRejouer);
+    ShowDisplay();
+    MainLoop();
+}
+
 /*
 	Fonction de callback, appelée lorsque l'utilisateur clique sur une carte.
 	Appelle les fonctions du module jeu pour jouer les coups. Affiche graphiquement 
@@ -91,10 +122,9 @@ void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight){
 void retournerCarte(Widget w, int which_button, int x, int y, void *data){
     //Si la partie est terminée : pas d'action
     if (board->etape == TERMINE){
-    	printf("Partie terminée\n");
-    	printf("Nombre de coups : %d\n",board->nbCoups);
-    	exit(EXIT_SUCCESS);
-    	return;
+    	fenetreDeFin();
+        return;
+        // exit(EXIT_SUCCESS);
     }
 
     //Si la carte est déjà révélée : pas d'action
@@ -132,4 +162,4 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
         jouerCoup(board,data);
     }
 }
-	
+
