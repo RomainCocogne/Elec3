@@ -30,8 +30,8 @@ Widget widget2;
 
 /* Formes à afficher pour identifier graphiquement les cartes */
 //Trouver comment comment en faire un const sans faire de warning
+#define NB_FORMES 4
 char *forme[] = { "Carre", "Rond", "Triangle", "Etoile", "Losange", "Ellipse" ,NULL };
-
 
 void quit(Widget w, void *d)
 {
@@ -164,9 +164,9 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
         SetBgColor(w,blanc);
         // DrawText(forme[((Card *)data)->f],areaWidth/2,areaHeight/2);
         Forme forme;
-        // printf("%d\n",((Card *)data)->f);
-        genereforme(&forme,((Card *)data)->f,areaWidth,areaHeight);
-        // print_type(4,printf("%d:%d\n",pointarray[i].x,pointarray[i].y ));
+        genereforme(&forme,((Card *)data)->f%NB_FORMES,areaWidth,areaHeight);
+        int couleur[]={bleu,rouge,vert,orange,rouge,vert,orange,bleu,vert,orange,bleu,rouge,orange,bleu,rouge,vert};
+        SetFgColor(w,couleur[((Card *)data)->f]);
         DrawFilledPolygon(forme.ptarray,forme.size);
         if (board->etape == CARTE1) widget1=w;
         else widget2=w;

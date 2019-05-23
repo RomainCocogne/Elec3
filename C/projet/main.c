@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
       return EXIT_FAILURE;
   }
   
-  int grilleWidth = 4;
+  int grilleWidth = 15;
   int grilleHeight = 2;
   int size = grilleWidth*grilleHeight;
 
