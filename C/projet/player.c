@@ -3,6 +3,12 @@
 */
 #include "player.h"
 
+
+int compare (Player j1, Player j2){
+	if (!strcmp(j1.name,j2.name) && j1.score==j2.score)
+		return 0;
+	return j1.score>j2.score? -1:1;
+}
 void initPlayer(Player *j){
 	j->name=malloc(MAX_NAME*sizeof(char));
 	j->score=INT_MAX;
@@ -53,7 +59,7 @@ void addScore(Player joueur){
 void insertAndSort(Player *joueur, Liste *listejoueurs){
 	int i=1;
 	while(i<=longueur(*listejoueurs) && ((Player *)ieme(*listejoueurs,i))->score<=joueur->score)i++;
-	inserer(listejoueurs,i,joueur);
+	if(compare(*joueur,*(Player *)ieme(*listejoueurs,i-1))) inserer(listejoueurs,i,joueur);
 	while(longueur(*listejoueurs)>10) supprimer(listejoueurs,longueur(*listejoueurs));
 }
 

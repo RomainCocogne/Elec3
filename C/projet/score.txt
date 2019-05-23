@@ -1,10 +1,7 @@
-test:1
-test2:1
-test2:1
-zayd:2
-romain:9
-test3:10
-test3:10
-quentin:12
-truc:13
-chose:14
+romain:1000
+romain:1750
+zayd:2000
+romain:6000
+romain:9000
+test3:10000
+test3:10000

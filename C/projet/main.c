@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
   }
   
   int grilleWidth = 2;
-  int grilleHeight = 2;
+  int grilleHeight = 4;
   int size = grilleWidth*grilleHeight;
 
   Jeu jeu;

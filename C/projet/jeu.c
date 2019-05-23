@@ -4,8 +4,10 @@
 */
 
 #include "jeu.h"
-
-
+/*
+	- board : contient tous les paramètres necessaires la logique du jeu
+*/
+Jeu *board;
 /*
 	Initialise une tableau de type Card de taille nbCartes.
 	Genere des paires de cartes ayant le même id. Il y a donc nbCartes/2 paires différentes.

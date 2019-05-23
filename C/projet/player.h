@@ -29,9 +29,11 @@ typedef struct{
 //		  fonctions			//
 /****************************/
 
+int compare(Player j1, Player j2);
 void initPlayer(Player *j);
 void setPlayerName(Player *j, char *name);
 void setPlayerScore(Player *j, int score);
+void playercpy(Player *j1, Player *j2);
 void addScore(Player joueur);
 void insertAndSort(Player *joueur, Liste *tabjoueurs);
 void getScore(Liste *joueurs);

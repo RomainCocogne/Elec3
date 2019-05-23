@@ -4,8 +4,8 @@
 	à ces clics
 */
 #include "affichage.h"
-#include "forme.h"
-#include "player.h"
+
+int fact;
 
 /* 
 	Variables pour accés rapide aux couleurs prédéfinies 
@@ -19,15 +19,13 @@ int orange;
 
 /*
 	Variables pour l'accés à l'etat actuel du jeu
-	- board : contient tous les paramètres necessaires la logique du jeu, 
-			  est passé au fonctions du module "jeu"
 	- wigdets : contient les widgets des cartes qui doivent êtres retournées 
 	 			à la prochaine verification 
 */
-Jeu *board;
+//Jeu *board;
 Widget widget1;
 Widget widget2;
-
+Widget strEntry;
 
 /* Formes à afficher pour identifier graphiquement les cartes */
 //Trouver comment comment en faire un const sans faire de warning
@@ -38,7 +36,18 @@ void quit(Widget w, void *d)
 {
     exit(EXIT_SUCCESS);
 }
-
+void saveScore(Widget w, void *d){
+    Player *j=(Player *)d;
+    setPlayerName(j,GetStringEntry(strEntry));
+    addScore(*j);
+}
+void replay(Widget w, void *d){
+    // SetCurrentWindow(GetTopWidget(w));
+    CloseWindow() ;
+    // board->etape=MENU;
+    initJeu(board,4);
+    initAffichage(board, 2, 2);
+}
 /*
 	Fonction de callback des zones de dessin qui représentent les cartes. 
 	Appelée une premiére fois par chaque zone lors du premier affichage, puis rappelée à 
@@ -74,6 +83,7 @@ void displayDrawArea(Widget w, int width, int height, void *data){
 	-grilleWidth, grilleHeight : largeur et hauteur de la grille en nombre de cartes
 */
 void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight){
+    fact=grilleWidth*grilleHeight;
     //Initialisation de la variable globale
     board = jeu; 
     Widget tabWidget[grilleWidth*grilleHeight];
@@ -104,19 +114,24 @@ void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight){
 
 
 void fenetreDeFin(){
+    int sc=(int)((double)(board->nbCoups)/fact*1000);
     MakeWindow(NULL,SAME_DISPLAY,EXCLUSIVE_WINDOW);
     Widget congrats = MakeLabel("Felicitations, vous avez gagne !\nVotre score est :");
     char str[4];
-    sprintf(str,"%d",board->nbCoups);
+    sprintf(str,"%d",sc);
     Widget score = MakeLabel(str);
-    Widget boutonRejouer = MakeButton("\n     Rejouer      \n\n",NULL,NULL);
+    Widget boutonRejouer = MakeButton("\n     Rejouer      \n\n",replay,NULL);
     Widget boutonQuitter = MakeButton("\n     Quitter      \n\n",quit,NULL); 
     SetWidgetPos(score,PLACE_UNDER,congrats,NO_CARE,NULL);
     SetWidgetPos(boutonRejouer,PLACE_UNDER,score,NO_CARE,NULL);
     SetWidgetPos(boutonQuitter,PLACE_UNDER,score,PLACE_RIGHT,boutonRejouer);
-    if(board->nbCoups<=getLastScore() || nbScores()<10){
+    if(sc<=getLastScore() || nbScores()<10){
         Widget nomJoueur = MakeStringEntry("Votre Nom",400,NULL,NULL);
-        Widget boutonEnregistrer = MakeButton("Enregister le score",NULL,NULL);
+        strEntry=nomJoueur;
+        Player joueur;
+        initPlayer(&joueur);
+        setPlayerScore(&joueur,sc);
+        Widget boutonEnregistrer = MakeButton("Enregister le score",saveScore,&joueur);
         SetWidgetPos(nomJoueur,PLACE_UNDER,boutonRejouer,NO_CARE,NULL);
         SetWidgetPos(boutonEnregistrer,PLACE_UNDER,nomJoueur,NO_CARE,NULL);
     }
@@ -134,6 +149,7 @@ void fenetreDeFin(){
 	*data : pointeur sur type Carte, contient la carte du Widget qui à été cliqué.
 */
 void retournerCarte(Widget w, int which_button, int x, int y, void *data){
+
     //Si la partie est terminée : pas d'action
     if (board->etape == TERMINE){
     	fenetreDeFin();
@@ -181,4 +197,3 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
         jouerCoup(board,data);
     }
 }
-

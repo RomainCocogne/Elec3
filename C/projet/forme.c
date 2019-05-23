@@ -53,8 +53,8 @@ void createXPointArray(Forme *forme){
 		forme->size=8;
 		int pointe= (forme->w < forme->h ? forme->w: forme->h)/2;
 		forme->ptarray=calloc(forme->size,sizeof(XPoint));
-		XPoint etoile[8]={{forme->w,forme->h-pointe*3/2},{forme->w+pointe,forme->h+pointe/2},{forme->w-pointe,forme->h+pointe/2},{forme->w,forme->h-pointe*3/2},
-						  {forme->w,forme->h+pointe},{forme->w+pointe,forme->h-pointe},{forme->w-pointe,forme->h-pointe},{forme->w,forme->h+pointe}};
+		XPoint etoile[8]={{forme->w,forme->h-pointe},{forme->w+pointe,forme->h+pointe/2},{forme->w-pointe,forme->h+pointe/2},{forme->w,forme->h-pointe},
+						  {forme->w,forme->h+pointe},{forme->w+pointe,forme->h-pointe/2},{forme->w-pointe,forme->h-pointe/2},{forme->w,forme->h+pointe}};
 		arrayXPointcpy(forme->ptarray,etoile,forme->size);
 		break;
 

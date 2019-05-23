@@ -5,6 +5,7 @@
 #include "shuffle.h"
 
 
+#define MENU 0
 #define CARTE1	1
 #define CARTE2	2
 #define VERIFICATION 3
@@ -17,6 +18,8 @@ typedef struct
 	Card *carte1,*carte2;
 	Card *TabCartes;
 } Jeu;
+
+extern Jeu *board;
 
 
 extern void initTabCartes(Card *TabCartes,int nbCartes);
