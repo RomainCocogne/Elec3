@@ -35,3 +35,5 @@ void setPlayerScore(Player *j, int score);
 void addScore(Player joueur);
 void insertAndSort(Player *joueur, Liste *tabjoueurs);
 void getScore(Liste *joueurs);
+int getLastScore();
+int nbScores();

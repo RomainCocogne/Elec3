@@ -5,6 +5,7 @@
 */
 #include "affichage.h"
 #include "forme.h"
+#include "player.h"
 
 /* 
 	Variables pour accés rapide aux couleurs prédéfinies 
@@ -49,7 +50,12 @@ void displayDrawArea(Widget w, int width, int height, void *data){
         DrawFilledBox(0,0,width,height);
         SetColor(gris);
         SetBgColor(w,blanc);
-        DrawText(forme[((Card *)data)->f],width/2,height/2);
+        // DrawText(forme[((Card *)data)->f],width/2,height/2);
+        Forme forme;
+        genereforme(&forme,((Card *)data)->f%NB_FORMES,width,height);
+        int couleur[]={bleu,rouge,vert,orange,rouge,vert,orange,bleu,vert,orange,bleu,rouge,orange,bleu,rouge,vert};
+        SetFgColor(w,couleur[((Card *)data)->f]);
+        DrawFilledPolygon(forme.ptarray,forme.size);
     }
     else{
         SetColor(gris);
@@ -103,15 +109,17 @@ void fenetreDeFin(){
     char str[4];
     sprintf(str,"%d",board->nbCoups);
     Widget score = MakeLabel(str);
-    Widget nomJoueur = MakeStringEntry("Votre Nom",400,NULL,NULL);
-    Widget boutonEnregistrer = MakeButton("Enregister le score",NULL,NULL);
     Widget boutonRejouer = MakeButton("\n     Rejouer      \n\n",NULL,NULL);
     Widget boutonQuitter = MakeButton("\n     Quitter      \n\n",quit,NULL); 
     SetWidgetPos(score,PLACE_UNDER,congrats,NO_CARE,NULL);
-    SetWidgetPos(nomJoueur,PLACE_UNDER,score,NO_CARE,NULL);
-    SetWidgetPos(boutonEnregistrer,PLACE_UNDER,nomJoueur,NO_CARE,NULL);
-    SetWidgetPos(boutonRejouer,PLACE_UNDER,boutonEnregistrer,NO_CARE,NULL);
-    SetWidgetPos(boutonQuitter,PLACE_UNDER,boutonEnregistrer,PLACE_RIGHT,boutonRejouer);
+    SetWidgetPos(boutonRejouer,PLACE_UNDER,score,NO_CARE,NULL);
+    SetWidgetPos(boutonQuitter,PLACE_UNDER,score,PLACE_RIGHT,boutonRejouer);
+    if(board->nbCoups<=getLastScore() || nbScores()<10){
+        Widget nomJoueur = MakeStringEntry("Votre Nom",400,NULL,NULL);
+        Widget boutonEnregistrer = MakeButton("Enregister le score",NULL,NULL);
+        SetWidgetPos(nomJoueur,PLACE_UNDER,boutonRejouer,NO_CARE,NULL);
+        SetWidgetPos(boutonEnregistrer,PLACE_UNDER,nomJoueur,NO_CARE,NULL);
+    }
     ShowDisplay();
     MainLoop();
 }
