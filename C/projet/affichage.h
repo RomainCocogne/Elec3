@@ -11,7 +11,7 @@
 #define DEFAULT_CARD_WIDTH 100
 #define DEFAULT_CARD_HEIGHT 180
 
-
+extern Jeu *board;
 
 extern char *forme[];
 
@@ -23,9 +23,9 @@ extern int rouge;
 extern int vert;
 extern int orange;
 
-void quit(Widget w, void *d);
+extern void quit(Widget w, void *d);
 extern void saveScore(Widget w, void *d);
-void displayDrawArea(Widget w, int width, int height, void *data);
+extern void displayDrawArea(Widget w, int width, int height, void *data);
 extern void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight);
-void fenetreDeFin();
+extern void fenetreDeFin();
 extern void retournerCarte(Widget w, int which_button, int x, int y, void *data);

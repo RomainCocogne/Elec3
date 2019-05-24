@@ -19,7 +19,7 @@ typedef struct
 	Card *TabCartes;
 } Jeu;
 
-extern Jeu *board;
+
 
 
 extern void initTabCartes(Card *TabCartes,int nbCartes);

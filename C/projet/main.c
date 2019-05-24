@@ -25,8 +25,8 @@ int main(int argc, char *argv[])
       return EXIT_FAILURE;
   }
   
-  int grilleWidth = 2;
-  int grilleHeight = 4;
+  int grilleWidth = 6;
+  int grilleHeight = 3;
   int size = grilleWidth*grilleHeight;
 
   Jeu jeu;

@@ -6,6 +6,8 @@
 #include "affichage.h"
 
 int fact;
+int globalGrilleWidth;
+int globalGrilleHeight;
 
 /* 
 	Variables pour accés rapide aux couleurs prédéfinies 
@@ -21,8 +23,10 @@ int orange;
 	Variables pour l'accés à l'etat actuel du jeu
 	- wigdets : contient les widgets des cartes qui doivent êtres retournées 
 	 			à la prochaine verification 
+    - board : contient tous les paramètres necessaires la logique du jeu
 */
-//Jeu *board;
+
+Jeu *board;
 Widget widget1;
 Widget widget2;
 Widget strEntry;
@@ -30,24 +34,28 @@ Widget strEntry;
 /* Formes à afficher pour identifier graphiquement les cartes */
 //Trouver comment comment en faire un const sans faire de warning
 #define NB_FORMES 4
-char *forme[] = { "Carre", "Rond", "Triangle", "Etoile", "Losange", "Ellipse" ,NULL };
+// char *forme[] = { "Carre", "Rond", "Triangle", "Etoile", "Losange", "Ellipse" ,NULL };
 
 void quit(Widget w, void *d)
 {
     exit(EXIT_SUCCESS);
 }
+
 void saveScore(Widget w, void *d){
     Player *j=(Player *)d;
     setPlayerName(j,GetStringEntry(strEntry));
     addScore(*j);
 }
+
 void replay(Widget w, void *d){
     // SetCurrentWindow(GetTopWidget(w));
-    CloseWindow() ;
+    CloseWindow();
     // board->etape=MENU;
-    initJeu(board,4);
-    initAffichage(board, 2, 2);
+    free(board->TabCartes);
+    initJeu(board,globalGrilleWidth*globalGrilleHeight);
+    initAffichage(board, globalGrilleWidth, globalGrilleHeight);
 }
+
 /*
 	Fonction de callback des zones de dessin qui représentent les cartes. 
 	Appelée une premiére fois par chaque zone lors du premier affichage, puis rappelée à 
@@ -83,9 +91,12 @@ void displayDrawArea(Widget w, int width, int height, void *data){
 	-grilleWidth, grilleHeight : largeur et hauteur de la grille en nombre de cartes
 */
 void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight){
+    //Initialisation des variables globales
     fact=grilleWidth*grilleHeight;
-    //Initialisation de la variable globale
+    globalGrilleWidth = grilleWidth;
+    globalGrilleHeight = grilleHeight;
     board = jeu; 
+
     Widget tabWidget[grilleWidth*grilleHeight];
 
     for (int k=0; k<grilleHeight*grilleWidth;k++){
