@@ -4,7 +4,6 @@
 #include <assert.h>
 #include <string.h> 
 #include "carte.h"
-#include "matrice.h"
 #include "player.h"
 #include "liste.h"
 #include "jeu.h"

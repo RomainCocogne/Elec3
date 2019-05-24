@@ -3,8 +3,8 @@ Quentin:1500
 Le Maitre:1500
 romain:1750
 zayd:2000
-Camille^pl;oCamille:2916
-romain:6000
-romain:9000
-test3:10000
-test3:10000
+avecespace:2000
+romainlebg:2111
+romainleplusfort:2333
+romainleplusfort:2444
+Camille:2916

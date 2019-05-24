@@ -20,6 +20,7 @@ void genereforme(Forme *forme, int f, int w, int h){
 
 void createXPointArray(Forme *forme){
 	switch(forme->f){
+
 		case CARRE:;
 		int len= (forme->w < forme->h ? forme->w: forme->h)/2;
 		forme->size=4;
@@ -28,7 +29,7 @@ void createXPointArray(Forme *forme){
 		arrayXPointcpy(forme->ptarray,carre,forme->size);
 		break;
 
-		case ROND:
+		case ROND:;
 		forme->size=360;
 		int rad= (forme->w < forme->h ? forme->w: forme->h)/2;
 		forme->ptarray=calloc(forme->size,sizeof(XPoint));
@@ -41,7 +42,7 @@ void createXPointArray(Forme *forme){
 		arrayXPointcpy(forme->ptarray,rond,forme->size);
 		break;
 
-		case TRIANGLE:
+		case TRIANGLE:;
 		forme->size=3; 
 		int cote= (forme->w < forme->h ? forme->w: forme->h)/2;
 		forme->ptarray=calloc(forme->size,sizeof(XPoint));
@@ -49,7 +50,7 @@ void createXPointArray(Forme *forme){
 		arrayXPointcpy(forme->ptarray,triangle,forme->size);
 		break;
 
-		case ETOILE:
+		case ETOILE:;
 		forme->size=8;
 		int pointe= (forme->w < forme->h ? forme->w: forme->h)/2;
 		forme->ptarray=calloc(forme->size,sizeof(XPoint));
@@ -58,7 +59,7 @@ void createXPointArray(Forme *forme){
 		arrayXPointcpy(forme->ptarray,etoile,forme->size);
 		break;
 
-		default:
+		default:;
 		forme->size=1;
 		forme->ptarray=calloc(forme->size,sizeof(XPoint));
 		XPoint null[1]={{0,0}};

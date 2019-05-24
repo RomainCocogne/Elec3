@@ -1,12 +1,15 @@
 /*
-	pris sur stackoverflow
+	Pris sur stackoverflow
+	melange les elements d'un array
 */
 
 #pragma once
 #include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
-#include <math.h>
 #include <time.h>
 
-extern void shuffle(void *array, size_t n, size_t size);
+/* arrange the N elements of ARRAY in random order.
+ * Only effective if N is much smaller than RAND_MAX;
+ * if this may not be the case, use a better random
+ * number generator. */
+extern void shuffle(void *, size_t , size_t);

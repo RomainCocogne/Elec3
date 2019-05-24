@@ -5,7 +5,7 @@
 #include "shuffle.h"
 
 
-#define MENU 0
+#define OFF 0
 #define CARTE1	1
 #define CARTE2	2
 #define VERIFICATION 3

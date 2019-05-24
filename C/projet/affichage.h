@@ -10,22 +10,23 @@
 
 #define DEFAULT_CARD_WIDTH 100
 #define DEFAULT_CARD_HEIGHT 180
+#define NB_FORMES 4
 
-extern Jeu *board;
+typedef struct{
+	int color[6];
+	int grilleWidth, grilleHeight;
+	int fact;
+	int state;
+	Jeu *board;
+} display;
 
-extern char *forme[];
+extern display *screen;
 
-//Pour la couleur des cartes
-extern int gris;
-extern int blanc;
-extern int bleu;
-extern int rouge;
-extern int vert;
-extern int orange;
 
 extern void quit(Widget w, void *d);
 extern void saveScore(Widget w, void *d);
 extern void displayDrawArea(Widget w, int width, int height, void *data);
 extern void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight);
+extern void genereGame();
 extern void fenetreDeFin();
 extern void retournerCarte(Widget w, int which_button, int x, int y, void *data);

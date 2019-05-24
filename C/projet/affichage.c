@@ -5,20 +5,6 @@
 */
 #include "affichage.h"
 
-int fact;
-int globalGrilleWidth;
-int globalGrilleHeight;
-
-/* 
-	Variables pour accés rapide aux couleurs prédéfinies 
-*/
-int gris;
-int blanc;
-int bleu;
-int rouge;
-int vert;
-int orange;
-
 /*
 	Variables pour l'accés à l'etat actuel du jeu
 	- wigdets : contient les widgets des cartes qui doivent êtres retournées 
@@ -26,15 +12,11 @@ int orange;
     - board : contient tous les paramètres necessaires la logique du jeu
 */
 
-Jeu *board;
+display *screen;
 Widget widget1;
 Widget widget2;
 Widget strEntry;
 
-/* Formes à afficher pour identifier graphiquement les cartes */
-//Trouver comment comment en faire un const sans faire de warning
-#define NB_FORMES 4
-// char *forme[] = { "Carre", "Rond", "Triangle", "Etoile", "Losange", "Ellipse" ,NULL };
 
 void quit(Widget w, void *d)
 {
@@ -51,9 +33,9 @@ void replay(Widget w, void *d){
     // SetCurrentWindow(GetTopWidget(w));
     CloseWindow();
     // board->etape=MENU;
-    free(board->TabCartes);
-    initJeu(board,globalGrilleWidth*globalGrilleHeight);
-    initAffichage(board, globalGrilleWidth, globalGrilleHeight);
+    free(screen->board->TabCartes);
+    initJeu(screen->board,screen->fact);
+    initAffichage(screen->board, screen->grilleWidth, screen->grilleHeight);
 }
 
 /*
@@ -63,19 +45,19 @@ void replay(Widget w, void *d){
 */
 void displayDrawArea(Widget w, int width, int height, void *data){
     if (((Card *)data)->mode >= RETOURNEE) {
-        SetColor(blanc);
+        SetColor(screen->color[1]);
         DrawFilledBox(0,0,width,height);
-        SetColor(gris);
-        SetBgColor(w,blanc);
+        SetColor(screen->color[0]);
+        SetBgColor(w,screen->color[1]);
         // DrawText(forme[((Card *)data)->f],width/2,height/2);
         Forme forme;
         genereforme(&forme,((Card *)data)->f%NB_FORMES,width,height);
-        int couleur[]={bleu,rouge,vert,orange,rouge,vert,orange,bleu,vert,orange,bleu,rouge,orange,bleu,rouge,vert};
+        int couleur[]={screen->color[2],screen->color[3],screen->color[4],screen->color[5],screen->color[3],screen->color[4],screen->color[5],screen->color[2],screen->color[4],screen->color[5],screen->color[2],screen->color[3],screen->color[5],screen->color[2],screen->color[3],screen->color[4]};
         SetFgColor(w,couleur[((Card *)data)->f]);
         DrawFilledPolygon(forme.ptarray,forme.size);
     }
     else{
-        SetColor(gris);
+        SetColor(screen->color[0]);
         DrawFilledBox(0,0,width,height);
     }
 }
@@ -91,16 +73,27 @@ void displayDrawArea(Widget w, int width, int height, void *data){
 	-grilleWidth, grilleHeight : largeur et hauteur de la grille en nombre de cartes
 */
 void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight){
+    screen=malloc(sizeof(display));
     //Initialisation des variables globales
-    fact=grilleWidth*grilleHeight;
-    globalGrilleWidth = grilleWidth;
-    globalGrilleHeight = grilleHeight;
-    board = jeu; 
+    screen->fact=grilleWidth*grilleHeight;
+    screen->grilleWidth = grilleWidth;
+    screen->grilleHeight = grilleHeight;
+    screen->board = jeu; 
 
-    Widget tabWidget[grilleWidth*grilleHeight];
+    GetStandardColors();
+    screen->color[0] = GetRGBColor(40,40,40);
+    screen->color[1] = GetRGBColor(230,230,230);
+    screen->color[2] = GetRGBColor(20,20,180);
+    screen->color[3] = GetRGBColor(180,20,20) ;
+    screen->color[4] = GetRGBColor(20,180,20);
+    screen->color[5] = GetRGBColor(220,130,20);
+}
 
-    for (int k=0; k<grilleHeight*grilleWidth;k++){
-        tabWidget[k] = MakeDrawArea(DEFAULT_CARD_WIDTH,DEFAULT_CARD_HEIGHT,displayDrawArea,jeu->TabCartes+k);
+void genereGame(){
+    Widget tabWidget[screen->fact];
+
+    for (int k=0; k<screen->grilleHeight*screen->grilleWidth;k++){
+        tabWidget[k] = MakeDrawArea(DEFAULT_CARD_WIDTH,DEFAULT_CARD_HEIGHT,displayDrawArea,screen->board->TabCartes+k);
         SetButtonDownCB(tabWidget[k],retournerCarte);
     }
 
@@ -108,16 +101,16 @@ void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight){
     Widget xposWidget = NULL;
 
     int i,j, right=NO_CARE, under=NO_CARE;
-    for (i = 0; i < grilleHeight; ++i)
+    for (i = 0; i < screen->grilleHeight; ++i)
     {
-        for (j = 0; j < grilleWidth; ++j)
+        for (j = 0; j < screen->grilleWidth; ++j)
         {
-            SetWidgetPos(tabWidget[i*grilleWidth + j], right, xposWidget, under, yposWidget);
-            xposWidget = tabWidget[i*grilleWidth + j];
+            SetWidgetPos(tabWidget[i*screen->grilleWidth + j], right, xposWidget, under, yposWidget);
+            xposWidget = tabWidget[i*screen->grilleWidth + j];
             right = PLACE_RIGHT;
         }
-        if (i*grilleWidth+j < grilleHeight*grilleWidth) 
-        	yposWidget = tabWidget[i*grilleWidth];
+        if (i*screen->grilleWidth+j < screen->grilleHeight*screen->grilleWidth) 
+            yposWidget = tabWidget[i*screen->grilleWidth];
         right = NO_CARE;
         under = PLACE_UNDER; 
     }
@@ -125,7 +118,7 @@ void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight){
 
 
 void fenetreDeFin(){
-    int sc=(int)((double)(board->nbCoups)/fact*1000);
+    int sc=(int)((double)(screen->board->nbCoups)/screen->fact*1000);
     MakeWindow(NULL,SAME_DISPLAY,EXCLUSIVE_WINDOW);
     Widget congrats = MakeLabel("Felicitations, vous avez gagne !\nVotre score est :");
     char str[4];
@@ -162,7 +155,7 @@ void fenetreDeFin(){
 void retournerCarte(Widget w, int which_button, int x, int y, void *data){
 
     //Si la partie est terminée : pas d'action
-    if (board->etape == TERMINE){
+    if (screen->board->etape == TERMINE){
     	fenetreDeFin();
         return;
         // exit(EXIT_SUCCESS);
@@ -176,14 +169,14 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
     int areaWidth, areaHeight;
     GetDrawAreaSize(&areaWidth,&areaHeight);
 
-    if (board->etape == VERIFICATION){
+    if (screen->board->etape == VERIFICATION){
     	printf("Verification\n");
-    	if (!verifierCoup(board)){;
+    	if (!verifierCoup(screen->board)){;
 	    	SetDrawArea(widget1);
-	        SetColor(gris); 
+	        SetColor(screen->color[0]); 
 	        DrawFilledBox(0,0,areaWidth,areaHeight);
 	    	SetDrawArea(widget2);
-	        SetColor(gris); 
+	        SetColor(screen->color[0]); 
 	        DrawFilledBox(0,0,areaWidth,areaHeight);
 	    }
     }
@@ -193,18 +186,18 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
     		return;
     	}
     	SetDrawArea(w);
-        SetColor(blanc);
+        SetColor(screen->color[1]);
         DrawFilledBox(0,0,areaWidth,areaHeight);
-        SetColor(gris);
-        SetBgColor(w,blanc);
+        SetColor(screen->color[0]);
+        SetBgColor(w,screen->color[1]);
         // DrawText(forme[((Card *)data)->f],areaWidth/2,areaHeight/2);
         Forme forme;
         genereforme(&forme,((Card *)data)->f%NB_FORMES,areaWidth,areaHeight);
-        int couleur[]={bleu,rouge,vert,orange,rouge,vert,orange,bleu,vert,orange,bleu,rouge,orange,bleu,rouge,vert};
+        int couleur[]={screen->color[2],screen->color[3],screen->color[4],screen->color[5],screen->color[3],screen->color[4],screen->color[5],screen->color[2],screen->color[4],screen->color[5],screen->color[2],screen->color[3],screen->color[5],screen->color[2],screen->color[3],screen->color[4]};
         SetFgColor(w,couleur[((Card *)data)->f]);
         DrawFilledPolygon(forme.ptarray,forme.size);
-        if (board->etape == CARTE1) widget1=w;
+        if (screen->board->etape == CARTE1) widget1=w;
         else widget2=w;
-        jouerCoup(board,data);
+        jouerCoup(screen->board,data);
     }
 }

@@ -4,7 +4,8 @@
 */
 
 #pragma once
-
+#include <stdlib.h>
+#include <assert.h>
 
 
 /****************************/
@@ -24,10 +25,10 @@ extern const Liste ListeVide;				//liste vide elementaire
 /****************************/
 //		  fonctions			//
 /****************************/
-void initListe (Liste *l);					//cree un nouvel element qui pointe vers une liste
-int longueur (Liste l);						//renvoie le nombre de formes dans la liste
-void *ieme (Liste l, int r);					//renvoie l element a la ieme position
-void inserer (Liste *l, int r, void *f);		//insere element f au rang r
-void supprimer (Liste *l, int r);			//supprime l element f an rang r
+extern void initListe (Liste *);					//cree un nouvel element qui pointe vers une liste
+extern int  longueur  (Liste );						//renvoie le nombre de formes dans la liste
+extern void *ieme     (Liste , int );				//renvoie l element a la ieme position
+extern void inserer   (Liste *, int , void *);		//insere element f au rang r
+extern void supprimer (Liste *, int );				//supprime l element f an rang r
 
 
