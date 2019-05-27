@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -pedantic 
+CFLAGS=-Wall -pedantic -g3
 LDFLAGS= -lm -lsx
 EXEC=compile/main
 SRC= $(wildcard *.c)

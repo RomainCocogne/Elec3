@@ -31,6 +31,7 @@ typedef struct{
 
 int compare(Player j1, Player j2);
 void initPlayer(Player *j);
+void rmPlayer(Player *j);
 void setPlayerName(Player *j, char *name);
 void setPlayerScore(Player *j, int score);
 void playercpy(Player *j1, Player *j2);

@@ -11,9 +11,6 @@
 */
 #include "header.h"
 
-#define GRILLEWIDTH 6
-#define GRILLEHEIGHT 3
-
 int main(int argc, char *argv[])
 {
   if (OpenDisplay(argc, argv)==0){                      //cree la fenetre libsx

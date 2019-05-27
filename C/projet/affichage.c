@@ -55,6 +55,7 @@ void displayDrawArea(Widget w, int width, int height, void *data){
         int couleur[]={screen->color[2],screen->color[3],screen->color[4],screen->color[5],screen->color[3],screen->color[4],screen->color[5],screen->color[2],screen->color[4],screen->color[5],screen->color[2],screen->color[3],screen->color[5],screen->color[2],screen->color[3],screen->color[4]};
         SetFgColor(w,couleur[((Card *)data)->f]);
         DrawFilledPolygon(forme.ptarray,forme.size);
+        free(forme.ptarray);
     }
     else{
         SetColor(screen->color[0]);
@@ -132,13 +133,14 @@ void fenetreDeFin(){
     if(sc<=getLastScore() || nbScores()<10){
         Widget nomJoueur = MakeStringEntry("Votre Nom",400,NULL,NULL);
         strEntry=nomJoueur;
-        Player joueur;
-        initPlayer(&joueur);
-        setPlayerScore(&joueur,sc);
+        Player *joueur=malloc(sizeof(Player));
+        initPlayer(joueur);
+        setPlayerScore(joueur,sc);
         Widget boutonEnregistrer = MakeButton("Enregister le score",saveScore,&joueur);
         SetWidgetPos(nomJoueur,PLACE_UNDER,boutonRejouer,NO_CARE,NULL);
         SetWidgetPos(boutonEnregistrer,PLACE_UNDER,nomJoueur,NO_CARE,NULL);
     }
+    free(screen);
     ShowDisplay();
     MainLoop();
 }
@@ -199,5 +201,6 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
         if (screen->board->etape == CARTE1) widget1=w;
         else widget2=w;
         jouerCoup(screen->board,data);
+        free(forme.ptarray);
     }
 }

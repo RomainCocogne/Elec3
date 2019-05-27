@@ -25,6 +25,7 @@ extern display *screen;
 
 extern void quit(Widget w, void *d);
 extern void saveScore(Widget w, void *d);
+extern void replay(Widget w, void *d);
 extern void displayDrawArea(Widget w, int width, int height, void *data);
 extern void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight);
 extern void genereGame();

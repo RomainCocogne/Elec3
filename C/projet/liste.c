@@ -23,6 +23,13 @@ void initListe (Liste *l){
 }
 
 /*
+	supprimer une liste
+*/
+void rmListe(Liste *l){
+	free(l);
+}
+
+/*
 	renvoie le nombre de formes dans la liste
 */
 int longueur (Liste l){

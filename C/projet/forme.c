@@ -25,7 +25,10 @@ void createXPointArray(Forme *forme){
 		int len= (forme->w < forme->h ? forme->w: forme->h)/2;
 		forme->size=4;
 		forme->ptarray=calloc(forme->size,sizeof(XPoint));
-		XPoint carre[4]={{forme->w-len,forme->h-len},{forme->w-len,forme->h+len},{forme->w+len,forme->h+len},{forme->w+len,forme->h-len}};
+		XPoint carre[4]={{forme->w-len,forme->h-len},
+						 {forme->w-len,forme->h+len},
+						 {forme->w+len,forme->h+len},
+						 {forme->w+len,forme->h-len}};
 		arrayXPointcpy(forme->ptarray,carre,forme->size);
 		break;
 
@@ -46,7 +49,9 @@ void createXPointArray(Forme *forme){
 		forme->size=3; 
 		int cote= (forme->w < forme->h ? forme->w: forme->h)/2;
 		forme->ptarray=calloc(forme->size,sizeof(XPoint));
-		XPoint triangle[3]={{forme->w,forme->h-cote},{forme->w+cote,forme->h+cote},{forme->w-cote,forme->h+cote}};
+		XPoint triangle[3]={{forme->w,forme->h-cote},
+							{forme->w+cote,forme->h+cote},
+							{forme->w-cote,forme->h+cote}};
 		arrayXPointcpy(forme->ptarray,triangle,forme->size);
 		break;
 
@@ -54,8 +59,14 @@ void createXPointArray(Forme *forme){
 		forme->size=8;
 		int pointe= (forme->w < forme->h ? forme->w: forme->h)/2;
 		forme->ptarray=calloc(forme->size,sizeof(XPoint));
-		XPoint etoile[8]={{forme->w,forme->h-pointe},{forme->w+pointe,forme->h+pointe/2},{forme->w-pointe,forme->h+pointe/2},{forme->w,forme->h-pointe},
-						  {forme->w,forme->h+pointe},{forme->w+pointe,forme->h-pointe/2},{forme->w-pointe,forme->h-pointe/2},{forme->w,forme->h+pointe}};
+		XPoint etoile[8]={{forme->w,forme->h-pointe},
+						  {forme->w+pointe,forme->h+pointe/2},
+						  {forme->w-pointe,forme->h+pointe/2},
+						  {forme->w,forme->h-pointe},
+						  {forme->w,forme->h+pointe},
+						  {forme->w+pointe,forme->h-pointe/2},
+						  {forme->w-pointe,forme->h-pointe/2},
+						  {forme->w,forme->h+pointe}};
 		arrayXPointcpy(forme->ptarray,etoile,forme->size);
 		break;
 

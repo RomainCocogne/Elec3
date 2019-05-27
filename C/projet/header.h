@@ -10,3 +10,8 @@
 #include "shuffle.h"
 #include "affichage.h"
 #include "image.h"
+
+
+#define GRILLEWIDTH 2
+#define GRILLEHEIGHT 2
+

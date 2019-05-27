@@ -26,6 +26,7 @@ extern const Liste ListeVide;				//liste vide elementaire
 //		  fonctions			//
 /****************************/
 extern void initListe (Liste *);					//cree un nouvel element qui pointe vers une liste
+extern void rmListe   (Liste *);					//supprimer une liste
 extern int  longueur  (Liste );						//renvoie le nombre de formes dans la liste
 extern void *ieme     (Liste , int );				//renvoie l element a la ieme position
 extern void inserer   (Liste *, int , void *);		//insere element f au rang r

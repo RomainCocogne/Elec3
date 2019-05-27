@@ -13,7 +13,10 @@ void initPlayer(Player *j){
 	j->name=malloc(MAX_NAME*sizeof(char));
 	j->score=INT_MAX;
 }
-
+void rmPlayer(Player *j){
+	free(j->name);
+	free(j);
+}
 void setPlayerName(Player *j, char *name){
 	strcpy(j->name,name);
 }
@@ -49,11 +52,13 @@ void addScore(Player joueur){
 		Player *jp;
 		jp=((Player*)ieme(all_players,j));
 	    fprintf(ftemp,"%s:%d\n",jp->name,jp->score);
+	    rmPlayer(jp);
 	}
 	fprintf(ftemp,"%s:%d",((Player*)ieme(all_players,longueur(all_players)))->name,((Player*)ieme(all_players,longueur(all_players)))->score);
 	fclose(fscore);fclose(ftemp);
 	remove(FILE_NAME);
 	rename("file_temp",FILE_NAME);
+	rmListe(&all_players);
 }
 
 void insertAndSort(Player *joueur, Liste *listejoueurs){
@@ -80,7 +85,7 @@ void getScore(Liste *joueurs){
 		jtemp->score=atoi(buffer);
 		inserer(joueurs,longueur(*joueurs)+1,jtemp);
 
-		free(buffer); 
+		free(buffer); rmPlayer(jtemp);
 		buffer=NULL;
 		
 	}
@@ -103,12 +108,14 @@ int getLastScore(){
 		strcpy(joueur->name,buffer);
 		lenbuff=getline(&buffer, &sizebuff,fscore);
 		joueur->score=atoi(buffer);
-		free(buffer); 
+		free(buffer);
 		buffer=NULL;
 		
 	}
+	int sc=joueur->score;
+	rmPlayer(joueur);
 	fclose(fscore);
-	return joueur->score;
+	return sc;
 }
 
 int nbScores(){
@@ -121,6 +128,6 @@ int nbScores(){
 	char* buffer=0;
 	ssize_t lenbuff=0;
 	while ((lenbuff=getline(&buffer, &sizebuff,fscore)>0))lines++;
-	fclose(fscore);
+	fclose(fscore);free(buffer);
 	return lines;
 }
