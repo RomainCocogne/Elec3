@@ -2,7 +2,7 @@
 	regroupe tout les modules
 */
 
-#include <termios.h>// pour la transmission en serie 
+#include <termios.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

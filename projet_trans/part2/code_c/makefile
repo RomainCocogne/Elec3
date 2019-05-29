@@ -12,6 +12,9 @@ compile/visual_serie: $(OBJ)
 	@rm -rf ./*.o
 
 compile/visual_serie.o: fft.h
+compile/visual_serie.o: analyse_file.h
+compile/visual_serie.o: mathematique.h
+compile/visual_serie.o: plot.h
 
 %.o: %.c
 	@$(CC) -o $@ -c $< $(CFLAGS)
