@@ -4,25 +4,8 @@
 #include "plot.h"
 
 
-void sleep_u(long int duree){
-  struct timeval tstart, tend;
-  gettimeofday(&tstart, NULL);
-  long seconds =0;
-  long micros = 0;
-
-  while(tend.tv_usec-tstart.tv_usec<duree){
-    gettimeofday(&tend, NULL);
-    // seconds = (tend.tv_sec - tstart.tv_sec);
-    // micros = (seconds*1000000+ tend.tv_usec) - (tstart.tv_usec);
-    printf("%ld\n",micros); 
-  }
-  // clock_t time_out = clock();
-  // while((time_out + duree) > clock());
-}
-
-
-void plot(double *data, int width){
-  int m, scale=120;
+void plot(double *data, int width, int scale){
+  int m;
   int height=47;
   char fene[width][height];
   for (int i=0; i<width; i++){
