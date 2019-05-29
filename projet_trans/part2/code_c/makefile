@@ -1,17 +1,17 @@
 # CC=gcc
 CFLAGS=-Wall -pedantic
 LDFLAGS=-lsndfile -lm -lncurses 
-EXEC=compile/analyse_file
+EXEC=compile/visual_serie
 SRC= $(wildcard *.c)
 OBJ= $(SRC:.c=.o)
 
 all: $(EXEC)
 
-compile/analyse_file: $(OBJ)
+compile/visual_serie: $(OBJ)
 	@$(CC) -o $@ $^ $(LDFLAGS)
 	@rm -rf ./*.o
 
-compile/analyse_file.o: fft.h
+compile/visual_serie.o: fft.h
 
 %.o: %.c
 	@$(CC) -o $@ -c $< $(CFLAGS)

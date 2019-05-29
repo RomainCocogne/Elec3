@@ -1,8 +1,11 @@
-// /*
-// 	programme principal: prend un fichier son en argument et
-// 	affiche la fft en temps reel sous forme graphique
-// */
-// #include "header.h"
+/*
+	programme principal: prend un fichier son en argument et
+	affiche la fft en temps reel sous forme graphique
+	pour faire le make, commenter l'autre main et decommenter celui-ci
+
+	@authors: Cocogne, Combal, Chbada, El Hachimi
+*/
+#include "header.h"
 
 // int main(int argc, char const *argv[])
 // {	
