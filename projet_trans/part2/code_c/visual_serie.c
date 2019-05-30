@@ -66,7 +66,7 @@ void initTermios(struct termios *termios_t, int fd){
 int main(){
 
     char c;
-    int fd, res;
+    int fd;
     struct termios termios_t;
     double data[BUFFER_LEN];
     double dataout[SIZE];
@@ -87,7 +87,7 @@ int main(){
 	while(1) {
 
 		for(int i=0;i<BUFFER_LEN;i++){
-			while((res=read(fd,&c,1))==-1); //on attend la reception d'un caractere
+			while(read(fd,&c,1)==-1); //on attend la reception d'un caractere
 			data[i]=(double)c;			    //on le lit
         }
         process_data(dataout,data,BUFFER_LEN,1,2); //traitement des donnees
