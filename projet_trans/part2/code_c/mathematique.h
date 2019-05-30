@@ -1,6 +1,6 @@
 /*
 	ensemble de fonctions et macro
-	realisant des operations mathematiques
+	realisant des operations mathematiques (hors fft)
 */
 
 #pragma once
