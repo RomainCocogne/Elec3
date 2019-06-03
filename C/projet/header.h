@@ -10,6 +10,7 @@
 #include "shuffle.h"
 #include "affichage.h"
 #include "image.h"
+#include "menu.h"
 
 
 #define GRILLEWIDTH 2

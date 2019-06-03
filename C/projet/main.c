@@ -21,7 +21,8 @@ int main(int argc, char *argv[])
   Jeu jeu;                                              //variable de jeu
   initJeu(&jeu,GRILLEWIDTH*GRILLEHEIGHT);               //initialisation du jeu
   initAffichage(&jeu, GRILLEWIDTH, GRILLEHEIGHT);       //initialisation de l'affichage
-  genereGame();                                         //creation des widgets
+  // genereGame();                                         //creation des widgets
+  init_display(argc, argv, NULL);
   ShowDisplay();                                        //affichage
   MainLoop();                                           //loop
 

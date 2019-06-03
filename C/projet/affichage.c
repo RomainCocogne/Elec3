@@ -91,6 +91,10 @@ void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight){
 }
 
 void genereGame(){
+    CloseWindow();
+    Widget window;
+    window=MakeWindow("game",NULL,NONEXCLUSIVE_WINDOW);
+    SetCurrentWindow(window);
     Widget tabWidget[screen->fact];
 
     for (int k=0; k<screen->grilleHeight*screen->grilleWidth;k++){
@@ -115,6 +119,7 @@ void genereGame(){
         right = NO_CARE;
         under = PLACE_UNDER; 
     }
+    ShowDisplay();
 }
 
 

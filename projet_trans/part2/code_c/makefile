@@ -1,4 +1,4 @@
-# CC=gcc
+CC=gcc
 CFLAGS=-Wall -pedantic
 LDFLAGS=-lsndfile -lm -lncurses 
 EXEC=compile/visual_sound
