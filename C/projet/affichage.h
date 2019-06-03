@@ -13,6 +13,8 @@
 #define DEFAULT_CARD_HEIGHT 180
 #define NB_FORMES 4
 
+
+
 typedef struct{
 	int color[6];
 	int grilleWidth, grilleHeight;

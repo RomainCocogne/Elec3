@@ -92,6 +92,8 @@ void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight){
 }
 
 void genereGame(){
+    initJeu(screen->board,GRILLEWIDTH*GRILLEHEIGHT);               //initialisation du jeu
+    initAffichage(screen->board, GRILLEWIDTH, GRILLEHEIGHT);       //initialisation de l'affichage
     CloseWindow();
     Widget window;
     window=MakeWindow("game",NULL,NONEXCLUSIVE_WINDOW);

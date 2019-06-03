@@ -1,5 +1,8 @@
 #include "callbacks.h"
 
+int GRILLEWIDTH=3;
+int GRILLEHEIGHT=2;
+
 void quiter (Widget w,void *d){
   exit(EXIT_SUCCESS);
 }
@@ -14,6 +17,10 @@ void ruler (Widget w,void *d){
   ShowDisplay();
   
 }
-  
-  
-  
+
+void setSize(Widget w, void *d){
+	char *str=(char*)d;
+	GRILLEWIDTH=str[0]-'0';
+	GRILLEHEIGHT=str[1]-'0';
+	printf("%d,%d\n",GRILLEHEIGHT,GRILLEWIDTH);
+}

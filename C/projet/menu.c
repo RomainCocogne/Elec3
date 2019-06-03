@@ -24,12 +24,12 @@ void init_display(int argc, char *argv[], void *d){
   quit=MakeButton("Quit", quiter,NULL);
 
   //menu difficulté.
-  diff_3x2=MakeButton("3x2",NULL,NULL);
-  diff_4x3=MakeButton("4x3",NULL,NULL);
-  diff_4x4=MakeButton("4x4",NULL,NULL);
-  diff_5x4=MakeButton("5x4",NULL,NULL);
-  diff_6x5=MakeButton("6x5",NULL,NULL);
-  diff_8x4=MakeButton("8x4",NULL,NULL);
+  diff_3x2=MakeButton("3x2",setSize,"32");
+  diff_4x3=MakeButton("4x3",setSize,"43");
+  diff_4x4=MakeButton("4x4",setSize,"44");
+  diff_5x4=MakeButton("5x4",setSize,"54");
+  diff_6x5=MakeButton("6x5",setSize,"65");
+  diff_8x4=MakeButton("8x4",setSize,"84");
 
   //position des widgets.
   SetWidgetPos(highest_scores,PLACE_UNDER,welcome,NO_CARE,NULL);
