@@ -34,8 +34,9 @@ void replay(Widget w, void *d){
     CloseWindow();
     // board->etape=MENU;
     free(screen->board->TabCartes);
-    initJeu(screen->board,screen->fact);
-    initAffichage(screen->board, screen->grilleWidth, screen->grilleHeight);
+    // initJeu(screen->board,screen->fact);
+    // initAffichage(screen->board, screen->grilleWidth, screen->grilleHeight);
+    init_display(0, 0, NULL);
 }
 
 /*

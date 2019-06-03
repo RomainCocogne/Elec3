@@ -7,6 +7,7 @@
 #include "player.h"
 #include <libsx.h>
 #include <string.h>
+#include "menu.h"
 
 #define DEFAULT_CARD_WIDTH 100
 #define DEFAULT_CARD_HEIGHT 180
