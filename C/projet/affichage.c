@@ -144,7 +144,7 @@ void fenetreDeFin(){
         Player *joueur=malloc(sizeof(Player));
         initPlayer(joueur);
         setPlayerScore(joueur,sc);
-        Widget boutonEnregistrer = MakeButton("Enregister le score",saveScore,&joueur);
+        Widget boutonEnregistrer = MakeButton("Enregister le score",saveScore,joueur);
         SetWidgetPos(nomJoueur,PLACE_UNDER,boutonRejouer,NO_CARE,NULL);
         SetWidgetPos(boutonEnregistrer,PLACE_UNDER,nomJoueur,NO_CARE,NULL);
     }
