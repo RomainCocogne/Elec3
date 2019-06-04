@@ -1,7 +1,7 @@
 #include "menu.h"
 
 void init_display(int argc, char *argv[], void *d){
-  CloseWindow();
+  // CloseWindow();
   Widget window;
   window=MakeWindow("menu",NULL,NONEXCLUSIVE_WINDOW);
   SetCurrentWindow(window);

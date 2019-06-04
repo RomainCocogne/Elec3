@@ -14,7 +14,6 @@ void initPlayer(Player *j){
 	j->score=INT_MAX;
 }
 void rmPlayer(Player *j){
-	free(j->name);
 	free(j);
 }
 void setPlayerName(Player *j, char *name){
@@ -52,19 +51,20 @@ void addScore(Player joueur){
 		Player *jp;
 		jp=((Player*)ieme(all_players,j));
 	    fprintf(ftemp,"%s:%d\n",jp->name,jp->score);
-	    rmPlayer(jp);
+	    // rmPlayer(jp);
 	}
 	fprintf(ftemp,"%s:%d",((Player*)ieme(all_players,longueur(all_players)))->name,((Player*)ieme(all_players,longueur(all_players)))->score);
 	fclose(fscore);fclose(ftemp);
 	remove(FILE_NAME);
 	rename("file_temp",FILE_NAME);
-	rmListe(&all_players);
+	// rmListe(&all_players);
 }
 
 void insertAndSort(Player *joueur, Liste *listejoueurs){
 	int i=1;
 	while(i<=longueur(*listejoueurs) && ((Player *)ieme(*listejoueurs,i))->score<=joueur->score)i++;
-	if(compare(*joueur,*(Player *)ieme(*listejoueurs,i-1))) inserer(listejoueurs,i,joueur);
+	printf("%d\n",longueur(*listejoueurs));
+	if(longueur(*listejoueurs)==0 || compare(*joueur,*(Player *)ieme(*listejoueurs,i-1))) inserer(listejoueurs,i,joueur);
 	while(longueur(*listejoueurs)>10) supprimer(listejoueurs,longueur(*listejoueurs));
 }
 
@@ -84,8 +84,8 @@ void getScore(Liste *joueurs){
 		lenbuff=getline(&buffer, &sizebuff,fscore);
 		jtemp->score=atoi(buffer);
 		inserer(joueurs,longueur(*joueurs)+1,jtemp);
-
-		free(buffer); rmPlayer(jtemp);
+		free(buffer); 
+		// rmPlayer(jtemp);
 		buffer=NULL;
 		
 	}
@@ -101,19 +101,19 @@ int getLastScore(){
 	char* buffer=0;
 	ssize_t lenbuff=0;
 	
-	Player *joueur=malloc(sizeof(Player));
+	Player joueur;
 	while ((lenbuff=getdelim(&buffer, &sizebuff, ':',fscore)>0)) {
-		initPlayer(joueur);
+		initPlayer(&joueur);
 		buffer[strlen(buffer)-1]='\0';
-		strcpy(joueur->name,buffer);
+		strcpy(joueur.name,buffer);
 		lenbuff=getline(&buffer, &sizebuff,fscore);
-		joueur->score=atoi(buffer);
+		joueur.score=atoi(buffer);
 		free(buffer);
 		buffer=NULL;
 		
 	}
-	int sc=joueur->score;
-	rmPlayer(joueur);
+	int sc=joueur.score;
+	// rmPlayer(joueur);
 	fclose(fscore);
 	return sc;
 }

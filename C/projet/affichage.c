@@ -32,6 +32,7 @@ void saveScore(Widget w, void *d){
 void replay(Widget w, void *d){
     // SetCurrentWindow(GetTopWidget(w));
     CloseWindow();
+    CloseWindow();
     // board->etape=MENU;
     free(screen->board->TabCartes);
     // initJeu(screen->board,screen->fact);
@@ -139,7 +140,7 @@ void fenetreDeFin(){
     SetWidgetPos(boutonRejouer,PLACE_UNDER,score,NO_CARE,NULL);
     SetWidgetPos(boutonQuitter,PLACE_UNDER,score,PLACE_RIGHT,boutonRejouer);
     if(sc<=getLastScore() || nbScores()<10){
-        Widget nomJoueur = MakeStringEntry("Votre Nom",400,NULL,NULL);
+        Widget nomJoueur = MakeStringEntry("Votre Nom",MAX_NAME,NULL,NULL);
         strEntry=nomJoueur;
         Player *joueur=malloc(sizeof(Player));
         initPlayer(joueur);
@@ -148,7 +149,7 @@ void fenetreDeFin(){
         SetWidgetPos(nomJoueur,PLACE_UNDER,boutonRejouer,NO_CARE,NULL);
         SetWidgetPos(boutonEnregistrer,PLACE_UNDER,nomJoueur,NO_CARE,NULL);
     }
-    free(screen);
+    // free(screen);
     ShowDisplay();
     MainLoop();
 }

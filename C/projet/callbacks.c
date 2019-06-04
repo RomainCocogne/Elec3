@@ -26,21 +26,30 @@ void setSize(Widget w, void *d){
 }
 
 void printScores(Widget w, void *d){
-	Liste *joueurs=malloc(sizeof(Liste));
-	initListe(joueurs);
-	getScore(joueurs);
+	Liste joueurs;
+	initListe(&joueurs);
+	getScore(&joueurs);
+	// printf("%s\n",((Player *)ieme(joueurs,1))->name);
 
-	char strJoueurs[longueur(*joueurs)*sizeof(char)*MAX_NAME*2];
-	for(int i=1; i<=longueur(*joueurs); i++){
-		char temp[sizeof(char)*MAX_NAME*2];
-	    sprintf(temp,"%s : %d\n",((Player *)ieme(*joueurs,i))->name,((Player *)ieme(*joueurs,i))->score);
-		strcat(strJoueurs,temp);
+	char strJoueurs[(longueur(joueurs)+1)*sizeof(char)*MAX_NAME*2];
+	if(longueur(joueurs)>0){
+		sprintf(strJoueurs,"%s : %d\n",((Player *)ieme(joueurs,1))->name,((Player *)ieme(joueurs,1))->score);
+		for(int i=2; i<=longueur(joueurs); i++){
+			char temp[sizeof(char)*MAX_NAME*2];
+		    sprintf(temp,"%s : %d\n",((Player *)ieme(joueurs,i))->name,((Player *)ieme(joueurs,i))->score);
+
+			strcat(strJoueurs,temp);
+		}
 	}
-
+	else{
+		strcpy(strJoueurs,"No hight score yet.");
+	}
 	Widget window,label_scores;
   	window=MakeWindow("HightScore",NULL,NONEXCLUSIVE_WINDOW);
   	SetCurrentWindow(window);
   	label_scores=MakeLabel(strJoueurs);
   	SetWidgetPos(label_scores,NO_CARE,NULL,NO_CARE,NULL);
+  	// rmListe(&joueurs);
+  	// free(strJoueurs);
   	ShowDisplay();
 }

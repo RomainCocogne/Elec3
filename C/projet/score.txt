@@ -1,10 +1,10 @@
-romain:1000
+le bg:1333
 Votre Nom:1333
-Quentin:1500
-Le Maitre:1500
-test:1500
-roro:1666
-romain:1750
-louisetromain:1900
-zayd:2000
-avecespace:2000
+on degage le dernier:1333
+vite:1666
+trop vite:1666
+il en faut 10:1666
+j'en suis a 8:1666
+plus que 1:1666
+le dixieme:1666
+bof:2833
