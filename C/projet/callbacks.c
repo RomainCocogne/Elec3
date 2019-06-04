@@ -24,3 +24,23 @@ void setSize(Widget w, void *d){
 	GRILLEHEIGHT=str[1]-'0';
 	printf("%d,%d\n",GRILLEHEIGHT,GRILLEWIDTH);
 }
+
+void printScores(Widget w, void *d){
+	Liste *joueurs=malloc(sizeof(Liste));
+	initListe(joueurs);
+	getScore(joueurs);
+
+	char strJoueurs[longueur(*joueurs)*sizeof(char)*MAX_NAME*2];
+	for(int i=1; i<=longueur(*joueurs); i++){
+		char temp[sizeof(char)*MAX_NAME*2];
+	    sprintf(temp,"%s : %d\n",((Player *)ieme(*joueurs,i))->name,((Player *)ieme(*joueurs,i))->score);
+		strcat(strJoueurs,temp);
+	}
+
+	Widget window,label_scores;
+  	window=MakeWindow("HightScore",NULL,NONEXCLUSIVE_WINDOW);
+  	SetCurrentWindow(window);
+  	label_scores=MakeLabel(strJoueurs);
+  	SetWidgetPos(label_scores,NO_CARE,NULL,NO_CARE,NULL);
+  	ShowDisplay();
+}

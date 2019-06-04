@@ -19,7 +19,7 @@ void init_display(int argc, char *argv[], void *d){
   rules=MakeButton("Rules",ruler,NULL);
 
   //création des boutons.
-  highest_scores=MakeButton("Highest_scores",NULL,NULL);
+  highest_scores=MakeButton("Highest_scores",printScores,NULL);
   start=MakeButton("Start",genereGame,NULL);
   quit=MakeButton("Quit", quiter,NULL);
 
