@@ -1,6 +1,8 @@
 #include "display.h"
 #include "player.h"
 
+int GRILLEWIDTH=3;
+int GRILLEHEIGHT=2;
 
 Widget strEntry;
 display *screen;
@@ -64,10 +66,14 @@ void genereGame(){
     initJeu(screen->board,GRILLEWIDTH*GRILLEHEIGHT);               //initialisation du jeu
     initAffichage(screen->board, GRILLEWIDTH, GRILLEHEIGHT);       //initialisation de l'affichage
     CloseWindow();
-    Widget window;
+    Widget window, form_game, form_right_panel;
+    Widget return_button, quit_button;
     window=MakeWindow("game",NULL,NONEXCLUSIVE_WINDOW);
     SetCurrentWindow(window);
+
     Widget tabWidget[screen->fact];
+    
+    form_game=MakeForm(TOP_LEVEL_FORM);
 
     for (int k=0; k<screen->grilleHeight*screen->grilleWidth;k++){
         tabWidget[k] = MakeDrawArea(DEFAULT_CARD_WIDTH,DEFAULT_CARD_HEIGHT,displayDrawArea,screen->board->TabCartes+k);
@@ -91,7 +97,16 @@ void genereGame(){
         right = NO_CARE;
         under = PLACE_UNDER; 
     }
+    form_right_panel=MakeForm(TOP_LEVEL_FORM);
+    
+    return_button=MakeButton("return", replay,NULL);
+    quit_button=MakeButton("quit",quit,NULL);
+    SetWidgetPos(quit_button,PLACE_UNDER,return_button,NO_CARE,NULL);
+
+    SetWidgetPos(form_right_panel,PLACE_RIGHT,form_game,NO_CARE,NULL);
     ShowDisplay();
+
+
 }
 
 

@@ -4,7 +4,7 @@
 #include <assert.h>
 #include <string.h> 
 #include "carte.h"
-#include "player.h"
+#include "score.h"
 #include "liste.h"
 #include "jeu.h"
 #include "callbacks.h"

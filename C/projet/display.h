@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "jeu.h"
 #include "forme.h"
-#include "player.h"
+#include "score.h"
 #include <libsx.h>
 #include <string.h>
 #include "callbacks.h"
@@ -11,8 +11,8 @@
 
 #define DEFAULT_CARD_WIDTH 100
 #define DEFAULT_CARD_HEIGHT 180
-#define NB_FORMES 4
-
+extern int GRILLEWIDTH;
+extern int GRILLEHEIGHT;
 
 
 typedef struct{

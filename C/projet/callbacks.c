@@ -1,7 +1,5 @@
 #include "callbacks.h"
 
-int GRILLEWIDTH=3;
-int GRILLEHEIGHT=2;
 
 void saveScore(Widget w, void *d){
     Player *j=(Player *)d;

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"score",
+				"score.h"
+			],
+			[
 				"displa",
 				"display.h"
 			],
@@ -510,10 +514,6 @@
 			[
 				"e",
 				"enum"
-			],
-			[
-				"fl",
-				"floor"
 			]
 		]
 	},
@@ -529,37 +529,10 @@
 			}
 		},
 		{
-			"file": "projet/menu.c",
+			"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/score.c",
 			"settings":
 			{
-				"buffer_size": 2075,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "projet/callbacks.c",
-			"settings":
-			{
-				"buffer_size": 1743,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "projet/affichage.c",
-			"settings":
-			{
-				"buffer_size": 3091,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/display.c",
-			"settings":
-			{
-				"buffer_size": 4144,
+				"buffer_size": 2609,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -568,33 +541,25 @@
 			"file": "projet/player.c",
 			"settings":
 			{
-				"buffer_size": 3122,
+				"buffer_size": 532,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "exec.sh",
+			"file": "projet/callbacks.c",
 			"settings":
 			{
-				"buffer_size": 171,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "projet/score.txt",
-			"settings":
-			{
-				"buffer_size": 146,
+				"buffer_size": 3294,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "projet/liste.c",
+			"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/display.c",
 			"settings":
 			{
-				"buffer_size": 1918,
+				"buffer_size": 7328,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -609,19 +574,10 @@
 			}
 		},
 		{
-			"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/image.c",
-			"settings":
-			{
-				"buffer_size": 3353,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "projet/carte.c",
 			"settings":
 			{
-				"buffer_size": 297,
+				"buffer_size": 109,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -630,7 +586,7 @@
 			"file": "projet/jeu.c",
 			"settings":
 			{
-				"buffer_size": 3260,
+				"buffer_size": 3256,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -639,16 +595,25 @@
 			"file": "projet/header.h",
 			"settings":
 			{
-				"buffer_size": 275,
+				"buffer_size": 214,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/menu.h",
+			"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/score.h",
 			"settings":
 			{
-				"buffer_size": 171,
+				"buffer_size": 477,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "projet/player.h",
+			"settings":
+			{
+				"buffer_size": 475,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -657,16 +622,7 @@
 			"file": "projet/callbacks.h",
 			"settings":
 			{
-				"buffer_size": 327,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "projet/affichage.h",
-			"settings":
-			{
-				"buffer_size": 612,
+				"buffer_size": 408,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -675,7 +631,7 @@
 			"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/display.h",
 			"settings":
 			{
-				"buffer_size": 514,
+				"buffer_size": 889,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -684,7 +640,7 @@
 			"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/forme.h",
 			"settings":
 			{
-				"buffer_size": 399,
+				"buffer_size": 397,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -699,19 +655,10 @@
 			}
 		},
 		{
-			"file": "projet/player.h",
-			"settings":
-			{
-				"buffer_size": 920,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "projet/carte.h",
 			"settings":
 			{
-				"buffer_size": 332,
+				"buffer_size": 179,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -720,7 +667,16 @@
 			"file": "projet/jeu.h",
 			"settings":
 			{
-				"buffer_size": 565,
+				"buffer_size": 564,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "projet/makefile",
+			"settings":
+			{
+				"buffer_size": 339,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -929,16 +885,21 @@
 	],
 	"file_history":
 	[
+		"/home/romain/Documents/C/projet/liste.c",
+		"/home/romain/Documents/C/projet/score.txt",
+		"/home/romain/Documents/C/projet/affichage.h",
+		"/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/image.c",
+		"/home/romain/Documents/C/projet/affichage.c",
+		"/home/romain/Documents/C/projet/menu.c",
+		"/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/menu.h",
 		"/home/romain/Documents/C/projet/shuffle.h",
 		"/home/romain/Documents/C/projet/shuffle.c",
 		"/home/romain/Documents/C/exec.sh",
-		"/home/romain/Documents/C/projet/score.txt",
 		"/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/image.h",
 		"/home/romain/Documents/C/projet/makefile",
 		"/home/romain/Documents/C/compile_and_exec.sh",
 		"/home/romain/Documents/C/projet/matrice.h",
 		"/home/romain/Documents/C/projet/matrice.c",
-		"/home/romain/Documents/C/projet/liste.c",
 		"/home/romain/Documents/C/projet/liste.h",
 		"/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/shuffle.h",
 		"/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/shuffle.c",
@@ -1051,12 +1012,7 @@
 		"/home/romain/Documents/C/td7/exo3.c",
 		"/home/romain/Documents/C/td7/exo5.c",
 		"/home/romain/Documents/C/td6/exo3.c",
-		"/home/romain/Documents/C/td5/exo7.c",
-		"/home/romain/Documents/C/td6/fichier_test.txt",
-		"/home/romain/Documents/C/td6/exo5.c",
-		"/home/romain/Documents/C/td6/exo4.c",
-		"/home/romain/Documents/C/td6/exo1.c",
-		"/home/romain/Documents/C/td5/exo4.c"
+		"/home/romain/Documents/C/td5/exo7.c"
 	],
 	"find":
 	{
@@ -1074,6 +1030,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"}\n",
+			")->f",
+			"->f",
+			"((Card *)data)->f",
+			"->f",
+			"quit",
+			"quiter",
 			"widget1",
 			"grilleWidth",
 			"GRILLEWIDTH",
@@ -1194,14 +1157,7 @@
 			"rwpsw",
 			"10",
 			"argv",
-			"#include <string.h> ",
-			"t",
-			");\n",
-			"fft",
-			"analyse_file",
-			"void*",
-			"file",
-			"fpath"
+			"#include <string.h> "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1219,7 +1175,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1259,156 +1215,29 @@
 						"translation.y": 2.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "projet/menu.c",
+					"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/score.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2075,
+						"buffer_size": 2609,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								84,
-								84
+								547,
+								547
 							]
 						],
 						"settings":
 						{
-							"SL.70.region_keys":
-							[
-							],
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 383.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "projet/callbacks.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1743,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								663,
-								663
-							]
-						],
-						"settings":
-						{
-							"SL.16.region_keys":
-							[
-							],
-							"SL.17.region_keys":
-							[
-							],
-							"SL.67.region_keys":
-							[
-							],
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 692.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "projet/affichage.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3091,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2964,
-								2964
-							]
-						],
-						"settings":
-						{
-							"SL.15.region_keys":
-							[
-							],
-							"SL.16.region_keys":
-							[
-							],
-							"SL.17.region_keys":
-							[
-							],
-							"SL.31.region_keys":
-							[
-							],
-							"SL.63.region_keys":
-							[
-							],
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1417.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/display.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4144,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								585,
-								585
-							]
-						],
-						"settings":
-						{
-							"SL.41.region_keys":
+							"SL.44.region_keys":
 							[
 							],
 							"git_gutter_is_enabled": true,
@@ -1418,27 +1247,27 @@
 							"syntax": "Packages/C++/C.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 208.0,
+						"translation.y": 125.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 2,
 					"file": "projet/player.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3122,
+						"buffer_size": 532,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1554,
-								1554
+								250,
+								250
 							]
 						],
 						"settings":
@@ -1469,76 +1298,6 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1006.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "exec.sh",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 171,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"SL.39.region_keys":
-							[
-							],
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "projet/score.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 146,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								146,
-								146
-							]
-						],
-						"settings":
-						{
-							"SL.40.region_keys":
-							[
-							],
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -1546,43 +1305,86 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "projet/liste.c",
+					"buffer": 3,
+					"file": "projet/callbacks.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1918,
+						"buffer_size": 3294,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								511,
-								511
+								308,
+								308
 							]
 						],
 						"settings":
 						{
-							"SL.34.region_keys":
+							"SL.16.region_keys":
+							[
+							],
+							"SL.17.region_keys":
+							[
+							],
+							"SL.67.region_keys":
 							[
 							],
 							"git_gutter_is_enabled": true,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 292.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 4,
+					"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/display.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7328,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1311,
+								1311
+							]
+						],
+						"settings":
+						{
+							"SL.18.region_keys":
+							[
+							],
+							"SL.41.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
+						},
+						"translation.x": 39.0,
+						"translation.y": 390.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/forme.c",
 					"semi_transient": false,
 					"settings":
@@ -1617,60 +1419,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/image.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3353,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1701,
-								1701
-							]
-						],
-						"settings":
-						{
-							"SL.34.region_keys":
-							[
-							],
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
+					"buffer": 6,
 					"file": "projet/carte.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 297,
+						"buffer_size": 109,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								185,
-								185
+								66,
+								66
 							]
 						],
 						"settings":
@@ -1689,24 +1455,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 7,
 					"file": "projet/jeu.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3260,
+						"buffer_size": 3256,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1002,
-								1002
+								1784,
+								1784
 							]
 						],
 						"settings":
@@ -1727,34 +1493,34 @@
 							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 2.0,
+						"translation.x": 3.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
-					"buffer": 13,
+					"buffer": 8,
 					"file": "projet/header.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 275,
+						"buffer_size": 214,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								210,
-								210
+								111,
+								111
 							]
 						],
 						"settings":
@@ -1772,29 +1538,67 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
-					"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/menu.h",
+					"buffer": 9,
+					"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/score.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 171,
+						"buffer_size": 477,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12,
-								12
+								69,
+								69
 							]
 						],
 						"settings":
 						{
-							"SL.71.region_keys":
+							"SL.45.region_keys":
+							[
+							],
+							"git_gutter_is_enabled": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "projet/player.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 475,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								61,
+								61
+							]
+						],
+						"settings":
+						{
+							"SL.34.region_keys":
+							[
+							],
+							"SL.37.region_keys":
 							[
 							],
 							"git_gutter_is_enabled": true,
@@ -1807,24 +1611,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 11,
 					"file": "projet/callbacks.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 327,
+						"buffer_size": 408,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								112,
-								112
+								91,
+								91
 							]
 						],
 						"settings":
@@ -1845,38 +1649,32 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
-					"file": "projet/affichage.h",
+					"buffer": 12,
+					"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/display.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 612,
+						"buffer_size": 889,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								531,
-								531
+								68,
+								68
 							]
 						],
 						"settings":
 						{
-							"SL.24.region_keys":
+							"SL.31.region_keys":
 							[
 							],
-							"SL.26.region_keys":
-							[
-							],
-							"SL.29.region_keys":
-							[
-							],
-							"SL.64.region_keys":
+							"SL.42.region_keys":
 							[
 							],
 							"git_gutter_is_enabled": true,
@@ -1886,62 +1684,27 @@
 							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 238.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
-					"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/display.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 514,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								514,
-								514
-							]
-						],
-						"settings":
-						{
-							"SL.42.region_keys":
-							[
-							],
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 18,
+					"buffer": 13,
 					"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/forme.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 399,
+						"buffer_size": 397,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								274,
-								274
+								123,
+								123
 							]
 						],
 						"settings":
@@ -1959,11 +1722,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 14,
 					"file": "projet/liste.h",
 					"semi_transient": false,
 					"settings":
@@ -1991,62 +1754,27 @@
 							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 19.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 20,
-					"file": "projet/player.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 920,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								617,
-								617
-							]
-						],
-						"settings":
-						{
-							"SL.37.region_keys":
-							[
-							],
-							"git_gutter_is_enabled": true,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 184.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
+					"buffer": 15,
 					"file": "projet/carte.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 332,
+						"buffer_size": 179,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								13,
-								13
+								175,
+								175
 							]
 						],
 						"settings":
@@ -2067,29 +1795,32 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 16,
 					"file": "projet/jeu.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 565,
+						"buffer_size": 564,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								94,
-								94
+								109,
+								109
 							]
 						],
 						"settings":
 						{
 							"SL.34.region_keys":
+							[
+							],
+							"SL.36.region_keys":
 							[
 							],
 							"SL.66.region_keys":
@@ -2105,7 +1836,38 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "projet/makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 339,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								205,
+								205
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
 					"type": "text"
 				}
 			]
@@ -2155,7 +1917,7 @@
 	},
 	"output.Terminus":
 	{
-		"height": 119.0
+		"height": 336.0
 	},
 	"output.Terminus 2":
 	{
