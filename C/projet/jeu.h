@@ -1,6 +1,7 @@
 #pragma once
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "carte.h"
 #include "shuffle.h"
 
@@ -22,10 +23,11 @@ typedef struct
 
 
 
+extern void shuffle(void *, size_t , size_t);
+
 extern void initTabCartes(Card *TabCartes,int nbCartes);
 
 extern void initJeu(Jeu *jeu, int nbCartes);
-
 
 extern void jouerCoup(Jeu *jeu, Card *carteRetournee);
 
