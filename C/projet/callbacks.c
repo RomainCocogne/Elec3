@@ -51,8 +51,6 @@ void printScores(Widget w, void *d){
   	SetCurrentWindow(window);
   	label_scores=MakeLabel(strJoueurs);
   	SetWidgetPos(label_scores,NO_CARE,NULL,NO_CARE,NULL);
-  	// rmListe(&joueurs);
-  	// free(strJoueurs);
   	ShowDisplay();
 }
 

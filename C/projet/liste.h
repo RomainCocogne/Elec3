@@ -23,7 +23,7 @@ typedef struct noeud					//structure suivant le principe de la structure chainee
 extern const Liste ListeVide;				//liste vide elementaire
 
 /****************************/
-//		  fonctions			//
+// 		  fonctions			//
 /****************************/
 extern void initListe (Liste *);					//cree un nouvel element qui pointe vers une liste
 extern void rmListe   (Liste *);					//supprimer une liste
