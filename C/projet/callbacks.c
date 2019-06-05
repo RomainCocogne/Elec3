@@ -3,8 +3,10 @@
 int GRILLEWIDTH=3;
 int GRILLEHEIGHT=2;
 
-void quiter (Widget w,void *d){
-  exit(EXIT_SUCCESS);
+void saveScore(Widget w, void *d){
+    Player *j=(Player *)d;
+    setPlayerName(j,GetStringEntry(strEntry));
+    addScore(*j);
 }
 
 void ruler (Widget w,void *d){
@@ -52,4 +54,52 @@ void printScores(Widget w, void *d){
   	// rmListe(&joueurs);
   	// free(strJoueurs);
   	ShowDisplay();
+}
+
+
+/*
+	Fonction de callback, appelée lorsque l'utilisateur clique sur une carte.
+	Appelle les fonctions du module jeu pour jouer les coups. Affiche graphiquement 
+	le resultat de chaque coup.
+	Quand deux cartes sont révélées, l'utilisateur peut observer leur valeur, 
+	et doit cliquer à nouveau pour les remettre face cachée ou pour valider la paire. 
+
+	*data : pointeur sur type Carte, contient la carte du Widget qui à été cliqué.
+*/
+void retournerCarte(Widget w, int which_button, int x, int y, void *data){
+
+    //Si la partie est terminée : pas d'action
+    if (screen->board->etape == TERMINE){
+    	fenetreDeFin();
+        return;
+        // exit(EXIT_SUCCESS);
+    }
+
+    //Si la carte est déjà révélée : pas d'action
+    if (((Card *)data)->mode == DECOUVERTE ){
+    	printf("Carte déja révélée\n");
+    	return;
+    }
+    int areaWidth, areaHeight;
+    GetDrawAreaSize(&areaWidth,&areaHeight);
+
+    if (screen->board->etape == VERIFICATION){
+    	printf("Verification\n");
+    	if (!verifierCoup(screen->board)){;
+	    	SetDrawArea(widget1);
+	        hide(areaWidth,areaHeight);
+	    	SetDrawArea(widget2);
+	        hide(areaWidth,areaHeight);
+	    }
+    }
+    else{
+    	if (((Card *)data)->mode == RETOURNEE){
+    		printf("Carte déjà retournée, choisissez une autre carte\n");
+    		return;
+    	}
+    	show(w,areaWidth,areaHeight, data);
+        if (screen->board->etape == CARTE1) widget1=w;
+        else widget2=w;
+        jouerCoup(screen->board,data);
+    }
 }

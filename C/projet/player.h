@@ -29,14 +29,14 @@ typedef struct{
 //		  fonctions			//
 /****************************/
 
-int compare(Player j1, Player j2);
-void initPlayer(Player *j);
-void rmPlayer(Player *j);
-void setPlayerName(Player *j, char *name);
-void setPlayerScore(Player *j, int score);
-void playercpy(Player *j1, Player *j2);
-void addScore(Player joueur);
-void insertAndSort(Player *joueur, Liste *tabjoueurs);
-void getScore(Liste *joueurs);
-int getLastScore();
-int nbScores();
+extern int compare(Player j1, Player j2);
+extern void initPlayer(Player *j);
+extern void rmPlayer(Player *j);
+extern void setPlayerName(Player *j, char *name);
+extern void setPlayerScore(Player *j, int score);
+extern void playercpy(Player *j1, Player *j2);
+extern void addScore(Player joueur);
+extern void insertAndSort(Player *joueur, Liste *tabjoueurs);
+extern void getScore(Liste *joueurs);
+extern int getLastScore();
+extern int nbScores();

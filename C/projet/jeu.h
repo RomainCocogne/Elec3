@@ -3,8 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "carte.h"
-#include "shuffle.h"
-
+#include <string.h> 
 
 #define OFF 0
 #define CARTE1	1
