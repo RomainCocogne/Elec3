@@ -11,8 +11,8 @@
 
 #define DEFAULT_CARD_WIDTH 100
 #define DEFAULT_CARD_HEIGHT 180
-#define NB_FORMES 4
-
+extern int GRILLEWIDTH;
+extern int GRILLEHEIGHT;
 
 
 typedef struct{
