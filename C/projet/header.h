@@ -8,7 +8,6 @@
 #include "liste.h"
 #include "jeu.h"
 #include "callbacks.h"
-#include "image.h"
 #include "display.h"
 
 

@@ -37,9 +37,9 @@ void show(Widget w, int width, int height, void *data){
     SetColor(screen->color[0]);
     SetBgColor(w,screen->color[1]);
     Forme forme;
-    genereforme(&forme,((Card *)data)->f%NB_FORMES,width,height);
+    genereforme(&forme,((Card *)data)->id%NB_FORMES,width,height);
     int couleur[]={screen->color[2],screen->color[3],screen->color[4],screen->color[5],screen->color[3],screen->color[4],screen->color[5],screen->color[2],screen->color[4],screen->color[5],screen->color[2],screen->color[3],screen->color[5],screen->color[2],screen->color[3],screen->color[4]};
-    SetFgColor(w,couleur[((Card *)data)->f]);
+    SetFgColor(w,couleur[((Card *)data)->id]);
     DrawFilledPolygon(forme.ptarray,forme.size);
     free(forme.ptarray);
 }

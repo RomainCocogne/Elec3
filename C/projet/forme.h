@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <libsx.h>
-#include "affichage.h"
+#include "display.h"
 
 enum FORME {CARRE, ROND, TRIANGLE,ETOILE};
 

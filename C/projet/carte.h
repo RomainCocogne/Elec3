@@ -12,8 +12,6 @@ typedef struct
 
 } Card;
 
-extern int getCardForme(Card c);
-
 extern int getCardMode(Card c);
 
 extern int getCardId(Card c);
