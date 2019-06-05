@@ -66,20 +66,22 @@ void createXPointArray(Forme *forme){
 		break;
 
 		case ETOILE:;
-		forme->size=8;
-		forme->ptarray=calloc(forme->size,sizeof(XPoint));
-		XPoint etoile[8]={{forme->w,forme->h-len},
-						  {forme->w+len,forme->h+len/2},
-						  {forme->w-len,forme->h+len/2},
-						  {forme->w,forme->h-len},
-						  {forme->w,forme->h+len},
-						  {forme->w+len,forme->h-len/2},
-						  {forme->w-len,forme->h-len/2},
-						  {forme->w,forme->h+len}};
-		arrayXPointcpy(forme->ptarray,etoile,forme->size);
+		forme->size=8;												//on a 2 triangles croises. Pour fermer la forme, il faut ajouter 2 points
+		
+		forme->ptarray=calloc(forme->size,sizeof(XPoint));			/**/
+		XPoint etoile[8]={{forme->w,forme->h-len},					//
+						  {forme->w+len,forme->h+len/2},			// on dessine un premier triangle avec un dernier point 
+						  {forme->w-len,forme->h+len/2},			// qui revient a l'origine.
+						  {forme->w,forme->h-len},					//
+						  {forme->w,forme->h+len},					// on dessine ensuite un autre triangle dans l'autre sens
+						  {forme->w+len,forme->h-len/2},			// qu'il faut refermer aussi
+						  {forme->w-len,forme->h-len/2},			// (les autres formes n'ont pas besoin d'etre refermees car il n'y a pas de croisements)
+						  {forme->w,forme->h+len}};					/**/
+
+		arrayXPointcpy(forme->ptarray,etoile,forme->size);			//on copie l'etoile dans la chaine de points de 'forme'
 		break;
 
-		default:;
+		default:;													//normalement on ne devrait pas aller la, mais au cas ou, on renvoie un seul point a l'origine
 		forme->size=1;
 		forme->ptarray=calloc(forme->size,sizeof(XPoint));
 		XPoint null[1]={{0,0}};
@@ -94,9 +96,9 @@ void createXPointArray(Forme *forme){
 	la hauteur et la largeur doivent etre renseignes
 */
 void genereforme(Forme *forme, int f, int w, int h){
-	forme->w=w/2; forme->h=h/2;
-	forme->f=f;
-	createXPointArray(forme);
+	forme->w=w/2; forme->h=h/2;									//on prend la taille d'une forme comme la moitie de la taille d'une carte
+	forme->f=f;													//on charge la forme
+	createXPointArray(forme);									//on fait correspondre une chaine de points a la forme
 }
 
 
