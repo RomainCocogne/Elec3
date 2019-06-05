@@ -11,8 +11,7 @@ compile/main: $(OBJ)
 	@$(CC) -o $@ $^ $(LDFLAGS)
 	@rm -rf ./*.o
 
-compile/main.o: matrice.h jeu.h
-compile/main.o: shuffle.h
+compile/main.o: jeu.h
 
 %.o: %.c
 	@$(CC) -o $@ -c $< $(CFLAGS)

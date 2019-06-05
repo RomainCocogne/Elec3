@@ -5,11 +5,10 @@
 #define DECOUVERTE	2
 
 
-// enum FORME {CARRE, ROND, TRIANGLE,ETOILE};
 typedef struct
 {
-	int id,mode;
-	int f;
+	int id;
+	int mode;
 
 } Card;
 
