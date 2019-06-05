@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
   initAffichage(&jeu, GRILLEWIDTH, GRILLEHEIGHT);       //initialisation de l'affichage
   // genereGame();                                         //creation des widgets
   init_display(argc, argv, NULL);
-  ShowDisplay();                                        //affichage
+  // ShowDisplay();                                        //affichage
   MainLoop();                                           //loop
 
   return EXIT_SUCCESS;
