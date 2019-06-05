@@ -7,7 +7,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <libsx.h>
+<<<<<<< Updated upstream
 #include "display.h"
+=======
+>>>>>>> Stashed changes
 
 enum FORME {CARRE, ROND, TRIANGLE,ETOILE};
 

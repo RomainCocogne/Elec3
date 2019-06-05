@@ -12,9 +12,12 @@ typedef struct
 
 } Card;
 
+<<<<<<< Updated upstream
 extern int getCardMode(Card c);
 
 extern int getCardId(Card c);
+=======
+>>>>>>> Stashed changes
 
 
 extern void initCard(Card *carte, int id , int mode, int f);
