@@ -12,10 +12,6 @@ typedef struct
 
 } Card;
 
-extern int getCardMode(Card c);
 
-extern int getCardId(Card c);
-
-
-extern void initCard(Card *carte, int id , int mode, int f);
+extern void initCard(Card *carte, int id , int mode);
 

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <libsx.h>
 #include "display.h"
-#include "player.h"
+#include "score.h"
 
 extern int GRILLEWIDTH;
 extern int GRILLEHEIGHT;

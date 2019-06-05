@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "jeu.h"
 #include "forme.h"
-#include "player.h"
+#include "score.h"
 #include <libsx.h>
 #include <string.h>
 #include "callbacks.h"
