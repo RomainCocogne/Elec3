@@ -7,8 +7,3 @@ il en faut 10:1666
 j'en suis a 8:1666
 plus que 1:1666
 le dixieme:1666
-<<<<<<< Updated upstream
-le meilleur:1666
-=======
-PaulLeBG:1750
->>>>>>> Stashed changes
