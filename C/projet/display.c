@@ -6,6 +6,8 @@ display *screen;
 Widget card1;
 Widget card2;
 
+char * rules_str= "The cards are layed in rows, face down.\nTurn over any two cards.If the two cards match,they are kept shown.\nIf they don't match,they are turned back over.\nRemember what was on each card and where it was.\n\nThe game is over when all the cards have been matched and revealed.\nTo register your score, click again anywhere on the screen.";
+
 
 
 void initGlobalDisplay(){
@@ -117,17 +119,24 @@ void fenetreDeFin(){
     Widget boutonRejouer = MakeButton("\n     replay      \n\n",replay,NULL);
     Widget boutonQuitter = MakeButton("\n     quit      \n\n",quit,NULL); 
     SetWidgetPos(score,PLACE_UNDER,congrats,NO_CARE,NULL);
-    SetWidgetPos(boutonRejouer,PLACE_UNDER,score,NO_CARE,NULL);
-    SetWidgetPos(boutonQuitter,PLACE_UNDER,score,PLACE_RIGHT,boutonRejouer);
-    if(sc<=getLastScore() || nbScores()<10){
+    if(sc>=getLastScore() || nbScores()<10){
         Widget nomJoueur = MakeStringEntry("name",MAX_NAME,NULL,NULL);
         strEntry=nomJoueur;
         Player *joueur=malloc(sizeof(Player));
         initPlayer(joueur);
         setPlayerScore(joueur,sc);
         Widget boutonEnregistrer = MakeButton("Save score",saveScore,joueur);
-        SetWidgetPos(nomJoueur,PLACE_UNDER,boutonRejouer,NO_CARE,NULL);
+        SetWidgetPos(nomJoueur,PLACE_UNDER,score,NO_CARE,NULL);
         SetWidgetPos(boutonEnregistrer,PLACE_UNDER,nomJoueur,NO_CARE,NULL);
+    	SetWidgetPos(boutonRejouer,PLACE_UNDER,boutonEnregistrer,NO_CARE,NULL);
+    	SetWidgetPos(boutonQuitter,PLACE_UNDER,boutonEnregistrer,PLACE_RIGHT,boutonRejouer);
+    }
+    else{
+    	Widget too_bad;
+    	too_bad=MakeLabel("Too bad ! your score isn't good enough to be registered :(");
+    	SetWidgetPos(too_bad,PLACE_UNDER,score,NO_CARE,NULL);
+    	SetWidgetPos(boutonRejouer,PLACE_UNDER,too_bad,NO_CARE,NULL);
+    	SetWidgetPos(boutonQuitter,PLACE_UNDER,too_bad,PLACE_RIGHT,boutonRejouer);
     }
     ShowDisplay();
 }
@@ -209,4 +218,53 @@ void initAffichage(int grilleWidth, int grilleHeight){
 
     initBgColor(bgColor, 2);
     initCardColor(cardColor,4);
+}
+
+void ruler (Widget w,void *d){
+	newWindow("rules");
+	Widget label_rules, form_rules, form_under_panel;
+	form_rules=MakeForm(TOP_LEVEL_FORM);
+	label_rules=MakeLabel(rules_str);
+	SetWidgetPos(label_rules,NO_CARE,NULL,NO_CARE,NULL);
+
+	form_under_panel=MakeForm(TOP_LEVEL_FORM);
+    
+    sidePanel();
+
+    SetWidgetPos(form_under_panel,PLACE_RIGHT,form_rules,NO_CARE,NULL);
+	ShowDisplay();
+  
+}
+
+void printScores(Widget w, void *d){
+	newWindow("hight scores");
+	Widget label_scores, form_hight_score, form_under_panel;
+  	form_hight_score=MakeForm(TOP_LEVEL_FORM);
+	Liste joueurs;
+	initListe(&joueurs);
+	getScore(&joueurs);
+	// printf("%s\n",((Player *)ieme(joueurs,1))->name);
+
+	char strJoueurs[(longueur(joueurs)+1)*sizeof(char)*MAX_NAME*2];
+	if(longueur(joueurs)>0){
+		sprintf(strJoueurs,"%s : %d\n",((Player *)ieme(joueurs,1))->name,((Player *)ieme(joueurs,1))->score);
+		for(int i=2; i<=longueur(joueurs); i++){
+			char temp[sizeof(char)*MAX_NAME*2];
+		    sprintf(temp,"%s : %d\n",((Player *)ieme(joueurs,i))->name,((Player *)ieme(joueurs,i))->score);
+
+			strcat(strJoueurs,temp);
+		}
+	}
+	else{
+		strcpy(strJoueurs,"No hight score yet.");
+	}
+  	label_scores=MakeLabel(strJoueurs);
+  	SetWidgetPos(label_scores,NO_CARE,NULL,NO_CARE,NULL);
+
+  	form_under_panel=MakeForm(TOP_LEVEL_FORM);
+    
+    sidePanel();
+
+    SetWidgetPos(form_under_panel,PLACE_RIGHT,form_hight_score,NO_CARE,NULL);
+  	ShowDisplay();
 }

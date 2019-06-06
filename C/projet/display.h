@@ -35,4 +35,5 @@ extern void genereGame();
 extern void fenetreDeFin();
 extern void menu();
 extern void initAffichage(int grilleWidth, int grilleHeight);
-
+extern void ruler (Widget w,void *d);
+extern void printScores(Widget w, void *d);
