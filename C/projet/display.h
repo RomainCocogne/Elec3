@@ -27,6 +27,8 @@ extern Widget strEntry;
 extern void initGlobalDisplay();
 extern void hide (int width, int height);
 extern void show(Widget w, int width, int height, void *d);
+extern void sidePanel();
+extern void newWindow(char *c);
 extern void displayDrawArea(Widget w, int width, int height, void *data);
 extern void genereGame();
 extern void fenetreDeFin();

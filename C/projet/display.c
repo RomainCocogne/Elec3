@@ -31,6 +31,20 @@ void show(Widget w, int width, int height, void *data){
     free(forme.ptarray);
 }
 
+void sidePanel(){
+	Widget return_button, quit_button;
+	return_button=MakeButton("return", replay,NULL);
+    quit_button=MakeButton("quit",quit,NULL);
+    SetWidgetPos(quit_button,PLACE_UNDER,return_button,NO_CARE,NULL);
+}
+
+void newWindow(char *c){
+	Widget w;
+	CloseWindow();
+    w=MakeWindow(c,NULL,NONEXCLUSIVE_WINDOW);
+    SetCurrentWindow(w);
+}
+
 /*
 	Fonction de callback des zones de dessin qui représentent les cartes. 
 	Appelée une premiére fois par chaque zone lors du premier affichage, puis rappelée à 
@@ -48,17 +62,15 @@ void displayDrawArea(Widget w, int width, int height, void *data){
 
 
 void genereGame(){
-	CloseWindow();
-    Widget window, form_game, form_right_panel;
-    Widget return_button, quit_button;
-    window=MakeWindow("game",NULL,NONEXCLUSIVE_WINDOW);
-    SetCurrentWindow(window);
+    Widget form_game, form_right_panel;
+	newWindow("game");
+    form_game=MakeForm(TOP_LEVEL_FORM);
+
     initJeu(screen->board,screen->grilleWidth*screen->grilleHeight);               //initialisation du jeu
     initAffichage(screen->grilleWidth, screen->grilleHeight);       //initialisation de l'affichage
 
     Widget tabWidget[screen->grilleWidth*screen->grilleHeight];
     
-    form_game=MakeForm(TOP_LEVEL_FORM);
 
     for (int k=0; k<screen->grilleHeight*screen->grilleWidth;k++){
         tabWidget[k] = MakeDrawArea(DEFAULT_CARD_WIDTH,DEFAULT_CARD_HEIGHT,displayDrawArea,screen->board->TabCartes+k);
@@ -84,9 +96,7 @@ void genereGame(){
     }
     form_right_panel=MakeForm(TOP_LEVEL_FORM);
     
-    return_button=MakeButton("return", replay,NULL);
-    quit_button=MakeButton("quit",quit,NULL);
-    SetWidgetPos(quit_button,PLACE_UNDER,return_button,NO_CARE,NULL);
+    sidePanel();
 
     SetWidgetPos(form_right_panel,PLACE_RIGHT,form_game,NO_CARE,NULL);
     ShowDisplay();
@@ -96,10 +106,7 @@ void genereGame(){
 
 
 void fenetreDeFin(){
-	CloseWindow();
-	Widget window;
-    window=MakeWindow("congratulation !",NULL,NONEXCLUSIVE_WINDOW);
-    SetCurrentWindow(window);
+	newWindow("congratulation !");
 
     size_t sc=(int)((1.0+1.0/(double)(screen->board->nbCoups))*(screen->grilleWidth*screen->grilleHeight)*100);
     MakeWindow(NULL,SAME_DISPLAY,EXCLUSIVE_WINDOW);
@@ -128,10 +135,7 @@ void fenetreDeFin(){
 
 
 void menu(){
-  CloseWindow();
-  Widget window;
-  window=MakeWindow("menu",NULL,NONEXCLUSIVE_WINDOW);
-  SetCurrentWindow(window);
+  newWindow("menu");
   Widget welcome,highest_scores,rules,difficulty,diff_3x2,diff_4x3,diff_4x4,diff_5x4,diff_6x5,diff_8x4,start,quit_button,space1,space2,space3,space4 ;
 
   //labels.

@@ -23,20 +23,15 @@ void saveScore(Widget w, void *d){
 }
 
 void ruler (Widget w,void *d){
-	CloseWindow();
-	Widget window,label_rules, form_rules, form_under_panel;
-	Widget return_button, quit_button;
-	window=MakeWindow("Rules",NULL,NONEXCLUSIVE_WINDOW);
-	SetCurrentWindow(window);
+	newWindow("rules");
+	Widget label_rules, form_rules, form_under_panel;
 	form_rules=MakeForm(TOP_LEVEL_FORM);
 	label_rules=MakeLabel(" The cards are layed in rows, face down.\n Turn over any two cards.If the two cards match,they are kept shown.\n If they don't match,they are turned back over if you click anywhere on the screen.\n Remember what was on each card and where it was.\n The game is over when all the cards have been matched and revealed");
 	SetWidgetPos(label_rules,NO_CARE,NULL,NO_CARE,NULL);
 
 	form_under_panel=MakeForm(TOP_LEVEL_FORM);
     
-    return_button=MakeButton("return", replay,NULL);
-    quit_button=MakeButton("quit",quit,NULL);
-    SetWidgetPos(quit_button,PLACE_UNDER,return_button,NO_CARE,NULL);
+    sidePanel();
 
     SetWidgetPos(form_under_panel,PLACE_RIGHT,form_rules,NO_CARE,NULL);
 	ShowDisplay();
@@ -50,11 +45,8 @@ void setSize(Widget w, void *d){
 }
 
 void printScores(Widget w, void *d){
-	CloseWindow();
-	Widget window,label_scores, form_hight_score, form_under_panel;
-	Widget return_button, quit_button;
-  	window=MakeWindow("HightScore",NULL,NONEXCLUSIVE_WINDOW);
-  	SetCurrentWindow(window);
+	newWindow("hight scores");
+	Widget label_scores, form_hight_score, form_under_panel;
   	form_hight_score=MakeForm(TOP_LEVEL_FORM);
 	Liste joueurs;
 	initListe(&joueurs);
@@ -79,9 +71,7 @@ void printScores(Widget w, void *d){
 
   	form_under_panel=MakeForm(TOP_LEVEL_FORM);
     
-    return_button=MakeButton("return", replay,NULL);
-    quit_button=MakeButton("quit",quit,NULL);
-    SetWidgetPos(quit_button,PLACE_UNDER,return_button,NO_CARE,NULL);
+    sidePanel();
 
     SetWidgetPos(form_under_panel,PLACE_RIGHT,form_hight_score,NO_CARE,NULL);
   	ShowDisplay();
