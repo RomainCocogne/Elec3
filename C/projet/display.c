@@ -154,7 +154,7 @@ void fenetreDeFin(){
     char str[4];
     sprintf(str,"%ld",sc);
     Widget score = MakeLabel(str);
-    Widget boutonRejouer = MakeButton("\n     replay      \n\n",replay,NULL);
+    Widget boutonRejouer = MakeButton("\n     menu      \n\n",menu,NULL);
     Widget boutonQuitter = MakeButton("\n     quit      \n\n",quit,NULL); 
     SetWidgetPos(score,PLACE_UNDER,congrats,NO_CARE,NULL);
    

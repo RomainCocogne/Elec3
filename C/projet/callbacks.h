@@ -5,6 +5,7 @@
 #include <string.h>
 #include "display.h"
 #include "score.h"
+#include "couleur.h"
 
 
 /****************************/
@@ -27,14 +28,6 @@ extern Widget card2Widget;
   Callback pour quitter le programme
 */
 extern void quit(Widget , void *d);
-
-/*
-  Callback pour relancer une partie
-  Ferme les feêntres ouvertes, libére l'espace aloué aux cartes de lapattie précdente,
-  et reinitialise les paramétres de la partie et de l'affichage.
-*/
-extern void replay(Widget , void *);
-
 extern void saveScore(Widget , void *);
 extern void setSize(Widget , void *);
 extern void retournerCarte(Widget , int , int , int , void *);
