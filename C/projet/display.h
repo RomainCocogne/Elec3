@@ -4,6 +4,7 @@
 #include "jeu.h"
 #include "forme.h"
 #include "score.h"
+#include "couleur.h"
 #include <libsx.h>
 #include <string.h>
 #include "callbacks.h"
@@ -11,12 +12,8 @@
 
 #define DEFAULT_CARD_WIDTH 100
 #define DEFAULT_CARD_HEIGHT 180
-extern int GRILLEWIDTH;
-extern int GRILLEHEIGHT;
-
 
 typedef struct{
-	int color[6];
 	int grilleWidth, grilleHeight;
 	int fact;
 	Jeu *board;

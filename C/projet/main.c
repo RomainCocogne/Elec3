@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
   }
   
   initGlobalDisplay();                                  //initalise la variable globale d'ecran
-  menu();                                               //affiche le menu
+  menu();                                               //affiche le menu. tout le reste va s'afficher avec des callbacks
   MainLoop();                                           //loop
 
   return EXIT_SUCCESS;

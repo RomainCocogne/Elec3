@@ -38,14 +38,12 @@ void shuffle(void *array, size_t n, size_t size) {
 void initTabCartes(Card *TabCartes,int nbCartes){
     int i, f;
     for(i=0, f=0; i<nbCartes/2; i++, f++){
-         // initCard(TabCartes+2*i,i,CACHEE);
     	
 		//Initalisation de la paire de cartes avec le même id.
     	(TabCartes+2*i)->id = i;	
     	(TabCartes+2*i+1)->id = i;
     	(TabCartes+2*i)->mode = CACHEE;
     	(TabCartes+2*i+1)->mode = CACHEE;
-         // initCard(TabCartes+2*i+1,i,CACHEE);
     }
     //Mélange du tableau de carte
     shuffle(TabCartes,nbCartes,sizeof(Card));

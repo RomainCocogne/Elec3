@@ -9,6 +9,7 @@
 #include "jeu.h"
 #include "callbacks.h"
 #include "display.h"
+#include "couleur.h"
 
 
 

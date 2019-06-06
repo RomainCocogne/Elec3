@@ -45,9 +45,8 @@ void ruler (Widget w,void *d){
 
 void setSize(Widget w, void *d){
 	char *str=(char*)d;
-	GRILLEWIDTH=str[0]-'0';
-	GRILLEHEIGHT=str[1]-'0';
-	printf("%d,%d\n",GRILLEHEIGHT,GRILLEWIDTH);
+	screen->grilleWidth=str[0]-'0';
+	screen->grilleHeight=str[1]-'0';
 }
 
 void printScores(Widget w, void *d){
