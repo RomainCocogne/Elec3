@@ -148,16 +148,16 @@ void startGame(){
 
 void fenetreDeFin(){
     newWindow("congratulation !");
-
+    Widget form_end_game, form_right_panel;
     size_t sc=(int)((0.5+1.0/(double)(screen->game->nbCoups))*(screen->grilleWidth*screen->grilleHeight)*100);
-    Widget congrats = MakeLabel("Congratulation ! You won ! \nYour score is :");
     char str[4];
     sprintf(str,"%ld",sc);
+
+   	form_end_game=MakeForm(TOP_LEVEL_FORM);
+    Widget congrats = MakeLabel("Congratulation ! You won ! \nYour score is :");
     Widget score = MakeLabel(str);
-    Widget boutonRejouer = MakeButton("\n     menu      \n\n",menu,NULL);
-    Widget boutonQuitter = MakeButton("\n     quit      \n\n",quit,NULL); 
     SetWidgetPos(score,PLACE_UNDER,congrats,NO_CARE,NULL);
-   
+
     if(sc>=getLastScore() || nbScores()<10){
         Widget nomJoueur = MakeStringEntry("name",MAX_NAME,NULL,NULL);
         strEntry=nomJoueur;
@@ -167,17 +167,15 @@ void fenetreDeFin(){
         Widget boutonEnregistrer = MakeButton("Save score",saveScore,joueur);
         SetWidgetPos(nomJoueur,PLACE_UNDER,score,NO_CARE,NULL);
         SetWidgetPos(boutonEnregistrer,PLACE_UNDER,nomJoueur,NO_CARE,NULL);
-        SetWidgetPos(boutonRejouer,PLACE_UNDER,boutonEnregistrer,NO_CARE,NULL);
-        SetWidgetPos(boutonQuitter,PLACE_UNDER,boutonEnregistrer,PLACE_RIGHT,boutonRejouer);
     }
 
     else{
     	Widget too_bad;
     	too_bad=MakeLabel("Too bad ! Your score isn't good enough to be registered :(");
-    	SetWidgetPos(too_bad,PLACE_UNDER,score,NO_CARE,NULL);
-    	SetWidgetPos(boutonRejouer,PLACE_UNDER,too_bad,NO_CARE,NULL);
-    	SetWidgetPos(boutonQuitter,PLACE_UNDER,too_bad,PLACE_RIGHT,boutonRejouer);
-    }
+    	SetWidgetPos(too_bad,PLACE_UNDER,score,NO_CARE,NULL);}
+    form_right_panel=MakeForm(TOP_LEVEL_FORM);
+    sidePanel();
+    SetWidgetPos(form_right_panel,PLACE_RIGHT,form_end_game,NO_CARE,NULL);
     ShowDisplay();
 }
 
@@ -257,23 +255,23 @@ void initAffichage(int grilleWidth, int grilleHeight){
 
 void ruler (Widget w,void *d){
 	newWindow("rules");
-	Widget label_rules, form_rules, form_under_panel;
+	Widget label_rules, form_rules, form_right_panel;
 	form_rules=MakeForm(TOP_LEVEL_FORM);
 	label_rules=MakeLabel((char *)rules_str);
 	SetWidgetPos(label_rules,NO_CARE,NULL,NO_CARE,NULL);
 
-	form_under_panel=MakeForm(TOP_LEVEL_FORM);
+	form_right_panel=MakeForm(TOP_LEVEL_FORM);
     
     sidePanel();
 
-    SetWidgetPos(form_under_panel,PLACE_RIGHT,form_rules,NO_CARE,NULL);
+    SetWidgetPos(form_right_panel,PLACE_RIGHT,form_rules,NO_CARE,NULL);
 	ShowDisplay();
   
 }
 
 void printScores(Widget w, void *d){
 	newWindow("hight scores");
-	Widget label_scores, form_hight_score, form_under_panel;
+	Widget label_scores, form_hight_score, form_right_panel;
   	form_hight_score=MakeForm(TOP_LEVEL_FORM);
 	Liste joueurs;
 	initListe(&joueurs);
@@ -296,10 +294,10 @@ void printScores(Widget w, void *d){
   	label_scores=MakeLabel(strJoueurs);
   	SetWidgetPos(label_scores,NO_CARE,NULL,NO_CARE,NULL);
 
-  	form_under_panel=MakeForm(TOP_LEVEL_FORM);
+  	form_right_panel=MakeForm(TOP_LEVEL_FORM);
     
     sidePanel();
 
-    SetWidgetPos(form_under_panel,PLACE_RIGHT,form_hight_score,NO_CARE,NULL);
+    SetWidgetPos(form_right_panel,PLACE_RIGHT,form_hight_score,NO_CARE,NULL);
   	ShowDisplay();
 }
