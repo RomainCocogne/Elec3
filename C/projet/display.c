@@ -37,8 +37,8 @@ void show(Widget w, int width, int height, void *data){
 
 void sidePanel(){
     Widget return_button, quit_button;
-    return_button=MakeButton("\n         return         \n\n", replay,NULL);
-    quit_button=MakeButton("\n          quit          \n\n",quit,NULL);
+    return_button=MakeButton("\n          Menu          \n\n", menu,NULL);
+    quit_button=MakeButton("\n          Quit          \n\n",quit,NULL);
 
     SetWidgetPos(quit_button,PLACE_UNDER,return_button,NO_CARE,NULL);
 }
