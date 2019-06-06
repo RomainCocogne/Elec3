@@ -35,7 +35,7 @@ void show(Widget w, int width, int height, void *data){
 
 void sidePanel(){
     Widget return_button, quit_button;
-    return_button=MakeButton("return", replay,NULL);
+    return_button=MakeButton("menu", menu,NULL);
     quit_button=MakeButton("quit",quit,NULL);
     SetWidgetPos(quit_button,PLACE_UNDER,return_button,NO_CARE,NULL);
 }
@@ -125,7 +125,7 @@ void fenetreDeFin(){
     char str[4];
     sprintf(str,"%ld",sc);
     Widget score = MakeLabel(str);
-    Widget boutonRejouer = MakeButton("\n     replay      \n\n",replay,NULL);
+    Widget boutonRejouer = MakeButton("\n     menu      \n\n",menu,NULL);
     Widget boutonQuitter = MakeButton("\n     quit      \n\n",quit,NULL); 
     SetWidgetPos(score,PLACE_UNDER,congrats,NO_CARE,NULL);
    

@@ -5,20 +5,13 @@ Widget card2Widget;
 
 void quit(Widget w, void *d)
 {
+	free(couleurBg->tab);  free(couleurBg);
+	free(couleurCard->tab);free(couleurCard);
+	free(screen->game);
+	free(screen);
     exit(EXIT_SUCCESS);
 }
 
-/*
-	A quoi elle sert du coup ?	
-*/
-void replay(Widget w, void *d){
-    // SetCurrentWindow(GetTopWidget(w));
-    // game->etape=MENU;
-    // free(screen->game->TabCartes);
-    // initJeu(screen->game,screen->fact);
-    // initAffichage(screen->game, screen->grilleWidth, screen->grilleHeight);
-    menu();
-}
 
 void saveScore(Widget w, void *d){
     Player *j=(Player *)d;
@@ -59,6 +52,7 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
 	        hide(areaWidth,areaHeight);
 	    	SetDrawArea(card2Widget);
 	        hide(areaWidth,areaHeight);
+	        SetDrawArea(w);
 	    }
     }
 
@@ -89,7 +83,6 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
     	et n'est pas déjà retournée.
 		L'utilisateur a donc cliqué une carte valide : on joue le coup
     */
-	SetDrawArea(w);
 	show(w,areaWidth,areaHeight, data);
 	//Enregistrement du widget cliqué
     if (screen->game->etape == CARTE1) 
