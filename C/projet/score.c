@@ -33,7 +33,7 @@ void addScore(Player joueur){
 
 void insertAndSort(Player *joueur, Liste *listejoueurs){
 	int i=1;
-	while(i<=longueur(*listejoueurs) && ((Player *)ieme(*listejoueurs,i))->score<=joueur->score)i++;
+	while(i<=longueur(*listejoueurs) && ((Player *)ieme(*listejoueurs,i))->score>=joueur->score)i++;
 	printf("%d\n",longueur(*listejoueurs));
 	if(i==1 || compare(*joueur,*(Player *)ieme(*listejoueurs,i-1))) inserer(listejoueurs,i,joueur);
 	while(longueur(*listejoueurs)>10) supprimer(listejoueurs,longueur(*listejoueurs));

@@ -1,10 +1,6 @@
-the best:1000
-le bg:1333
-Votre Nom:1333
-on degage le dernier:1333
-nouveau score:1333
-Léonie B):1333
-Votre Nom:1333
-un nom:1333
-vite:1666
-trop vite:1666
+le meilleur:3226
+un autre bg:3200
+the best:1260
+le best:1200
+Votre Nom:675
+Votre Nom:600

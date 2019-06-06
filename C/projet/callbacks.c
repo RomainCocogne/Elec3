@@ -10,7 +10,7 @@ void quit(Widget w, void *d)
 void replay(Widget w, void *d){
     // SetCurrentWindow(GetTopWidget(w));
     // board->etape=MENU;
-    free(screen->board->TabCartes);
+    // free(screen->board->TabCartes);
     // initJeu(screen->board,screen->fact);
     // initAffichage(screen->board, screen->grilleWidth, screen->grilleHeight);
     menu();

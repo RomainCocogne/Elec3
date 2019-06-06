@@ -56,7 +56,7 @@ void genereGame(){
     initJeu(screen->board,screen->grilleWidth*screen->grilleHeight);               //initialisation du jeu
     initAffichage(screen->grilleWidth, screen->grilleHeight);       //initialisation de l'affichage
 
-    Widget tabWidget[screen->fact];
+    Widget tabWidget[screen->grilleWidth*screen->grilleHeight];
     
     form_game=MakeForm(TOP_LEVEL_FORM);
 
@@ -101,11 +101,11 @@ void fenetreDeFin(){
     window=MakeWindow("congratulation !",NULL,NONEXCLUSIVE_WINDOW);
     SetCurrentWindow(window);
 
-    int sc=(int)((double)(screen->board->nbCoups)/screen->fact*1000);
+    size_t sc=(int)((1.0+1.0/(double)(screen->board->nbCoups))*(screen->grilleWidth*screen->grilleHeight)*100);
     MakeWindow(NULL,SAME_DISPLAY,EXCLUSIVE_WINDOW);
     Widget congrats = MakeLabel("Felicitations, vous avez gagne !\nVotre score est :");
     char str[4];
-    sprintf(str,"%d",sc);
+    sprintf(str,"%ld",sc);
     Widget score = MakeLabel(str);
     Widget boutonRejouer = MakeButton("\n     Rejouer      \n\n",replay,NULL);
     Widget boutonQuitter = MakeButton("\n     Quitter      \n\n",quit,NULL); 
@@ -189,10 +189,8 @@ void menu(){
 */
 void initAffichage(int grilleWidth, int grilleHeight){
     //Initialisation des variables globales
-    screen->fact=grilleWidth*grilleHeight;
     screen->grilleWidth = grilleWidth;
     screen->grilleHeight = grilleHeight;
-    // screen->board = jeu; 
 
     int bgColor[2], cardColor[4];
     bgColor[0]   = GetRGBColor(40,40,40);

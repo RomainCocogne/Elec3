@@ -15,7 +15,6 @@
 
 typedef struct{
 	int grilleWidth, grilleHeight;
-	int fact;
 	Jeu *board;
 } display;
 
