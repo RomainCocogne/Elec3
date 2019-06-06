@@ -78,17 +78,8 @@ extern void initGlobalDisplay();
 // 		  fonctions			//
 /****************************/
 
-/*
-  Callback pour quitter le programme
-*/
-extern void quit(Widget w, void *d);
 
-/*
-  Callback pour relancer une partie
-  Ferme les feêntres ouvertes, libére l'espace aloué aux cartes de lapattie précdente,
-  et reinitialise les paramétres de la partie et de l'affichage.
-*/
-extern void replay(Widget w, void *d);
+
 extern void hide (int width, int height);
 extern void show(Widget w, int width, int height, void *d);
 extern void sidePanel();

@@ -1,11 +1,16 @@
 #include "callbacks.h"
 
+Widget card1Widget;
+Widget card2Widget;
+
 void quit(Widget w, void *d)
 {
     exit(EXIT_SUCCESS);
 }
 
-
+/*
+	A qoi elle sert du coup ?	
+*/
 void replay(Widget w, void *d){
     // SetCurrentWindow(GetTopWidget(w));
     // board->etape=MENU;
@@ -53,9 +58,9 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
     if (screen->board->etape == VERIFICATION){
     	printf("Verification\n");
     	if (!verifierCoup(screen->board)){
-	    	SetDrawArea(card1);
+	    	SetDrawArea(card1Widget);
 	        hide(areaWidth,areaHeight);
-	    	SetDrawArea(card2);
+	    	SetDrawArea(card2Widget);
 	        hide(areaWidth,areaHeight);
 	    }
     }
@@ -66,14 +71,13 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
     		return;
     	}
     	show(w,areaWidth,areaHeight, data);
-        if (screen->board->etape == CARTE1) card1=w;
-        else card2=w;
+        if (screen->board->etape == CARTE1) card1Widget=w;
+        else card2Widget=w;
         jouerCoup(screen->board,data);
     }
     //Si la partie est terminée 
     if (screen->board->etape == TERMINE){
     	fenetreDeFin();
         return;
-        // exit(EXIT_SUCCESS);
     }
 }

@@ -3,8 +3,7 @@
 
 Widget strEntry;
 display *screen;
-Widget card1;
-Widget card2;
+
 
 char * rules_str= "The cards are layed in rows, face down.\nTurn over any two cards.If the two cards match,they are kept shown.\nIf they don't match,they are turned back over.\nRemember what was on each card and where it was.\n\nThe game is over when all the cards have been matched and revealed.\nTo register your score, click again anywhere on the screen.";
 
