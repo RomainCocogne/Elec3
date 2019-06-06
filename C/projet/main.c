@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
       return EXIT_FAILURE;
   }
   
-  initDisplay();                                        //initalise la variable globale d'ecran
+  initGlobalDisplay();                                  //initalise la variable globale d'ecran
   menu();                                               //affiche le menu
   MainLoop();                                           //loop
 

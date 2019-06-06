@@ -28,7 +28,7 @@ extern Widget card2;
 
 extern Widget strEntry;
 
-extern void initDisplay();
+extern void initGlobalDisplay();
 extern void hide (int width, int height);
 extern void show(Widget w, int width, int height, void *d);
 extern void displayDrawArea(Widget w, int width, int height, void *data);

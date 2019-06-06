@@ -10,7 +10,7 @@ Widget card1;
 Widget card2;
 
 
-void initDisplay(){
+void initGlobalDisplay(){
 	screen=malloc(sizeof(display));
 	screen->board=malloc(sizeof(Jeu));
 
@@ -54,12 +54,12 @@ void displayDrawArea(Widget w, int width, int height, void *data){
 
 void genereGame(){
 	CloseWindow();
-    initJeu(screen->board,GRILLEWIDTH*GRILLEHEIGHT);               //initialisation du jeu
-    initAffichage(GRILLEWIDTH, GRILLEHEIGHT);       //initialisation de l'affichage
     Widget window, form_game, form_right_panel;
     Widget return_button, quit_button;
     window=MakeWindow("game",NULL,NONEXCLUSIVE_WINDOW);
     SetCurrentWindow(window);
+    initJeu(screen->board,GRILLEWIDTH*GRILLEHEIGHT);               //initialisation du jeu
+    initAffichage(GRILLEWIDTH, GRILLEHEIGHT);       //initialisation de l'affichage
 
     Widget tabWidget[screen->fact];
     
@@ -102,11 +102,9 @@ void genereGame(){
 
 void fenetreDeFin(){
 	CloseWindow();
-	Widget window, form_end_window, form_under_panel;
-	Widget return_button, quit_button;
+	Widget window;
     window=MakeWindow("congratulation !",NULL,NONEXCLUSIVE_WINDOW);
     SetCurrentWindow(window);
-    form_end_window=MakeForm(TOP_LEVEL_FORM);
 
     int sc=(int)((double)(screen->board->nbCoups)/screen->fact*1000);
     MakeWindow(NULL,SAME_DISPLAY,EXCLUSIVE_WINDOW);
@@ -129,13 +127,6 @@ void fenetreDeFin(){
         SetWidgetPos(nomJoueur,PLACE_UNDER,boutonRejouer,NO_CARE,NULL);
         SetWidgetPos(boutonEnregistrer,PLACE_UNDER,nomJoueur,NO_CARE,NULL);
     }
-    form_under_panel=MakeForm(TOP_LEVEL_FORM);
-    
-    return_button=MakeButton("return", replay,NULL);
-    quit_button=MakeButton("quit",quit,NULL);
-    SetWidgetPos(quit_button,PLACE_UNDER,return_button,NO_CARE,NULL);
-
-    SetWidgetPos(form_under_panel,PLACE_UNDER,form_end_window,NO_CARE,NULL);
     ShowDisplay();
 }
 
