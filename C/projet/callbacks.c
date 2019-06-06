@@ -9,14 +9,14 @@ void quit(Widget w, void *d)
 }
 
 /*
-	A qoi elle sert du coup ?	
+	A quoi elle sert du coup ?	
 */
 void replay(Widget w, void *d){
     // SetCurrentWindow(GetTopWidget(w));
-    // board->etape=MENU;
-    // free(screen->board->TabCartes);
-    // initJeu(screen->board,screen->fact);
-    // initAffichage(screen->board, screen->grilleWidth, screen->grilleHeight);
+    // game->etape=MENU;
+    // free(screen->game->TabCartes);
+    // initJeu(screen->game,screen->fact);
+    // initAffichage(screen->game, screen->grilleWidth, screen->grilleHeight);
     menu();
 }
 
@@ -39,45 +39,62 @@ void setSize(Widget w, void *d){
 	Fonction de callback, appelée lorsque l'utilisateur clique sur une carte.
 	Appelle les fonctions du module jeu pour jouer les coups. Affiche graphiquement 
 	le resultat de chaque coup.
-	Quand deux cartes sont révélées, l'utilisateur peut observer leur valeur, 
-	et doit cliquer à nouveau pour les remettre face cachée ou pour valider la paire. 
+	Quand deux cartes sont révélées, l'utilisateur peut observer leur valeur.
+	Au prochain clic, le coup est verifié. Si la paire est juste, les cartes restent retournées, 
+	sinon la paire est remise face cachée. 
 
 	*data : pointeur sur type Carte, contient la carte du Widget qui à été cliqué.
 */
 void retournerCarte(Widget w, int which_button, int x, int y, void *data){
 
+	//Recupere les dimensions de la carte
     int areaWidth, areaHeight;
     GetDrawAreaSize(&areaWidth,&areaHeight);
 
-    if (screen->board->etape == VERIFICATION){
+    //Si deux cartes ont déjà été révélées, effectue la verification avant tout autre action
+    if (screen->game->etape == VERIFICATION){
     	printf("Verification\n");
-    	if (!verifierCoup(screen->board)){
+    	if (!verifierCoup(screen->game)){
 	    	SetDrawArea(card1Widget);
 	        hide(areaWidth,areaHeight);
 	    	SetDrawArea(card2Widget);
 	        hide(areaWidth,areaHeight);
 	    }
     }
-        //Si la partie est terminée 
-    if (screen->board->etape == TERMINE){
+
+    //Si la partie est terminée, afiche la fenêtre de fin
+    if (screen->game->etape == TERMINE){
     	fenetreDeFin();
         return;
-        // exit(EXIT_SUCCESS);
     }
-        //Si la carte est déjà révélée : pas d'action
-    if (((Card *)data)->mode == DECOUVERTE ){
-    	printf("Carte déja révélée\n");
+
+    /*La partie est toujours*/
+
+    //Si la carte est déjà decouverte: pas d'action
+    if (((Card *)data)->mode == DECOUVERTE){
+    	printf("Carte déja découverte\n");
     	return;
     }
-    if(screen->board->etape == CARTE1 || screen->board->etape == CARTE2){
-    	SetDrawArea(w);
-    	if (((Card *)data)->mode == RETOURNEE){
-    		printf("Carte déjà retournée, choisissez une autre carte\n");
-    		return;
-    	}
-    	show(w,areaWidth,areaHeight, data);
-        if (screen->board->etape == CARTE1) card1Widget=w;
-        else card2Widget=w;
-        jouerCoup(screen->board,data);
-    }
+
+    /*La carte cliquée n'a pas encore été découverte*/ 
+
+    //Si la carte est déjà retournée : pas d'action
+	if (((Card *)data)->mode == RETOURNEE){
+		printf("Carte déjà retournée, choisissez une autre carte\n");
+		return;
+	}
+    
+    /*
+    	La partie est toujours en cours, la carte n'a pas encore été découverte 
+    	et n'est pas déjà retournée.
+		L'utilisateur a donc cliqué une carte valide : on joue le coup
+    */
+	SetDrawArea(w);
+	show(w,areaWidth,areaHeight, data);
+	//Enregistrement du widget cliqué
+    if (screen->game->etape == CARTE1) 
+    	card1Widget=w;
+    else 
+    	card2Widget=w;
+    jouerCoup(screen->game,data);
 }

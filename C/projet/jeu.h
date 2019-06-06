@@ -67,7 +67,7 @@ extern void shuffle(void *, size_t , size_t);
 	Genere des paires de cartes ayant le même id. Il y a donc nbCartes/2 paires différentes.
 	Mélange l'ordre des cartes dans le tableau en appelant la fonction du module "shuffle" 
 */
-extern void initTabCartes(Card *TabCartes,int nbCartes);
+extern void initTabCartes(Card *,int );
 
 
 
@@ -75,7 +75,7 @@ extern void initTabCartes(Card *TabCartes,int nbCartes);
 	Initialise une strucutre Jeu déclarée au préalable. 
 	Doit être appelée en prmeier pour demarrer une partie. 
 */
-extern void initJeu(Jeu *jeu, int nbCartes);
+extern void initJeu(Jeu *, int );
 
 
 /*
@@ -86,7 +86,7 @@ extern void initJeu(Jeu *jeu, int nbCartes);
 	Si le jeu est à l'étape VERIFICATION ou TERMINE, la fonction ne fait rien.
 	Il faut appeler verifierCoup() avant de pouvoir jouer un autre coup
 */
-extern void jouerCoup(Jeu *jeu, Card *carteRetournee);
+extern void jouerCoup(Jeu *, Card *);
 
 
 /*
@@ -100,4 +100,4 @@ extern void jouerCoup(Jeu *jeu, Card *carteRetournee);
 		1 si les deux cartes sont identiques
 		0 sinon 
 */
-extern int verifierCoup(Jeu *jeu);
+extern int verifierCoup(Jeu *);
