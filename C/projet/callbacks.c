@@ -1,5 +1,6 @@
 #include "callbacks.h"
 
+char * rules_str= " The cards are layed in rows, face down.\n Turn over any two cards.If the two cards match,they are kept shown.\n If they don't match,they are turned back over if you click anywhere on the screen.\n Remember what was on each card and where it was.\n The game is over when all the cards have been matched and revealed";
 
 void quit(Widget w, void *d)
 {
@@ -26,7 +27,7 @@ void ruler (Widget w,void *d){
 	newWindow("rules");
 	Widget label_rules, form_rules, form_under_panel;
 	form_rules=MakeForm(TOP_LEVEL_FORM);
-	label_rules=MakeLabel(" The cards are layed in rows, face down.\n Turn over any two cards.If the two cards match,they are kept shown.\n If they don't match,they are turned back over if you click anywhere on the screen.\n Remember what was on each card and where it was.\n The game is over when all the cards have been matched and revealed");
+	label_rules=MakeLabel(rules_str);
 	SetWidgetPos(label_rules,NO_CARE,NULL,NO_CARE,NULL);
 
 	form_under_panel=MakeForm(TOP_LEVEL_FORM);

@@ -5,8 +5,6 @@
 #include "display.h"
 #include "score.h"
 
-
-
 extern void quit(Widget w, void *d);
 extern void replay(Widget w, void *d);
 extern void saveScore(Widget w, void *d);

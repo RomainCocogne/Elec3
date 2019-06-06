@@ -7,6 +7,7 @@ Widget card1;
 Widget card2;
 
 
+
 void initGlobalDisplay(){
 	screen=malloc(sizeof(display));
 	screen->board=malloc(sizeof(Jeu));
@@ -62,8 +63,9 @@ void displayDrawArea(Widget w, int width, int height, void *data){
 
 
 void genereGame(){
-    Widget form_game, form_right_panel;
 	newWindow("game");
+
+    Widget form_game, form_right_panel;
     form_game=MakeForm(TOP_LEVEL_FORM);
 
     initJeu(screen->board,screen->grilleWidth*screen->grilleHeight);               //initialisation du jeu
@@ -94,10 +96,9 @@ void genereGame(){
         right = NO_CARE;
         under = PLACE_UNDER; 
     }
-    form_right_panel=MakeForm(TOP_LEVEL_FORM);
-    
-    sidePanel();
 
+    form_right_panel=MakeForm(TOP_LEVEL_FORM);
+    sidePanel();
     SetWidgetPos(form_right_panel,PLACE_RIGHT,form_game,NO_CARE,NULL);
     ShowDisplay();
 
@@ -108,9 +109,8 @@ void genereGame(){
 void fenetreDeFin(){
 	newWindow("congratulation !");
 
-    size_t sc=(int)((1.0+1.0/(double)(screen->board->nbCoups))*(screen->grilleWidth*screen->grilleHeight)*100);
-    MakeWindow(NULL,SAME_DISPLAY,EXCLUSIVE_WINDOW);
-    Widget congrats = MakeLabel("Felicitations, vous avez gagne !\nVotre score est :");
+    size_t sc=(int)((0.5+1.0/(double)(screen->board->nbCoups))*(screen->grilleWidth*screen->grilleHeight)*100);
+    Widget congrats = MakeLabel("Congratulation ! you won ! \nyour score is :");
     char str[4];
     sprintf(str,"%ld",sc);
     Widget score = MakeLabel(str);
@@ -120,12 +120,12 @@ void fenetreDeFin(){
     SetWidgetPos(boutonRejouer,PLACE_UNDER,score,NO_CARE,NULL);
     SetWidgetPos(boutonQuitter,PLACE_UNDER,score,PLACE_RIGHT,boutonRejouer);
     if(sc<=getLastScore() || nbScores()<10){
-        Widget nomJoueur = MakeStringEntry("Votre Nom",MAX_NAME,NULL,NULL);
+        Widget nomJoueur = MakeStringEntry("name",MAX_NAME,NULL,NULL);
         strEntry=nomJoueur;
         Player *joueur=malloc(sizeof(Player));
         initPlayer(joueur);
         setPlayerScore(joueur,sc);
-        Widget boutonEnregistrer = MakeButton("Enregister le score",saveScore,joueur);
+        Widget boutonEnregistrer = MakeButton("Save score",saveScore,joueur);
         SetWidgetPos(nomJoueur,PLACE_UNDER,boutonRejouer,NO_CARE,NULL);
         SetWidgetPos(boutonEnregistrer,PLACE_UNDER,nomJoueur,NO_CARE,NULL);
     }

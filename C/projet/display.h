@@ -10,6 +10,7 @@
 #include "callbacks.h"
 
 
+
 #define DEFAULT_CARD_WIDTH 100
 #define DEFAULT_CARD_HEIGHT 180
 
