@@ -23,17 +23,17 @@ typedef struct{
 } display;
 
 extern display *screen;
-extern Widget widget1;
-extern Widget widget2;
+extern Widget card1;
+extern Widget card2;
 
 extern Widget strEntry;
-extern void quit(Widget w, void *d);
-extern void replay(Widget w, void *d);
+
+extern void initDisplay();
 extern void hide (int width, int height);
 extern void show(Widget w, int width, int height, void *d);
 extern void displayDrawArea(Widget w, int width, int height, void *data);
 extern void genereGame();
 extern void fenetreDeFin();
-extern void init_display(int argc, char *argv[], void *d);
-extern void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight);
+extern void menu();
+extern void initAffichage(int grilleWidth, int grilleHeight);
 

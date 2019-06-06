@@ -16,13 +16,11 @@
 
 /*
 	Etape : etats possibles du jeu
-		OFF : 
 		CARTE1 : le joueur doit retourner une premiere carte
 		CARTE2 : le joueur doit retourner une deuxiéme carte
 		VERIFICATION : le joueur à retourné deux cartes, le programme verifie les cartes retournées
 		TERMINE : la partie est finie
 */
-#define OFF 0
 #define CARTE1	1
 #define CARTE2	2
 #define VERIFICATION 3

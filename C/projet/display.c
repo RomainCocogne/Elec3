@@ -6,28 +6,15 @@ int GRILLEHEIGHT=2;
 
 Widget strEntry;
 display *screen;
-Widget widget1;
-Widget widget2;
+Widget card1;
+Widget card2;
 
-void quit(Widget w, void *d)
-{
-    exit(EXIT_SUCCESS);
+
+void initDisplay(){
+	screen=malloc(sizeof(display));
+	screen->board=malloc(sizeof(Jeu));
+
 }
-
-
-void replay(Widget w, void *d){
-    // SetCurrentWindow(GetTopWidget(w));
-    CloseWindow();
-    CloseWindow();
-    // board->etape=MENU;
-    free(screen->board->TabCartes);
-    // initJeu(screen->board,screen->fact);
-    // initAffichage(screen->board, screen->grilleWidth, screen->grilleHeight);
-    init_display(0, 0, NULL);
-}
-
-/**************/
-
 void hide (int width, int height){
 	SetColor(screen->color[0]);
     DrawFilledBox(0,0,width,height);
@@ -40,7 +27,10 @@ void show(Widget w, int width, int height, void *data){
     SetBgColor(w,screen->color[1]);
     Forme forme;
     genereforme(&forme,((Card *)data)->id%NB_FORMES,width,height);
-    int couleur[]={screen->color[2],screen->color[3],screen->color[4],screen->color[5],screen->color[3],screen->color[4],screen->color[5],screen->color[2],screen->color[4],screen->color[5],screen->color[2],screen->color[3],screen->color[5],screen->color[2],screen->color[3],screen->color[4]};
+    int couleur[]={screen->color[2],screen->color[3],screen->color[4],screen->color[5],
+    			   screen->color[3],screen->color[4],screen->color[5],screen->color[2],
+    			   screen->color[4],screen->color[5],screen->color[2],screen->color[3],
+    			   screen->color[5],screen->color[2],screen->color[3],screen->color[4]};
     SetFgColor(w,couleur[((Card *)data)->id]);
     DrawFilledPolygon(forme.ptarray,forme.size);
     free(forme.ptarray);
@@ -63,9 +53,9 @@ void displayDrawArea(Widget w, int width, int height, void *data){
 
 
 void genereGame(){
+	CloseWindow();
     initJeu(screen->board,GRILLEWIDTH*GRILLEHEIGHT);               //initialisation du jeu
-    initAffichage(screen->board, GRILLEWIDTH, GRILLEHEIGHT);       //initialisation de l'affichage
-    CloseWindow();
+    initAffichage(GRILLEWIDTH, GRILLEHEIGHT);       //initialisation de l'affichage
     Widget window, form_game, form_right_panel;
     Widget return_button, quit_button;
     window=MakeWindow("game",NULL,NONEXCLUSIVE_WINDOW);
@@ -111,6 +101,13 @@ void genereGame(){
 
 
 void fenetreDeFin(){
+	CloseWindow();
+	Widget window, form_end_window, form_under_panel;
+	Widget return_button, quit_button;
+    window=MakeWindow("congratulation !",NULL,NONEXCLUSIVE_WINDOW);
+    SetCurrentWindow(window);
+    form_end_window=MakeForm(TOP_LEVEL_FORM);
+
     int sc=(int)((double)(screen->board->nbCoups)/screen->fact*1000);
     MakeWindow(NULL,SAME_DISPLAY,EXCLUSIVE_WINDOW);
     Widget congrats = MakeLabel("Felicitations, vous avez gagne !\nVotre score est :");
@@ -132,15 +129,20 @@ void fenetreDeFin(){
         SetWidgetPos(nomJoueur,PLACE_UNDER,boutonRejouer,NO_CARE,NULL);
         SetWidgetPos(boutonEnregistrer,PLACE_UNDER,nomJoueur,NO_CARE,NULL);
     }
-    // free(screen);
+    form_under_panel=MakeForm(TOP_LEVEL_FORM);
+    
+    return_button=MakeButton("return", replay,NULL);
+    quit_button=MakeButton("quit",quit,NULL);
+    SetWidgetPos(quit_button,PLACE_UNDER,return_button,NO_CARE,NULL);
+
+    SetWidgetPos(form_under_panel,PLACE_UNDER,form_end_window,NO_CARE,NULL);
     ShowDisplay();
-    MainLoop();
 }
 
 
 
-void init_display(int argc, char *argv[], void *d){
-  // CloseWindow();
+void menu(){
+  CloseWindow();
   Widget window;
   window=MakeWindow("menu",NULL,NONEXCLUSIVE_WINDOW);
   SetCurrentWindow(window);
@@ -199,13 +201,12 @@ void init_display(int argc, char *argv[], void *d){
 	-jeu : un type Jeu initialisé au préalable
 	-grilleWidth, grilleHeight : largeur et hauteur de la grille en nombre de cartes
 */
-void initAffichage(Jeu *jeu, int grilleWidth, int grilleHeight){
-    screen=malloc(sizeof(display));
+void initAffichage(int grilleWidth, int grilleHeight){
     //Initialisation des variables globales
     screen->fact=grilleWidth*grilleHeight;
     screen->grilleWidth = grilleWidth;
     screen->grilleHeight = grilleHeight;
-    screen->board = jeu; 
+    // screen->board = jeu; 
 
     GetStandardColors();
     screen->color[0] = GetRGBColor(40,40,40);

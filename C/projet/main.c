@@ -18,12 +18,8 @@ int main(int argc, char *argv[])
       return EXIT_FAILURE;
   }
   
-  Jeu jeu;                                              //variable de jeu
-  initJeu(&jeu,GRILLEWIDTH*GRILLEHEIGHT);               //initialisation du jeu
-  initAffichage(&jeu, GRILLEWIDTH, GRILLEHEIGHT);       //initialisation de l'affichage
-  // genereGame();                                         //creation des widgets
-  init_display(argc, argv, NULL);
-  // ShowDisplay();                                        //affichage
+  initDisplay();                                        //initalise la variable globale d'ecran
+  menu();                                               //affiche le menu
   MainLoop();                                           //loop
 
   return EXIT_SUCCESS;

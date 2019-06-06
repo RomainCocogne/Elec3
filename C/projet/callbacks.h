@@ -7,6 +7,8 @@
 
 
 
+extern void quit(Widget w, void *d);
+extern void replay(Widget w, void *d);
 extern void saveScore(Widget w, void *d);
 extern void ruler (Widget w,void *d);
 extern void setSize(Widget w, void *d);

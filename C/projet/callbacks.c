@@ -1,6 +1,21 @@
 #include "callbacks.h"
 
 
+void quit(Widget w, void *d)
+{
+    exit(EXIT_SUCCESS);
+}
+
+
+void replay(Widget w, void *d){
+    // SetCurrentWindow(GetTopWidget(w));
+    // board->etape=MENU;
+    free(screen->board->TabCartes);
+    // initJeu(screen->board,screen->fact);
+    // initAffichage(screen->board, screen->grilleWidth, screen->grilleHeight);
+    menu();
+}
+
 void saveScore(Widget w, void *d){
     Player *j=(Player *)d;
     setPlayerName(j,GetStringEntry(strEntry));
@@ -8,13 +23,14 @@ void saveScore(Widget w, void *d){
 }
 
 void ruler (Widget w,void *d){
-  Widget window,label_rules;
-  window=MakeWindow("Rules",NULL,NONEXCLUSIVE_WINDOW);
-  SetCurrentWindow(window);
-  label_rules=MakeLabel(" The cards are layed in rows, face down.\n Turn over any two cards.If the two cards match,they are kept shown.\n If they don't match,they are turned back over if you click anywhere on the screen.\n Remember what was on each card and where it was.\n The game is over when all the cards have been matched and revealed");
-  SetWidgetPos(label_rules,NO_CARE,NULL,NO_CARE,NULL);
+	CloseWindow();
+	Widget window,label_rules;
+	window=MakeWindow("Rules",NULL,NONEXCLUSIVE_WINDOW);
+	SetCurrentWindow(window);
+	label_rules=MakeLabel(" The cards are layed in rows, face down.\n Turn over any two cards.If the two cards match,they are kept shown.\n If they don't match,they are turned back over if you click anywhere on the screen.\n Remember what was on each card and where it was.\n The game is over when all the cards have been matched and revealed");
+	SetWidgetPos(label_rules,NO_CARE,NULL,NO_CARE,NULL);
 
-  ShowDisplay();
+	ShowDisplay();
   
 }
 
@@ -26,6 +42,10 @@ void setSize(Widget w, void *d){
 }
 
 void printScores(Widget w, void *d){
+	CloseWindow();
+	Widget window,label_scores;
+  	window=MakeWindow("HightScore",NULL,NONEXCLUSIVE_WINDOW);
+  	SetCurrentWindow(window);
 	Liste joueurs;
 	initListe(&joueurs);
 	getScore(&joueurs);
@@ -44,9 +64,6 @@ void printScores(Widget w, void *d){
 	else{
 		strcpy(strJoueurs,"No hight score yet.");
 	}
-	Widget window,label_scores;
-  	window=MakeWindow("HightScore",NULL,NONEXCLUSIVE_WINDOW);
-  	SetCurrentWindow(window);
   	label_scores=MakeLabel(strJoueurs);
   	SetWidgetPos(label_scores,NO_CARE,NULL,NO_CARE,NULL);
   	ShowDisplay();
@@ -82,9 +99,9 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
     if (screen->board->etape == VERIFICATION){
     	printf("Verification\n");
     	if (!verifierCoup(screen->board)){;
-	    	SetDrawArea(widget1);
+	    	SetDrawArea(card1);
 	        hide(areaWidth,areaHeight);
-	    	SetDrawArea(widget2);
+	    	SetDrawArea(card2);
 	        hide(areaWidth,areaHeight);
 	    }
     }
@@ -94,8 +111,8 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
     		return;
     	}
     	show(w,areaWidth,areaHeight, data);
-        if (screen->board->etape == CARTE1) widget1=w;
-        else widget2=w;
+        if (screen->board->etape == CARTE1) card1=w;
+        else card2=w;
         jouerCoup(screen->board,data);
     }
 }
