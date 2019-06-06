@@ -41,12 +41,6 @@ void setSize(Widget w, void *d){
 */
 void retournerCarte(Widget w, int which_button, int x, int y, void *data){
 
-
-    //Si la carte est déjà révélée : pas d'action
-    if (((Card *)data)->mode == DECOUVERTE ){
-    	printf("Carte déja révélée\n");
-    	return;
-    }
     int areaWidth, areaHeight;
     GetDrawAreaSize(&areaWidth,&areaHeight);
 
@@ -59,6 +53,17 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
 	        hide(areaWidth,areaHeight);
 	    }
     }
+        //Si la partie est terminée 
+    if (screen->board->etape == TERMINE){
+    	fenetreDeFin();
+        return;
+        // exit(EXIT_SUCCESS);
+    }
+        //Si la carte est déjà révélée : pas d'action
+    if (((Card *)data)->mode == DECOUVERTE ){
+    	printf("Carte déja révélée\n");
+    	return;
+    }
     if(screen->board->etape == CARTE1 || screen->board->etape == CARTE2){
     	SetDrawArea(w);
     	if (((Card *)data)->mode == RETOURNEE){
@@ -69,11 +74,5 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
         if (screen->board->etape == CARTE1) card1=w;
         else card2=w;
         jouerCoup(screen->board,data);
-    }
-    //Si la partie est terminée 
-    if (screen->board->etape == TERMINE){
-    	fenetreDeFin();
-        return;
-        // exit(EXIT_SUCCESS);
     }
 }
