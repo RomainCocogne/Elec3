@@ -136,7 +136,10 @@ void fenetreDeFin(){
 
 void menu(){
   newWindow("menu");
-  Widget welcome,highest_scores,rules,difficulty,diff_3x2,diff_4x3,diff_4x4,diff_5x4,diff_6x5,diff_8x4,start,quit_button,space1,space2,space3,space4 ;
+  Widget welcome,highest_scores,rules,difficulty,
+  		 diff_3x2,diff_4x3,diff_4x4,diff_5x4,diff_6x5,diff_8x4,
+  		 start,quit_button,
+  		 space1,space2,space3,space4 ;
 
   //labels.
   welcome=MakeLabel("Welcome to MEMORY");

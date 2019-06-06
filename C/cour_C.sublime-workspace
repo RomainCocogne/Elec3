@@ -523,7 +523,7 @@
 			"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/display.c",
 			"settings":
 			{
-				"buffer_size": 7067,
+				"buffer_size": 7047,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -532,7 +532,7 @@
 			"file": "projet/callbacks.c",
 			"settings":
 			{
-				"buffer_size": 3801,
+				"buffer_size": 3830,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -550,7 +550,7 @@
 			"file": "projet/score.txt",
 			"settings":
 			{
-				"buffer_size": 88,
+				"buffer_size": 106,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -595,7 +595,7 @@
 			"file": "/media/romain/OS/Users/roco2/Desktop/Elec3/C/projet/display.h",
 			"settings":
 			{
-				"buffer_size": 824,
+				"buffer_size": 825,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -613,7 +613,7 @@
 			"file": "projet/callbacks.h",
 			"settings":
 			{
-				"buffer_size": 436,
+				"buffer_size": 434,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1175,15 +1175,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7067,
+						"buffer_size": 7047,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3133,
-								3133
+								3022,
+								3022
 							]
 						],
 						"settings":
@@ -1207,7 +1207,7 @@
 							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1700.0,
+						"translation.y": 1672.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1219,15 +1219,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3801,
+						"buffer_size": 3830,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1380,
-								1380
+								361,
+								361
 							]
 						],
 						"settings":
@@ -1253,11 +1253,11 @@
 							"synced": false,
 							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
 						},
-						"translation.x": 1.0,
-						"translation.y": 1577.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1295,7 +1295,7 @@
 						"translation.y": 444.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1304,7 +1304,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 88,
+						"buffer_size": 106,
 						"regions":
 						{
 						},
@@ -1330,7 +1330,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1365,7 +1365,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1416,7 +1416,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1457,7 +1457,7 @@
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1492,7 +1492,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1501,15 +1501,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 824,
+						"buffer_size": 825,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								612,
-								612
+								191,
+								191
 							]
 						],
 						"settings":
@@ -1530,10 +1530,10 @@
 							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 147.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -1568,7 +1568,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1577,19 +1577,22 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 436,
+						"buffer_size": 434,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								189,
-								189
+								111,
+								111
 							]
 						],
 						"settings":
 						{
+							"SL.24.region_keys":
+							[
+							],
 							"SL.28.region_keys":
 							[
 							],
@@ -1606,7 +1609,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1755,7 +1758,7 @@
 						"translation.y": 262.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
@@ -1834,7 +1837,7 @@
 						"translation.y": 735.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
