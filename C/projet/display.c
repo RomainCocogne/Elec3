@@ -114,8 +114,8 @@ void fenetreDeFin(){
     char str[4];
     sprintf(str,"%ld",sc);
     Widget score = MakeLabel(str);
-    Widget boutonRejouer = MakeButton("\n     Rejouer      \n\n",replay,NULL);
-    Widget boutonQuitter = MakeButton("\n     Quitter      \n\n",quit,NULL); 
+    Widget boutonRejouer = MakeButton("\n     replay      \n\n",replay,NULL);
+    Widget boutonQuitter = MakeButton("\n     quit      \n\n",quit,NULL); 
     SetWidgetPos(score,PLACE_UNDER,congrats,NO_CARE,NULL);
     SetWidgetPos(boutonRejouer,PLACE_UNDER,score,NO_CARE,NULL);
     SetWidgetPos(boutonQuitter,PLACE_UNDER,score,PLACE_RIGHT,boutonRejouer);
