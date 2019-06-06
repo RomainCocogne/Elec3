@@ -3,7 +3,7 @@
 
 Widget strEntry;
 Widget pairesRestantesLabel;
-Widget infoBoxLabel;
+Widget infoBoxLabel, infoDiffLabel;
 display *screen;
 
 
@@ -65,6 +65,18 @@ void updateInfoBox(const char *infoBoxMsg){
     SetLabel(infoBoxLabel,(char *)infoBoxMsg); 
 }
 
+void initDiffBox(int pos1, Widget w1, int pos2, Widget w2){
+	char diff[27];
+	sprintf(diff,"(Current Difficulty: %dx%d)",DEFUALT_GRILLEWIDTH,DEFUALT_GRILLEHEIGHT);
+	infoDiffLabel=MakeLabel(diff);
+	SetWidgetPos(infoDiffLabel,pos1,w1,pos2,w2);
+
+}
+void updateDiffBox(){
+	char diff[27];
+	sprintf(diff,"(Current Difficulty: %dx%d)",screen->grilleWidth,screen->grilleHeight);
+	SetLabel(infoDiffLabel,diff);
+}
 void newWindow(char *c){
     Widget w;
     CloseWindow();
@@ -228,6 +240,7 @@ void menu(){
   SetWidgetPos(start,PLACE_UNDER,space2,NO_CARE,NULL);
   SetWidgetPos(space3,PLACE_RIGHT,start,PLACE_UNDER,space2);
   SetWidgetPos(quit_button,PLACE_RIGHT,space3,PLACE_UNDER,space2);
+  initDiffBox(PLACE_UNDER, difficulty,PLACE_RIGHT,diff_4x4);
 
   ShowDisplay(); 
 }

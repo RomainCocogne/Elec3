@@ -69,6 +69,8 @@ extern void show(Widget w, int width, int height, void *d);
 extern void sidePanel();
 extern void initInfoBox();
 extern void updateInfoBox(const char *);
+extern void initDiffBox(int pos1, Widget w1, int pos2, Widget w2);
+extern void updateDiffBox();
 extern void newWindow(char *c);
 extern void displayDrawArea(Widget w, int width, int height, void *data);
 extern void genereGame();

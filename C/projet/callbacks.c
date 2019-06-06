@@ -5,8 +5,6 @@ Widget card2Widget;
 
 void quit(Widget w, void *d)
 {
-	free(couleurBg->tab);  free(couleurBg);
-	free(couleurCard->tab);free(couleurCard);
 	free(screen->game);
 	free(screen);
     exit(EXIT_SUCCESS);
@@ -24,6 +22,7 @@ void setSize(Widget w, void *d){
 	char *str=(char*)d;
 	screen->grilleWidth=str[0]-'0';
 	screen->grilleHeight=str[1]-'0';
+	updateDiffBox();
 }
 
 
