@@ -1,13 +1,14 @@
 #pragma once
 #include <stdio.h>
 #include <stdlib.h>
+#include <libsx.h>
+#include <string.h>
 #include "jeu.h"
 #include "forme.h"
 #include "score.h"
 #include "couleur.h"
-#include <libsx.h>
-#include <string.h>
 #include "callbacks.h"
+#include "player.h"
 
 /****************************/
 // 		  Macros			//
@@ -18,8 +19,8 @@
 	Il s'agit de la taille des crtaes lors de l'affichage du debut d'une partie.
 	L'utilisateur peut ensuite redimensionner la fenêtre et changer la tailel des cartes.
  */
-#define DEFAULT_CARD_WIDTH 100
-#define DEFAULT_CARD_HEIGHT 180
+#define DEFAULT_CARD_WIDTH 90
+#define DEFAULT_CARD_HEIGHT 170
 
 
 /*
@@ -29,10 +30,11 @@
 #define DEFUALT_GRILLEWIDTH 3
 #define DEFUALT_GRILLEHEIGHT 2
 
+
+
 /****************************/
 // 		   types			//
 /****************************/
-
 
 /*
 	Structure contenant toutes les données necessaires à l'affichage de la partie.
@@ -65,6 +67,8 @@ extern void initGlobalDisplay();
 extern void hide (int width, int height);
 extern void show(Widget w, int width, int height, void *d);
 extern void sidePanel();
+extern void initInfoBox();
+extern void updateInfoBox(const char *);
 extern void newWindow(char *c);
 extern void displayDrawArea(Widget w, int width, int height, void *data);
 extern void genereGame();

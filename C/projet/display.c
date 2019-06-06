@@ -1,12 +1,14 @@
 #include "display.h"
-#include "player.h"
+
 
 Widget strEntry;
+Widget pairesRestantesLabel;
+Widget infoBoxLabel;
 display *screen;
 
 
 const char * rules_str= "The cards are layed in rows, face down.\nTurn over any two cards.If the two cards match,they are kept shown.\nIf they don't match,they are turned back over.\nRemember what was on each card and where it was.\n\nThe game is over when all the cards have been matched and revealed.\nTo register your score, click again anywhere on the screen.";
-
+const char * start_str= " The game starts now !";
 
 
 void initGlobalDisplay(){
@@ -35,9 +37,32 @@ void show(Widget w, int width, int height, void *data){
 
 void sidePanel(){
     Widget return_button, quit_button;
-    return_button=MakeButton("return", replay,NULL);
-    quit_button=MakeButton("quit",quit,NULL);
+    return_button=MakeButton("\n         return         \n\n", replay,NULL);
+    quit_button=MakeButton("\n          quit          \n\n",quit,NULL);
+
     SetWidgetPos(quit_button,PLACE_UNDER,return_button,NO_CARE,NULL);
+}
+
+void initInfoBox(){
+    Widget verticalSpace1, verticalSpace2;
+
+    verticalSpace1=MakeLabel("\n\n\n");
+    pairesRestantesLabel = MakeLabel(NULL);
+    verticalSpace2=MakeLabel("\n\n\n");
+    infoBoxLabel=MakeLabel(NULL);
+
+    SetWidgetPos(verticalSpace1, NO_CARE, NULL, NO_CARE, NULL);
+    SetWidgetPos(pairesRestantesLabel, PLACE_UNDER, verticalSpace1, NO_CARE, NULL);
+    SetWidgetPos(verticalSpace2, PLACE_UNDER, pairesRestantesLabel, NO_CARE, NULL);
+    SetWidgetPos(infoBoxLabel,PLACE_UNDER,verticalSpace2,NO_CARE,NULL);
+}
+
+
+void updateInfoBox(const char *infoBoxMsg){
+    char strPairesRestantes[25];
+    sprintf(strPairesRestantes,"%d",screen->game->nbCartesRestantes/2);
+    SetLabel(pairesRestantesLabel,strcat(strPairesRestantes," pair(s) left to match"));
+    SetLabel(infoBoxLabel,(char *)infoBoxMsg); 
 }
 
 void newWindow(char *c){
@@ -72,7 +97,7 @@ void displayDrawArea(Widget w, int width, int height, void *data){
 void startGame(){
     newWindow("game");
 
-    Widget form_game, form_right_panel;
+    Widget form_game, form_right_panel, form_infobox;
     form_game=MakeForm(TOP_LEVEL_FORM);
 
     initJeu(screen->game,screen->grilleWidth*screen->grilleHeight);               //initialisation du jeu
@@ -110,18 +135,22 @@ void startGame(){
 
     form_right_panel=MakeForm(TOP_LEVEL_FORM);
     sidePanel();
+    form_infobox=MakeForm(TOP_LEVEL_FORM);
+    initInfoBox();
+    updateInfoBox(start_str);
+    
     SetWidgetPos(form_right_panel,PLACE_RIGHT,form_game,NO_CARE,NULL);
+    SetWidgetPos(form_infobox,PLACE_RIGHT,form_game,PLACE_UNDER,form_right_panel);
+
     ShowDisplay();
-
-
 }
 
 
 void fenetreDeFin(){
-	newWindow("congratulation !");
+    newWindow("congratulation !");
 
     size_t sc=(int)((0.5+1.0/(double)(screen->game->nbCoups))*(screen->grilleWidth*screen->grilleHeight)*100);
-    Widget congrats = MakeLabel("Congratulation ! you won ! \nyour score is :");
+    Widget congrats = MakeLabel("Congratulation ! You won ! \nYour score is :");
     char str[4];
     sprintf(str,"%ld",sc);
     Widget score = MakeLabel(str);
@@ -144,7 +173,7 @@ void fenetreDeFin(){
 
     else{
     	Widget too_bad;
-    	too_bad=MakeLabel("Too bad ! your score isn't good enough to be registered :(");
+    	too_bad=MakeLabel("Too bad ! Your score isn't good enough to be registered :(");
     	SetWidgetPos(too_bad,PLACE_UNDER,score,NO_CARE,NULL);
     	SetWidgetPos(boutonRejouer,PLACE_UNDER,too_bad,NO_CARE,NULL);
     	SetWidgetPos(boutonQuitter,PLACE_UNDER,too_bad,PLACE_RIGHT,boutonRejouer);
@@ -182,7 +211,7 @@ void menu(){
   diff_4x3=MakeButton("4x3",setSize,"43");
   diff_4x4=MakeButton("4x4",setSize,"44");
   diff_5x4=MakeButton("5x4",setSize,"54");
-  diff_6x5=MakeButton("6x5",setSize,"65");
+  diff_6x5=MakeButton("7x4",setSize,"74");
   diff_8x4=MakeButton("8x4",setSize,"84");
 
   //position des widgets.

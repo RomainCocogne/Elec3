@@ -82,7 +82,6 @@ void jouerCoup(Jeu *jeu, Card *carteRetournee){
 			//Aucune carte n'est actuellement retournée  : la carte choisie est la premiere carte
 			carteRetournee->mode = RETOURNEE; 
 			jeu->carte1 = carteRetournee;
-			printf("Carte 1 retournée!\n");
 			//Une carte est retournée : on passe à l'étape CARTE2
 			jeu->etape = CARTE2;
 		}
@@ -90,7 +89,6 @@ void jouerCoup(Jeu *jeu, Card *carteRetournee){
 			//Une carte est retournée : la carte choisie est la deuxiéme
 			carteRetournee->mode = RETOURNEE;
 			jeu->carte2 = carteRetournee;
-			printf("Carte 2 retournée!\n");
 			//Les deux cartes sont retournées. Le jeu est avance à l'étape VERIFICATION
 			jeu-> etape = VERIFICATION;
 		}
@@ -114,12 +112,10 @@ int verifierCoup(Jeu *jeu){
 	if (jeu->carte1->id == jeu->carte2->id){
 		//Les deux cartes sont identiques
 		jeu->nbCartesRestantes -= 2;
-		printf("Cartes identiques\n");
 		jeu->carte1->mode = DECOUVERTE;
 		jeu->carte2->mode = DECOUVERTE;
 		if (jeu->nbCartesRestantes == 0){
 			//Toutes les cartes ont été decouvertes. La partie est terminée
-			printf("Felicitations ! Vous avez gagné !\n");
 			jeu->etape = TERMINE;
 		}
 		return 1;

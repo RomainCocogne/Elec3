@@ -22,7 +22,6 @@ void addScore(Player joueur){
 		Player *jp;
 		jp=((Player*)ieme(all_players,j));
 	    fprintf(ftemp,"%s:%d\n",jp->name,jp->score);
-	    // rmPlayer(jp);
 	}
 	fprintf(ftemp,"%s:%d",((Player*)ieme(all_players,longueur(all_players)))->name,((Player*)ieme(all_players,longueur(all_players)))->score);
 	fclose(fscore);fclose(ftemp);
@@ -56,7 +55,6 @@ void getScore(Liste *joueurs){
 		jtemp->score=atoi(buffer);
 		inserer(joueurs,longueur(*joueurs)+1,jtemp);
 		free(buffer); 
-		// rmPlayer(jtemp);
 		buffer=NULL;
 		
 	}
@@ -84,7 +82,6 @@ int getLastScore(){
 		
 	}
 	int sc=joueur.score;
-	// rmPlayer(joueur);
 	fclose(fscore);
 	return sc;
 }

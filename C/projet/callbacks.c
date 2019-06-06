@@ -36,7 +36,7 @@ void setSize(Widget w, void *d){
 
 
 /*
-	Fonction de callback, appelée lorsque l'utilisateur clique sur une carte.
+	Fonction appelée lorsque l'utilisateur clique sur une carte.
 	Appelle les fonctions du module jeu pour jouer les coups. Affiche graphiquement 
 	le resultat de chaque coup.
 	Quand deux cartes sont révélées, l'utilisateur peut observer leur valeur.
@@ -53,12 +53,17 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
 
     //Si deux cartes ont déjà été révélées, effectue la verification avant tout autre action
     if (screen->game->etape == VERIFICATION){
-    	printf("Verification\n");
-    	if (!verifierCoup(screen->game)){
+    	//Verification de la paire selectionnée
+    	if (verifierCoup(screen->game)){
+    		updateInfoBox("You found a pair !");
+    	}
+    	else{
+    		//La paire n'est pas bonne, on retourne les cartes
 	    	SetDrawArea(card1Widget);
 	        hide(areaWidth,areaHeight);
 	    	SetDrawArea(card2Widget);
 	        hide(areaWidth,areaHeight);
+    		updateInfoBox("Wrong pair !");
 	    }
     }
 
@@ -72,7 +77,7 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
 
     //Si la carte est déjà decouverte: pas d'action
     if (((Card *)data)->mode == DECOUVERTE){
-    	printf("Carte déja découverte\n");
+    	updateInfoBox("Card already matched !");
     	return;
     }
 
@@ -80,7 +85,7 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
 
     //Si la carte est déjà retournée : pas d'action
 	if (((Card *)data)->mode == RETOURNEE){
-		printf("Carte déjà retournée, choisissez une autre carte\n");
+		updateInfoBox("Card already picked !");
 		return;
 	}
     
