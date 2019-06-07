@@ -10,7 +10,7 @@ int compare (Player j1, Player j2){
 }
 void initPlayer(Player *j){
 	j->name=malloc(MAX_NAME*sizeof(char));
-	j->score=INT_MAX;
+	j->score=0;
 }
 void rmPlayer(Player *j){
 	free(j);

@@ -18,12 +18,17 @@ void addScore(Player joueur){
 	rewind(fscore);
 	insertAndSort(&joueur,&all_players);
 
-	for(int j=1; j<=longueur(all_players)-1; j++){
-		Player *jp;
+	for(int j=1; j<=longueur(all_players); j++){
+		Player *jp=malloc(sizeof(Player));
 		jp=((Player*)ieme(all_players,j));
-	    fprintf(ftemp,"%s:%d\n",jp->name,jp->score);
+
+	//     fprintf(ftemp,"%s:%d\n",jp->name,jp->score);
+		fwrite(jp->name,sizeof(char)*MAX_NAME,1,ftemp);
+		fwrite(&(jp->score),sizeof(int),1,ftemp);
 	}
-	fprintf(ftemp,"%s:%d",((Player*)ieme(all_players,longueur(all_players)))->name,((Player*)ieme(all_players,longueur(all_players)))->score);
+	// char test[20]="test";
+	// fwrite(test,sizeof(char)*20,1,ftemp);
+	// fprintf(ftemp,"%s:%d",((Player*)ieme(all_players,longueur(all_players)))->name,((Player*)ieme(all_players,longueur(all_players)))->score);
 	fclose(fscore);fclose(ftemp);
 	remove(FILE_NAME);
 	rename("file_temp",FILE_NAME);
@@ -43,20 +48,36 @@ void getScore(Liste *joueurs){
 	if((fscore=fopen(FILE_NAME,"r+"))==NULL) {
 		perror(FILE_NAME); exit(errno);
 	}
-	size_t sizebuff=0;
-	char* buffer=0;
-	ssize_t lenbuff=0;
-	while ((lenbuff=getdelim(&buffer, &sizebuff, ':',fscore)>0)) {
+	// size_t sizebuff=0;
+	// char* buffer=0;
+	// ssize_t lenbuff=0;
+	// while ((lenbuff=getdelim(&buffer, &sizebuff, ':',fscore)>0)) {
+	// 	buffer[strlen(buffer)-1]='\0';
+	// 	strcpy(jtemp->name,buffer);
+	// 	lenbuff=getline(&buffer, &sizebuff,fscore);
+	// 	jtemp->score=atoi(buffer);
+	// 	free(buffer); 
+	// 	buffer=NULL;
+		
+	// }
+	// char test [20];
+	char *bufferchar=malloc(sizeof(char)*MAX_NAME);
+	int bufferint;
+	while(fread(bufferchar,sizeof(char)*MAX_NAME,1,fscore)>0){
+		fread(&bufferint,sizeof(int),1,fscore);
+
 		Player *jtemp=malloc(sizeof(Player));
 		initPlayer(jtemp);
-		buffer[strlen(buffer)-1]='\0';
-		strcpy(jtemp->name,buffer);
-		lenbuff=getline(&buffer, &sizebuff,fscore);
-		jtemp->score=atoi(buffer);
+		strcpy(jtemp->name,bufferchar);
+		jtemp->score=bufferint;
 		inserer(joueurs,longueur(*joueurs)+1,jtemp);
-		free(buffer); 
-		buffer=NULL;
-		
+		printf("%d\n",longueur(*joueurs));
+		printf("%s:%d\n",((Player *)ieme(*joueurs,longueur(*joueurs)))->name,((Player *)ieme(*joueurs,longueur(*joueurs)))->score);
+	    free(bufferchar);
+	    // free(bufferint); 
+		bufferint=0;
+		bufferchar=NULL;
+		bufferchar=malloc(sizeof(char)*MAX_NAME);
 	}
 	fclose(fscore);
 }
@@ -66,22 +87,23 @@ int getLastScore(){
 	if((fscore=fopen(FILE_NAME,"r+"))==NULL) {
 		perror(FILE_NAME); exit(errno);
 	}
-	size_t sizebuff=0;
-	char* buffer=0;
-	ssize_t lenbuff=0;
-	
-	Player joueur;
-	while ((lenbuff=getdelim(&buffer, &sizebuff, ':',fscore)>0)) {
-		initPlayer(&joueur);
-		buffer[strlen(buffer)-1]='\0';
-		strcpy(joueur.name,buffer);
-		lenbuff=getline(&buffer, &sizebuff,fscore);
-		joueur.score=atoi(buffer);
-		free(buffer);
-		buffer=NULL;
+	// size_t sizebuff=0;
+	// char* buffer=0;
+	// ssize_t lenbuff=0;
+	Player *jtemp=malloc(sizeof(Player));
+	initPlayer(jtemp);
+	// while ((lenbuff=getdelim(&buffer, &sizebuff, ':',fscore)>0)) {
+	// 	initPlayer(&joueur);
+	// 	buffer[strlen(buffer)-1]='\0';
+	// 	strcpy(joueur.name,buffer);
+	// 	lenbuff=getline(&buffer, &sizebuff,fscore);
+	// 	joueur.score=atoi(buffer);
+	// 	free(buffer);
+	// 	buffer=NULL;
 		
-	}
-	int sc=joueur.score;
+	// }
+	while(fread(jtemp->name,sizeof(char)*MAX_NAME,1,fscore)) fread(&(jtemp->score),sizeof(int),1,fscore);
+	int sc=jtemp->score;
 	fclose(fscore);
 	return sc;
 }

@@ -15,6 +15,7 @@ void saveScore(Widget w, void *d){
     Player *j=(Player *)d;
     setPlayerName(j,GetStringEntry(strEntry));
     addScore(*j);
+    printScores(NULL,NULL);
 }
 
 

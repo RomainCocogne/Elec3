@@ -161,7 +161,7 @@ void startGame(){
 void fenetreDeFin(){
     newWindow("congratulation !");
     Widget form_end_game, form_right_panel;
-    size_t sc=(int)((0.5+1.0/(double)(screen->game->nbCoups))*(screen->grilleWidth*screen->grilleHeight)*100);
+    size_t sc=(int)((0.1+1.0/(double)(screen->game->nbCoups))*(screen->grilleWidth*screen->grilleHeight)*100);
     char str[4];
     sprintf(str,"%ld",sc);
 
@@ -289,7 +289,7 @@ void printScores(Widget w, void *d){
 	Liste joueurs;
 	initListe(&joueurs);
 	getScore(&joueurs);
-	// printf("%s\n",((Player *)ieme(joueurs,1))->name);
+	// printf("%s\n",((Player *)ieme(joueurs,longueur(joueurs)))->name);
 
 	char strJoueurs[(longueur(joueurs)+1)*sizeof(char)*MAX_NAME*2];
 	if(longueur(joueurs)>0){
