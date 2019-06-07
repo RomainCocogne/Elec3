@@ -59,6 +59,7 @@ typedef struct{
 extern display *screen;
 extern Widget strEntry;
 
+
 /****************************/
 // 		  fonctions			//
 /****************************/

@@ -8,7 +8,7 @@ display *screen;
 
 
 const char * rules_str= "The cards are layed in rows, face down.\nTurn over any two cards.If the two cards match,they are kept shown.\nIf they don't match,they are turned back over.\nRemember what was on each card and where it was.\n\nThe game is over when all the cards have been matched and revealed.\nTo register your score, click again anywhere on the screen.";
-const char * start_str= " The game starts now !";
+const char * start_str= " The game starts now !\n\n\n\n";
 
 
 void initGlobalDisplay(){
@@ -46,9 +46,9 @@ void sidePanel(){
 void initInfoBox(){
     Widget verticalSpace1, verticalSpace2;
 
-    verticalSpace1=MakeLabel("\n\n\n");
+    verticalSpace1=MakeLabel("\n");
     pairesRestantesLabel = MakeLabel(NULL);
-    verticalSpace2=MakeLabel("\n\n\n");
+    verticalSpace2=MakeLabel("\n");
     infoBoxLabel=MakeLabel(NULL);
 
     SetWidgetPos(verticalSpace1, NO_CARE, NULL, NO_CARE, NULL);
@@ -161,13 +161,14 @@ void startGame(){
 void fenetreDeFin(){
     newWindow("congratulation !");
     Widget form_end_game, form_right_panel;
-    size_t sc=(int)((0.1+1.0/(double)(screen->game->nbCoups))*(screen->grilleWidth*screen->grilleHeight)*100);
+    size_t sc=genereScore(*(screen->game));
     char str[4];
     sprintf(str,"%ld",sc);
 
    	form_end_game=MakeForm(TOP_LEVEL_FORM);
-    Widget congrats = MakeLabel("Congratulation ! You won ! \nYour score is :");
+    Widget congrats = MakeLabel("Your score is :");
     Widget score = MakeLabel(str);
+
     SetWidgetPos(score,PLACE_UNDER,congrats,NO_CARE,NULL);
 
     if(sc>=getLastScore() || nbScores()<10){
@@ -183,7 +184,7 @@ void fenetreDeFin(){
 
     else{
     	Widget too_bad;
-    	too_bad=MakeLabel("Too bad ! Your score isn't good enough to be registered :(");
+    	too_bad=MakeLabel("(Not enough to be registered)");
     	SetWidgetPos(too_bad,PLACE_UNDER,score,NO_CARE,NULL);}
     form_right_panel=MakeForm(TOP_LEVEL_FORM);
     sidePanel();
@@ -217,12 +218,12 @@ void menu(){
   quit_button=MakeButton("Quit", quit,NULL);
 
   //menu difficulté.
-  diff_3x2=MakeButton("3x2",setSize,"32");
-  diff_4x3=MakeButton("4x3",setSize,"43");
-  diff_4x4=MakeButton("4x4",setSize,"44");
-  diff_5x4=MakeButton("5x4",setSize,"54");
-  diff_6x5=MakeButton("7x4",setSize,"74");
-  diff_8x4=MakeButton("8x4",setSize,"84");
+  diff_3x2=MakeToggle("3x2",FALSE, NULL, setSize,"32");
+  diff_4x3=MakeToggle("4x3",FALSE, diff_3x2, setSize,"43");
+  diff_4x4=MakeToggle("4x4",FALSE, diff_3x2, setSize,"44");
+  diff_5x4=MakeToggle("5x4",FALSE, diff_3x2, setSize,"54");
+  diff_6x5=MakeToggle("7x4",FALSE, diff_3x2, setSize,"74");
+  diff_8x4=MakeToggle("8x4",FALSE, diff_3x2, setSize,"84");
 
   //position des widgets.
   SetWidgetPos(highest_scores,PLACE_UNDER,welcome,NO_CARE,NULL);

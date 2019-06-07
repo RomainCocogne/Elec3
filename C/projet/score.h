@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include "player.h"
+#include "jeu.h"
 
 /****************************/
 //		  variables			//
@@ -18,3 +19,4 @@ extern void insertAndSort(Player *joueur, Liste *tabjoueurs);
 extern void getScore(Liste *joueurs);
 extern int getLastScore();
 extern int nbScores();
+extern int genereScore (Jeu);

@@ -2,6 +2,7 @@
 
 Widget card1Widget;
 Widget card2Widget;
+int hide_next_move=NO;
 
 void quit(Widget w, void *d)
 {
@@ -21,6 +22,7 @@ void saveScore(Widget w, void *d){
 
 void setSize(Widget w, void *d){
 	char *str=(char*)d;
+	assert(!(((str[0]-'0')*(str[1]-'0'))&1));
 	screen->grilleWidth=str[0]-'0';
 	screen->grilleHeight=str[1]-'0';
 	updateDiffBox();
@@ -39,32 +41,25 @@ void setSize(Widget w, void *d){
 	*data : pointeur sur type Carte, contient la carte du Widget qui à été cliqué.
 */
 void retournerCarte(Widget w, int which_button, int x, int y, void *data){
+	//Si la partie est terminée, afiche la fenêtre de fin
+    if (screen->game->etape == TERMINE){
+    	fenetreDeFin();
+    	// updateInfoBox("You won! \nclick again to save your score");
+    	// screen->game->etape=EXIT;
+        return;
+    }
 
 	//Recupere les dimensions de la carte
     int areaWidth, areaHeight;
     GetDrawAreaSize(&areaWidth,&areaHeight);
 
-    //Si deux cartes ont déjà été révélées, effectue la verification avant tout autre action
-    if (screen->game->etape == VERIFICATION){
-    	//Verification de la paire selectionnée
-    	if (verifierCoup(screen->game)){
-    		updateInfoBox("You found a pair !");
-    	}
-    	else{
-    		//La paire n'est pas bonne, on retourne les cartes
-	    	SetDrawArea(card1Widget);
-	        hide(areaWidth,areaHeight);
-	    	SetDrawArea(card2Widget);
-	        hide(areaWidth,areaHeight);
-	        SetDrawArea(w);
-    		updateInfoBox("Wrong pair !");
-	    }
-    }
-
-    //Si la partie est terminée, afiche la fenêtre de fin
-    if (screen->game->etape == TERMINE){
-    	fenetreDeFin();
-        return;
+    if(hide_next_move){
+		SetDrawArea(card1Widget);
+		hide(areaWidth,areaHeight);
+		SetDrawArea(card2Widget);
+		hide(areaWidth,areaHeight);
+		SetDrawArea(w);   
+		hide_next_move=NO; 	
     }
 
     /*La partie est toujours*/
@@ -95,4 +90,23 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
     else 
     	card2Widget=w;
     jouerCoup(screen->game,data);
+     //Si deux cartes ont déjà été révélées, effectue la verification avant tout autre action
+    if (screen->game->etape == VERIFICATION){
+    	//Verification de la paire selectionnée
+    	if (verifierCoup(screen->game)){
+    		updateInfoBox("You found a pair !");
+    	}
+    	else{
+	     hide_next_move=YES;
+	     updateInfoBox("Wrong pair !");
+	    }
+    }
+        //Si la partie est terminée, afiche la fenêtre de fin
+    if (screen->game->etape == TERMINE){
+    	// fenetreDeFin();
+    	updateInfoBox("Game is finished! \nclick again\nto see your score");
+    	// screen->game->etape=EXIT;
+        return;
+    }
+
 }

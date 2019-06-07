@@ -109,3 +109,7 @@ int nbScores(){
 	fclose(fscore);free(bufferchar);
 	return lines;
 }
+
+int genereScore(Jeu jeu){
+	return (int)((0.1+1.0/(double)(jeu.nbCoups))*(jeu.nbCartes)*100);
+}

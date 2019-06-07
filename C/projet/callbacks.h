@@ -3,11 +3,13 @@
 #include <stdlib.h>
 #include <libsx.h>
 #include <string.h>
+#include <assert.h>
 #include "display.h"
 #include "score.h"
 #include "couleur.h"
 
-
+#define YES 1
+#define NO 0
 /****************************/
 //		  variables			//
 /****************************/
@@ -18,7 +20,7 @@
 */
 extern Widget card1Widget;
 extern Widget card2Widget;
-
+extern int hide_next_move;
 
 /****************************/
 // 		  fonctions			//
