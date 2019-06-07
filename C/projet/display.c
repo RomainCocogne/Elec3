@@ -67,7 +67,7 @@ void updateInfoBox(const char *infoBoxMsg){
 
 void initDiffBox(int pos1, Widget w1, int pos2, Widget w2){
 	char diff[27];
-	sprintf(diff,"(Current Difficulty: %dx%d)",DEFUALT_GRILLEWIDTH,DEFUALT_GRILLEHEIGHT);
+	sprintf(diff,"(Current Difficulty: %dx%d)",screen->grilleWidth,screen->grilleHeight);
 	infoDiffLabel=MakeLabel(diff);
 	SetWidgetPos(infoDiffLabel,pos1,w1,pos2,w2);
 
@@ -289,8 +289,7 @@ void printScores(Widget w, void *d){
 	Liste joueurs;
 	initListe(&joueurs);
 	getScore(&joueurs);
-	// printf("%s\n",((Player *)ieme(joueurs,longueur(joueurs)))->name);
-
+	
 	char strJoueurs[(longueur(joueurs)+1)*sizeof(char)*MAX_NAME*2];
 	if(longueur(joueurs)>0){
 		sprintf(strJoueurs,"%s : %d\n",((Player *)ieme(joueurs,1))->name,((Player *)ieme(joueurs,1))->score);
