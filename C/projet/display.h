@@ -79,17 +79,18 @@ extern display *screen;
 /****************************/
 
 extern void initGlobalDisplay();
-extern void hide (int width, int height);
-extern void show(Widget w, int width, int height, void *d);
+extern void initCouleurs();
 extern void initButtonBox();
 extern void initInfoBox();
 extern void updateInfoBox(const char *);
 extern void initDiffBox(int pos1, Widget w1, int pos2, Widget w2);
 extern void updateDiffBox();
 extern void newWindow(char *c);
+extern void hideCard(int width, int height);
+extern void showCard(Widget w, int width, int height, void *d);
 extern void displayDrawArea(Widget w, int width, int height, void *data);
 extern void startGame();
 extern void fenetreDeFin();
 extern void menu();
-extern void initAffichage(int grilleWidth, int grilleHeight);
+extern void rules();
 extern void printScores(Widget w, void *d);

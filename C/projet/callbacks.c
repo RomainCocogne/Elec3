@@ -9,7 +9,9 @@ void quit(Widget w, void *d)
     exit(EXIT_SUCCESS);
 }
 
-
+/*
+	Fonction appellée par le bouton 
+*/
 void saveScore(Widget w, void *d){
     Player *j=(Player *)d;
     setPlayerName(j,GetStringEntry(strEntry));
@@ -17,7 +19,10 @@ void saveScore(Widget w, void *d){
     printScores(NULL,NULL);
 }
 
-
+/*
+	Fonction appellée par les boutons de changement de difficulté
+	Assigne la difficulté selectionnée à la partie.
+*/
 void setSize(Widget w, void *d){
 	char *str=(char*)d;
 	assert(!(((str[0]-'0')*(str[1]-'0'))&1));
@@ -58,9 +63,9 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
     //Si deu cartes ont été retournées et doivent être remises face cachée
     if(screen->hide_next_move){
 		SetDrawArea(screen->card1Widget);
-		hide(areaWidth,areaHeight);
+		hideCard(areaWidth,areaHeight);
 		SetDrawArea(screen->card2Widget);
-		hide(areaWidth,areaHeight);
+		hideCard(areaWidth,areaHeight);
 		SetDrawArea(w);   
 		screen->hide_next_move=NO; 	
     }
@@ -88,7 +93,7 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
     */
 
     //Affichage de la carte correspondante
-	show(w,areaWidth,areaHeight, data);
+	showCard(w,areaWidth,areaHeight, data);
 
 	//Enregistrement du widget cliqué
     if (screen->game->etape == CARTE1)

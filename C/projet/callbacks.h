@@ -18,6 +18,11 @@
 */
 extern void quit(Widget , void *d);
 extern void saveScore(Widget , void *);
+
+/*
+	Fonction appellée par les boutons de changement de difficulté
+	Assigne la difficulté selectionnée à la partie.
+*/
 extern void setSize(Widget , void *);
 
 /*

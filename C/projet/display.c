@@ -10,6 +10,9 @@ const char * rules_str= "The cards are layed in rows, face down.\nTurn over any 
 const char * start_str= " The game starts now !\n\n\n\n";
 
 
+
+
+
 void initGlobalDisplay(){
     screen=malloc(sizeof(display));
     screen->game=malloc(sizeof(Jeu));
@@ -18,21 +21,21 @@ void initGlobalDisplay(){
     screen->hide_next_move = NO;
 }
 
-void hide (int width, int height){
-    SetColor(getBgColor(0));
-    DrawFilledBox(0,0,width,height);
-}
+/*
+  Fonction d'initialisation des couleurs utilisées pour la partie. 
+*/
+void initCouleurs(){
 
-void show(Widget w, int width, int height, void *data){
-    SetColor(getBgColor(1));
-    DrawFilledBox(0,0,width,height);
-    SetColor(getBgColor(0));
-    SetBgColor(w,getBgColor(1));
-    Forme forme;
-    genereforme(&forme,((Card *)data)->id%NB_FORMES,width,height);
-    SetFgColor(w,getLoopedCardColor(((Card *)data)->id));
-    DrawFilledPolygon(forme.ptarray,forme.size);
-    free(forme.ptarray);
+    int bgColor[2], cardColor[4];
+    bgColor[0]   = GetRGBColor(40,40,40);
+    bgColor[1]   = GetRGBColor(230,230,230);
+    cardColor[0] = GetRGBColor(20,20,180);
+    cardColor[1] = GetRGBColor(180,20,20) ;
+    cardColor[2] = GetRGBColor(20,180,20);
+    cardColor[3] = GetRGBColor(220,130,20);
+
+    initBgColor(bgColor, 2);
+    initCardColor(cardColor,4);
 }
 
 void initButtonBox(){
@@ -86,6 +89,23 @@ void newWindow(char *c){
     SetCurrentWindow(w);
 }
 
+void hideCard(int width, int height){
+    SetColor(getBgColor(0));
+    DrawFilledBox(0,0,width,height);
+}
+
+void showCard(Widget w, int width, int height, void *data){
+    SetColor(getBgColor(1));
+    DrawFilledBox(0,0,width,height);
+    SetColor(getBgColor(0));
+    SetBgColor(w,getBgColor(1));
+    Forme forme;
+    genereforme(&forme,((Card *)data)->id%NB_FORMES,width,height);
+    SetFgColor(w,getLoopedCardColor(((Card *)data)->id));
+    DrawFilledPolygon(forme.ptarray,forme.size);
+    free(forme.ptarray);
+}
+
 /*
 	Fonction de callback des zones de dessin qui représentent les cartes. 
 	Appelée une premiére fois par chaque zone lors du premier affichage, puis rappelée à 
@@ -95,9 +115,9 @@ void newWindow(char *c){
 */
 void displayDrawArea(Widget w, int width, int height, void *data){
     if (((Card *)data)->mode >= RETOURNEE)
-        show(w,width, height, data);
+        showCard(w,width, height, data);
     else
-        hide(width,height);
+        hideCard(width,height);
 }
 
 
@@ -114,7 +134,7 @@ void startGame(){
     form_game=MakeForm(TOP_LEVEL_FORM);
 
     initJeu(screen->game,screen->grilleWidth*screen->grilleHeight);               //initialisation du jeu
-    initAffichage(screen->grilleWidth, screen->grilleHeight);       //initialisation de l'affichage
+    initCouleurs();       //initialisation de l'affichage
 
     Widget tabWidget[screen->grilleWidth*screen->grilleHeight];
 
@@ -128,24 +148,31 @@ void startGame(){
     //Place les widgets de tabWidget dans la zone de jeu
     //Les widgets sont placés dans l'ordre croissant des indices du tableau, 
     //de gauche à droite puis de haut en bas
-    Widget yposWidget = NULL;
-    Widget xposWidget = NULL;
+    Widget yposWidget = NULL; //Widget de reference pour le placement vertical
+    Widget xposWidget = NULL; //Widget de reference pour le placement horizontal
 
     int i,j, right=NO_CARE, under=NO_CARE;
     for (i = 0; i < screen->grilleHeight; ++i)
     {
+        //Les widgets des i premiéres lignes sont placés
         for (j = 0; j < screen->grilleWidth; ++j)
         {
+            //pour la ligne courante, les j premiers widgets sont placés
             SetWidgetPos(tabWidget[i*screen->grilleWidth + j], right, xposWidget, under, yposWidget);
             xposWidget = tabWidget[i*screen->grilleWidth + j];
             right = PLACE_RIGHT;
         }
+        //Les widgets de la ligne courante sont tous placés. 
+        //Le widget de reference verticale devient le dernier widget de la ligne courante
+
         if (i*screen->grilleWidth+j < screen->grilleHeight*screen->grilleWidth) 
             yposWidget = tabWidget[i*screen->grilleWidth];
         right = NO_CARE;
         under = PLACE_UNDER; 
     }
 
+
+    //Initialise 
     form_right_panel=MakeForm(TOP_LEVEL_FORM);
     initButtonBox();
     form_infobox=MakeForm(TOP_LEVEL_FORM);
@@ -196,7 +223,7 @@ void fenetreDeFin(){
 
 void menu(){
   newWindow("menu");
-  Widget welcome,highest_scores,rules,difficulty,
+  Widget welcome,highest_scores,rulesButton,difficulty,
   		 diff_3x2,diff_4x3,diff_4x4,diff_5x4,diff_6x5,diff_8x4,
   		 start,quit_button,
   		 space1,space2,space3,space4 ;
@@ -210,7 +237,7 @@ void menu(){
   space4=MakeLabel("        ");
 
   //pop_up d'affichage des régles
-  rules=MakeButton("Rules",ruler,NULL);
+  rulesButton=MakeButton("Rules",rules,NULL);
 
   //création des boutons.
   highest_scores=MakeButton("Highest_scores",printScores,NULL);
@@ -228,7 +255,7 @@ void menu(){
   //position des widgets.
   SetWidgetPos(highest_scores,PLACE_UNDER,welcome,NO_CARE,NULL);
   SetWidgetPos(space4,PLACE_UNDER,welcome,PLACE_RIGHT,highest_scores);
-  SetWidgetPos(rules,PLACE_RIGHT,space4,PLACE_UNDER,welcome);
+  SetWidgetPos(rulesButton,PLACE_RIGHT,space4,PLACE_UNDER,welcome);
   SetWidgetPos(space1,PLACE_UNDER,highest_scores,NO_CARE,NULL);
   SetWidgetPos(difficulty,PLACE_UNDER,space1,NO_CARE,NULL);
   SetWidgetPos(diff_3x2,PLACE_UNDER,difficulty,NO_CARE,NULL);
@@ -246,28 +273,9 @@ void menu(){
   ShowDisplay(); 
 }
 
-/*
-	Fonction d'initialisation des paramétres graphiques de la partie. 
-	   -grilleWidth, grilleHeight : largeur et hauteur de la grille en nombre de cartes
-*/
-void initAffichage(int grilleWidth, int grilleHeight){
-    //Initialisation des variables globales de dimension
-    screen->grilleWidth = grilleWidth;
-    screen->grilleHeight = grilleHeight;
 
-    int bgColor[2], cardColor[4];
-    bgColor[0]   = GetRGBColor(40,40,40);
-    bgColor[1]   = GetRGBColor(230,230,230);
-    cardColor[0] = GetRGBColor(20,20,180);
-    cardColor[1] = GetRGBColor(180,20,20) ;
-    cardColor[2] = GetRGBColor(20,180,20);
-    cardColor[3] = GetRGBColor(220,130,20);
 
-    initBgColor(bgColor, 2);
-    initCardColor(cardColor,4);
-}
-
-void ruler (Widget w,void *d){
+void rules (Widget w,void *d){
 	newWindow("rules");
 	Widget label_rules, form_rules, form_right_panel;
 	form_rules=MakeForm(TOP_LEVEL_FORM);
