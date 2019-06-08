@@ -98,6 +98,6 @@ int nbScores(){
 	return lines;
 }
 
-int genereScore(Jeu jeu){
-	return (int)((0.1+1.0/(double)(jeu.nbCoups))*(jeu.nbCartes)*100);
+int genereScore(int nbCoups, int nbCartes){
+	return (int)((0.1+1.0/(double)(nbCoups))*(nbCartes)*100);
 }

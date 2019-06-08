@@ -43,3 +43,15 @@ extern void setSize(Widget , void *);
 	*data : pointeur sur type Carte, contient la carte associée au Widget qui à été cliqué.
 */
 extern void retournerCarte(Widget , int , int , int , void *);
+
+extern void hideCard(int width, int height);
+extern void showCard(Widget w, int width, int height, void *d);
+
+/*
+	Fonction de callback des zones de dessin qui représentent les cartes. 
+	Appelée une premiére fois par chaque zone lors du premier affichage, puis rappelée à 
+	chaque fois que l'utilisateur change la taille de la fenêtre
+
+  data : pointeur vers la structure carte associée au widget ayant appelé cette fonction
+*/
+extern void displayDrawArea(Widget w, int width, int height, void *data);

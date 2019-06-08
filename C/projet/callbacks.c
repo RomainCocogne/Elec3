@@ -129,3 +129,36 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
 	    }
 	}
 }
+
+
+void hideCard(int width, int height){
+    SetColor(getBgColor(0));
+    DrawFilledBox(0,0,width,height);
+}
+
+void showCard(Widget w, int width, int height, void *data){
+    SetColor(getBgColor(1));
+    DrawFilledBox(0,0,width,height);
+    SetColor(getBgColor(0));
+    SetBgColor(w,getBgColor(1));
+    Forme forme;
+    genereforme(&forme,((Card *)data)->id%NB_FORMES,width,height);
+    SetFgColor(w,getLoopedCardColor(((Card *)data)->id));
+    DrawFilledPolygon(forme.ptarray,forme.size);
+    free(forme.ptarray);
+}
+
+/*
+	Fonction de callback des zones de dessin qui représentent les cartes. 
+	Appelée une premiére fois par chaque zone lors du premier affichage, puis rappelée à 
+	chaque fois que l'utilisateur change la taille de la fenêtre
+
+  data : pointeur vers la structure carte associée au widget ayant appelé cette fonction
+*/
+void displayDrawArea(Widget w, int width, int height, void *data){
+    if (((Card *)data)->mode >= RETOURNEE)
+        showCard(w,width, height, data);
+    else
+        hideCard(width,height);
+}
+

@@ -1,18 +1,15 @@
 /*
 	Module contenant tous les outils pour gerer l'affichage de menus et d'une partie de memory.
+	utilise la librairie libsx
 */
 
 #pragma once
-#include <stdio.h>
-#include <stdlib.h>
 #include <libsx.h>
-#include <string.h>
-#include "jeu.h"
 #include "forme.h"
 #include "score.h"
 #include "couleur.h"
 #include "callbacks.h"
-#include "player.h"
+#include "jeu.h"
 
 /****************************/
 // 		  Macros			//
@@ -20,8 +17,8 @@
 
 /*
 	Dimensions graphiques des cartes par defaut. 
-	Il s'agit de la taille des crtaes lors de l'affichage du debut d'une partie.
-	L'utilisateur peut ensuite redimensionner la fenêtre et changer la tailel des cartes.
+	Il s'agit de la taille des cartes lors de l'affichage du debut d'une partie.
+	L'utilisateur peut ensuite redimensionner la fenêtre et changer la taille des cartes.
  */
 #define DEFAULT_CARD_WIDTH 90
 #define DEFAULT_CARD_HEIGHT 170
@@ -31,11 +28,11 @@
 	Taille de la grille de cartes par default.
 	Il s'agit de la taille de grille appliquée si l'utilisateur n'a pas précisé la difficulté.
 */
-#define DEFUALT_GRILLEWIDTH 3
-#define DEFUALT_GRILLEHEIGHT 2
+#define DEFAULT_GRILLEWIDTH 3
+#define DEFAULT_GRILLEHEIGHT 2
 
 /*
-	Valeurs possibles de hide_next_move
+	Valeurs possibles de hide_next_move (utilité expliquée plus bas)
 */
 #define YES 1
 #define NO 0
@@ -72,8 +69,7 @@ typedef struct{
 /****************************/
 
 /*
-	-screen: variable globale d'affichage contenant les données necessaires pour representer la partie
-	-strEntry : widget de l'entrée texte permettant d'entrer un nom de joueur.
+	Variable globale d'affichage contenant les données necessaires pour representer la partie
 */
 extern display *screen;
 
@@ -87,38 +83,88 @@ extern display *screen;
 */
 extern void initGlobalDisplay();
 
+/*****************************
+		initialisation
+*****************************/
+
 /*
-  Fonction d'initialisation des couleurs utilisées pour la partie. 
+  Initialisation des couleurs utilisées pour la partie. 
 */
 extern void initCouleurs();
 
-
-extern void initButtonBox();
-extern void initInfoBox();
-extern void updateInfoBox(const char *);
-extern void initDiffBox(int pos1, Widget w1, int pos2, Widget w2);
-extern void updateDiffBox();
-extern void newWindow(char *c);
-extern void hideCard(int width, int height);
-extern void showCard(Widget w, int width, int height, void *d);
-
 /*
-	Fonction de callback des zones de dessin qui représentent les cartes. 
-	Appelée une premiére fois par chaque zone lors du premier affichage, puis rappelée à 
-	chaque fois que l'utilisateur change la taille de la fenêtre
-
-  data : pointeur vers la structure carte associée au widget ayant appelé cette fonction
+	Initialisation des bouttons de navigation présent sur toute les fenetres
 */
-extern void displayDrawArea(Widget w, int width, int height, void *data);
+extern void initButtonBox();
+/*
+	Initialisation du panel informatif adjacent à l'espace de jeu.
+	Est utilisé pour communiquer au joueur toute sortes d'informations sur la partie en cours
+*/
+extern void initInfoBox();
+/*
+	Initialisation du message informatif communiquant au joueur la difficulté courante du jeu.
+	@args:
+		- position par rapport au widget suivant. positions valides: meme que libsx (PLACE_UNDER, PLACE_RIGHT,NO_CARE)
+		- widget de reference a la premiere position
+		- position par rapport au second widget
+		- widget de reference a la seconde position
+*/
+extern void initDiffBox(int, Widget, int, Widget);
+/*
+	cree une nouvelle fenetre apres avoir fermee la fenetre courante.
+	@args: 
+		-nom de la nouvelle fenetre
+*/
+extern void newWindow(char *);
+
+
+/*****************************
+		rafraichissement
+*****************************/
 
 /*
-  Demarre une partie et affiche le plateau de jeu.
-  Genere un widget DrawArea pour chaque carte (soit grilleWidth x grilleHeight widgets).
-  Associe à chaque widget la carte correspondante, la fonction d'affichage, et la fonction d'action 
-  lorsque l'on clique sur la carte.
+	Rafraichissent les elements initialisés dans initInfoBox et initDiffBox respectivement.
+	updateInfoBox vous permet de choisir le message a afficher.
+	updateDiffBox n'est pas parametrable
+*/
+extern void updateInfoBox(const char *);
+extern void updateDiffBox();
+
+
+/*****************************
+			fenetres
+*****************************/
+
+/*
+	Demarre une partie et affiche le plateau de jeu.
+	Genere un widget DrawArea pour chaque carte (soit grilleWidth x grilleHeight widgets).
+	Associe à chaque widget la carte correspondante, la fonction d'affichage, et la fonction d'action 
+	lorsque l'on clique sur la carte.
 */
 extern void startGame();
-extern void fenetreDeFin();
+/*
+	Cree et affiche la fenetre contenant le menu du jeu.
+	Ferme la fenetre precedante.
+	Donne acces via callbacks aux fenetres de jeu, des scores et des regles.
+*/
 extern void menu();
+/*
+	Cree et affiche le fenetre de fin.
+	Si le score du joueur est suffisant, on lui propose de le sauvegarder.
+	Ferme la fenetre precedante.
+*/
+extern void fenetreDeFin();
+/*
+	Cree et affiche la fenetre des regles.
+	Ferme la fenetre precedante.
+*/
 extern void rules();
-extern void printScores(Widget w, void *d);
+/*
+	Cree et affiche la fenetre des scores.
+	Les scores sont tries du plus meilleur au pire.
+	Ferme la fenetre precedante.
+	@args:
+		- widget transmis si la fonction est utilisee en callback
+		- donnees transmises si la fonction est utilisee en callback
+*/
+extern void printScores(Widget, void*);

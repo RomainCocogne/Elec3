@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
   }
   
   initGlobalDisplay();         //initalise la variable globale d'ecran
+  initCouleurs();              //initalise les couleurs du jeu
   menu();                      //affiche le menu. tout le reste va s'afficher avec des callbacks
   MainLoop();                  //loop
 
