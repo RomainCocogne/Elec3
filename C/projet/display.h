@@ -1,3 +1,7 @@
+/*
+	Module contenant tous les outils pour gerer l'affichage de menus et d'une partie de memory.
+*/
+
 #pragma once
 #include <stdio.h>
 #include <stdlib.h>
@@ -78,8 +82,17 @@ extern display *screen;
 // 		  fonctions			//
 /****************************/
 
+/*
+  Initialise la variable globale d'affichage screen 
+*/
 extern void initGlobalDisplay();
+
+/*
+  Fonction d'initialisation des couleurs utilisées pour la partie. 
+*/
 extern void initCouleurs();
+
+
 extern void initButtonBox();
 extern void initInfoBox();
 extern void updateInfoBox(const char *);
@@ -88,7 +101,22 @@ extern void updateDiffBox();
 extern void newWindow(char *c);
 extern void hideCard(int width, int height);
 extern void showCard(Widget w, int width, int height, void *d);
+
+/*
+	Fonction de callback des zones de dessin qui représentent les cartes. 
+	Appelée une premiére fois par chaque zone lors du premier affichage, puis rappelée à 
+	chaque fois que l'utilisateur change la taille de la fenêtre
+
+  data : pointeur vers la structure carte associée au widget ayant appelé cette fonction
+*/
 extern void displayDrawArea(Widget w, int width, int height, void *data);
+
+/*
+  Demarre une partie et affiche le plateau de jeu.
+  Genere un widget DrawArea pour chaque carte (soit grilleWidth x grilleHeight widgets).
+  Associe à chaque widget la carte correspondante, la fonction d'affichage, et la fonction d'action 
+  lorsque l'on clique sur la carte.
+*/
 extern void startGame();
 extern void fenetreDeFin();
 extern void menu();

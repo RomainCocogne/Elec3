@@ -1,3 +1,7 @@
+/*
+	Module contenant les fonctions de callback non graphiques.
+*/
+
 #pragma once
 #include <stdio.h>
 #include <stdlib.h>

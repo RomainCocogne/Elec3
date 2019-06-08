@@ -1,6 +1,8 @@
+/*
+	Module contenant les fonctions de callback non graphiques.
+*/
+
 #include "callbacks.h"
-
-
 
 /*
   Callback pour quitter le programme

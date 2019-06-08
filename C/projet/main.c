@@ -1,8 +1,8 @@
 /*
-    Programme de memori utilisant la librairie graphique libsx
+    Jeu de memory utilisant la librairie graphique libsx
 
     @distribution: Linux (ubuntu)    
-    @authors: Zayd, Quentin, Romain
+    @authors: Zayd El Hachimi, Quentin Combal, Romain Cocogne
     @arguments: none
 
     Pour compiler faire make dans le dossier courant
@@ -18,9 +18,9 @@ int main(int argc, char *argv[])
       return EXIT_FAILURE;
   }
   
-  initGlobalDisplay();                                  //initalise la variable globale d'ecran
-  menu();                                               //affiche le menu. tout le reste va s'afficher avec des callbacks
-  MainLoop();                                           //loop
+  initGlobalDisplay();         //initalise la variable globale d'ecran
+  menu();                      //affiche le menu. tout le reste va s'afficher avec des callbacks
+  MainLoop();                  //loop
 
   return EXIT_SUCCESS;
 }

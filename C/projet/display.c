@@ -1,3 +1,7 @@
+/*
+  Module contenant tous les outils pour gerer l'affichage de menus et d'une partie de memory.
+*/
+
 #include "display.h"
 
 
@@ -7,7 +11,9 @@ display *screen;
 const char * rules_str= "The cards are layed in rows, face down.\nTurn over any two cards.If the two cards match,they are kept shown.\nIf they don't match,they are turned back over.\nRemember what was on each card and where it was.\n\nThe game is over when all the cards have been matched and revealed.\nTo register your score, click again anywhere on the screen.";
 const char * start_str= " The game starts now !\n\n\n\n";
 
-
+/*
+  Initialise la variable globale d'affichage screen 
+*/
 void initGlobalDisplay(){
     screen=malloc(sizeof(display));
     screen->game=malloc(sizeof(Jeu));
@@ -118,6 +124,7 @@ void displayDrawArea(Widget w, int width, int height, void *data){
 
 
 /*
+  Demarre une partie et affiche le plateau de jeu.
   Genere un widget DrawArea pour chaque carte (soit grilleWidth x grilleHeight widgets).
   Associe à chaque widget la carte correspondante, la fonction d'affichage, et la fonction d'action 
   lorsque l'on clique sur la carte.
@@ -129,7 +136,7 @@ void startGame(){
     form_game=MakeForm(TOP_LEVEL_FORM);
 
     initJeu(screen->game,screen->grilleWidth*screen->grilleHeight);               //initialisation du jeu
-    initCouleurs();       //initialisation de l'affichage
+    initCouleurs();       
 
     Widget tabWidget[screen->grilleWidth*screen->grilleHeight];
 
@@ -167,7 +174,7 @@ void startGame(){
     }
 
 
-    //Initialise 
+    //Initialise les boites d'affichageà droite du plateau
     form_right_panel=MakeForm(TOP_LEVEL_FORM);
     initButtonBox();
     form_infobox=MakeForm(TOP_LEVEL_FORM);
