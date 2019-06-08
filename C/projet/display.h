@@ -45,19 +45,21 @@
 		-grilleWidth, grilleHeight : Taille de la grille de jeu. grilleWidth x grilleHeight doit être égal au nombre de cartes dans le jeu. 
 		-game : pointeur vers une structure jeu contenant toutes les infos de jeu. Ce pointeur permet à l'affichage de recupérer les données 
 				de la partie pour pouvoir les afficher.
+		-hide_next_move : lors d'une verification de coup, enregistre si les deux cartes doivent être retournées faces cachée
+						  au prochain coup.		
 		-widget1, widget2 : buffers contenant les widgets des cartes cliquées par le joueur. 
 					   		Permet d'enregistrer les zones des deux cartes qui ont été cliquées
-		-infoBoxLabel, pairesRestantesLabel : widgets de l'infobox et du compteur de paires restantes. Ces widgets sont enregistrés pour pouvoir 
-											  être actualisés depuis une fonction de callback
-		-hide_next_move : lors d'une verification de coup, enregistre si les deux cartes doivent être retournées faces cachée
-						  au rochain coup.
+		-widgets labels : widgets permettant un affichage d'informations en temps réel. Ces widgets sont enregistrés pour pouvoir 
+						  être actualisés depuis une fonction de callback
+		-strEntry : widget de l'entrée texte permettant d'entrer un nom de joueur.
 */
 typedef struct{
 	Jeu *game;
 	int grilleWidth, grilleHeight;
-	Widget card1Widget, card2Widget;
-	Widget infoBoxLabel, pairesRestantesLabel;
 	int hide_next_move;
+	Widget card1Widget, card2Widget;
+	Widget infoBoxLabel, pairesRestantesLabel, infoDiffLabel;
+	Widget strEntry;
 } display;
 
 
@@ -69,8 +71,6 @@ typedef struct{
 	-screen: variable globale d'affichage contenant les données necessaires pour representer la partie
 	-strEntry : widget de l'entrée texte permettant d'entrer un nom de joueur.
 */
-extern Widget strEntry;
-extern Widget infoDiffLabel;
 extern display *screen;
 
 

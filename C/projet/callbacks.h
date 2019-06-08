@@ -17,6 +17,8 @@
   Callback pour quitter le programme
 */
 extern void quit(Widget , void *d);
+
+
 extern void saveScore(Widget , void *);
 
 /*

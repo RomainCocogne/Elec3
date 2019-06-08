@@ -1,16 +1,11 @@
 #include "display.h"
 
 
-Widget strEntry;
-Widget infoDiffLabel;
 display *screen;
 
 
 const char * rules_str= "The cards are layed in rows, face down.\nTurn over any two cards.If the two cards match,they are kept shown.\nIf they don't match,they are turned back over.\nRemember what was on each card and where it was.\n\nThe game is over when all the cards have been matched and revealed.\nTo register your score, click again anywhere on the screen.";
 const char * start_str= " The game starts now !\n\n\n\n";
-
-
-
 
 
 void initGlobalDisplay(){
@@ -71,15 +66,15 @@ void updateInfoBox(const char *infoBoxMsg){
 }
 
 void initDiffBox(int pos1, Widget w1, int pos2, Widget w2){
-	infoDiffLabel=MakeLabel(NULL);
-	SetWidgetPos(infoDiffLabel,pos1,w1,pos2,w2);
+	screen->infoDiffLabel=MakeLabel(NULL);
+	SetWidgetPos(screen->infoDiffLabel,pos1,w1,pos2,w2);
   updateDiffBox();
 }
 
 void updateDiffBox(){
 	char diff[27];
 	sprintf(diff,"(Current Difficulty: %dx%d)",screen->grilleWidth,screen->grilleHeight);
-	SetLabel(infoDiffLabel,diff);
+	SetLabel(screen->infoDiffLabel,diff);
 }
 
 void newWindow(char *c){
@@ -200,7 +195,7 @@ void fenetreDeFin(){
 
     if(sc>=getLastScore() || nbScores()<10){
         Widget nomJoueur = MakeStringEntry("name",MAX_NAME,NULL,NULL);
-        strEntry=nomJoueur;
+        screen->strEntry=nomJoueur;
         Player *joueur=malloc(sizeof(Player));
         initPlayer(joueur);
         setPlayerScore(joueur,sc);

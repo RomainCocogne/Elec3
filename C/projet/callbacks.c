@@ -2,6 +2,9 @@
 
 
 
+/*
+  Callback pour quitter le programme
+*/
 void quit(Widget w, void *d)
 {
 	free(screen->game);
@@ -10,11 +13,12 @@ void quit(Widget w, void *d)
 }
 
 /*
-	Fonction appellée par le bouton 
+	Fonction appellée par le bouton SaveScore. 
+	Enregistre le score sous le nom contenu dans strEntry
 */
 void saveScore(Widget w, void *d){
     Player *j=(Player *)d;
-    setPlayerName(j,GetStringEntry(strEntry));
+    setPlayerName(j,GetStringEntry(screen->strEntry));
     addScore(*j);
     printScores(NULL,NULL);
 }
