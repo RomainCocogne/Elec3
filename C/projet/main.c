@@ -6,7 +6,8 @@
     @arguments: none
 
     Pour compiler faire make dans le dossier courant
-    Pour executer faire compile/main
+    Pour que l'affichage des scores fonctionne, lancer la commande d'execution depuis
+    le repertoire où se trouve le fichier "score.txt"
 
 */
 #include "header.h"
