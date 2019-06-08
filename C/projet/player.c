@@ -8,13 +8,16 @@ int compare (Player j1, Player j2){
 		return 0;
 	return j1.score>j2.score? -1:1;
 }
+
 void initPlayer(Player *j){
 	j->name=malloc(MAX_NAME*sizeof(char));
 	j->score=0;
 }
+
 void rmPlayer(Player *j){
 	free(j);
 }
+
 void setPlayerName(Player *j, char *name){
 	strcpy(j->name,name);
 }

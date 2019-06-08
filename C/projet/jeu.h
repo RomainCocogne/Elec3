@@ -37,7 +37,7 @@
 		nbCoups : nombre de coups joués 
 		etape : représente l'etat actuel du jeu, parmi les valeurs définies plus haut
 		carte1/carte2 : pointeurs vers les cartes selectionnées par le joueur
-		TabCartes : 
+		TabCartes : pointeur vers un tableau contenant les cartes du jeu
 */
 typedef struct
 {

@@ -2,8 +2,7 @@
 
 
 Widget strEntry;
-Widget pairesRestantesLabel;
-Widget infoBoxLabel, infoDiffLabel;
+Widget infoDiffLabel;
 display *screen;
 
 
@@ -16,6 +15,7 @@ void initGlobalDisplay(){
     screen->game=malloc(sizeof(Jeu));
     screen->grilleWidth=DEFUALT_GRILLEWIDTH;
     screen->grilleHeight=DEFUALT_GRILLEHEIGHT;
+    screen->hide_next_move = NO;
 }
 
 void hide (int width, int height){
@@ -35,7 +35,7 @@ void show(Widget w, int width, int height, void *data){
     free(forme.ptarray);
 }
 
-void sidePanel(){
+void initButtonBox(){
     Widget return_button, quit_button;
     return_button=MakeButton("\n          Menu          \n\n", menu,NULL);
     quit_button=MakeButton("\n          Quit          \n\n",quit,NULL);
@@ -47,36 +47,38 @@ void initInfoBox(){
     Widget verticalSpace1, verticalSpace2;
 
     verticalSpace1=MakeLabel("\n");
-    pairesRestantesLabel = MakeLabel(NULL);
+    screen->pairesRestantesLabel = MakeLabel(NULL);
     verticalSpace2=MakeLabel("\n");
-    infoBoxLabel=MakeLabel(NULL);
+    screen->infoBoxLabel=MakeLabel(NULL);
 
     SetWidgetPos(verticalSpace1, NO_CARE, NULL, NO_CARE, NULL);
-    SetWidgetPos(pairesRestantesLabel, PLACE_UNDER, verticalSpace1, NO_CARE, NULL);
-    SetWidgetPos(verticalSpace2, PLACE_UNDER, pairesRestantesLabel, NO_CARE, NULL);
-    SetWidgetPos(infoBoxLabel,PLACE_UNDER,verticalSpace2,NO_CARE,NULL);
+    SetWidgetPos(screen->pairesRestantesLabel, PLACE_UNDER, verticalSpace1, NO_CARE, NULL);
+    SetWidgetPos(verticalSpace2, PLACE_UNDER, screen->pairesRestantesLabel, NO_CARE, NULL);
+    SetWidgetPos(screen->infoBoxLabel,PLACE_UNDER,verticalSpace2,NO_CARE,NULL);
+
+    updateInfoBox(start_str);
 }
 
 
 void updateInfoBox(const char *infoBoxMsg){
     char strPairesRestantes[25];
-    sprintf(strPairesRestantes,"%d",screen->game->nbCartesRestantes/2);
-    SetLabel(pairesRestantesLabel,strcat(strPairesRestantes," pair(s) left to match"));
-    SetLabel(infoBoxLabel,(char *)infoBoxMsg); 
+    sprintf(strPairesRestantes,"%d pair(s) left to match",screen->game->nbCartesRestantes/2);
+    SetLabel(screen->pairesRestantesLabel,strPairesRestantes);
+    SetLabel(screen->infoBoxLabel,(char *)infoBoxMsg); 
 }
 
 void initDiffBox(int pos1, Widget w1, int pos2, Widget w2){
-	char diff[27];
-	sprintf(diff,"(Current Difficulty: %dx%d)",screen->grilleWidth,screen->grilleHeight);
-	infoDiffLabel=MakeLabel(diff);
+	infoDiffLabel=MakeLabel(NULL);
 	SetWidgetPos(infoDiffLabel,pos1,w1,pos2,w2);
-
+  updateDiffBox();
 }
+
 void updateDiffBox(){
 	char diff[27];
 	sprintf(diff,"(Current Difficulty: %dx%d)",screen->grilleWidth,screen->grilleHeight);
 	SetLabel(infoDiffLabel,diff);
 }
+
 void newWindow(char *c){
     Widget w;
     CloseWindow();
@@ -99,7 +101,6 @@ void displayDrawArea(Widget w, int width, int height, void *data){
 }
 
 
-/***********/
 
 /*
   Genere un widget DrawArea pour chaque carte (soit grilleWidth x grilleHeight widgets).
@@ -146,10 +147,9 @@ void startGame(){
     }
 
     form_right_panel=MakeForm(TOP_LEVEL_FORM);
-    sidePanel();
+    initButtonBox();
     form_infobox=MakeForm(TOP_LEVEL_FORM);
     initInfoBox();
-    updateInfoBox(start_str);
     
     SetWidgetPos(form_right_panel,PLACE_RIGHT,form_game,NO_CARE,NULL);
     SetWidgetPos(form_infobox,PLACE_RIGHT,form_game,PLACE_UNDER,form_right_panel);
@@ -159,7 +159,7 @@ void startGame(){
 
 
 void fenetreDeFin(){
-    newWindow("congratulation !");
+    newWindow("Congratulations !");
     Widget form_end_game, form_right_panel;
     size_t sc=genereScore(*(screen->game));
     char str[4];
@@ -187,7 +187,7 @@ void fenetreDeFin(){
     	too_bad=MakeLabel("(Not enough to be registered)");
     	SetWidgetPos(too_bad,PLACE_UNDER,score,NO_CARE,NULL);}
     form_right_panel=MakeForm(TOP_LEVEL_FORM);
-    sidePanel();
+    initButtonBox();
     SetWidgetPos(form_right_panel,PLACE_RIGHT,form_end_game,NO_CARE,NULL);
     ShowDisplay();
 }
@@ -276,7 +276,7 @@ void ruler (Widget w,void *d){
 
 	form_right_panel=MakeForm(TOP_LEVEL_FORM);
     
-    sidePanel();
+    initButtonBox();
 
     SetWidgetPos(form_right_panel,PLACE_RIGHT,form_rules,NO_CARE,NULL);
 	ShowDisplay();
@@ -309,7 +309,7 @@ void printScores(Widget w, void *d){
 
   	form_right_panel=MakeForm(TOP_LEVEL_FORM);
     
-    sidePanel();
+    initButtonBox();
 
     SetWidgetPos(form_right_panel,PLACE_RIGHT,form_hight_score,NO_CARE,NULL);
   	ShowDisplay();

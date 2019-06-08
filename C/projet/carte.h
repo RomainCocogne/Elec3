@@ -28,7 +28,7 @@
 /****************************/
 
 /*
-	Structure permettant de representer une carte. 
+	Structure permettant de representer une carte dans la logique du jeu. 
 	Membres : 
 		- id : numero d'identification de la carte. Chaque paire de 
 			   carte est representée par un id

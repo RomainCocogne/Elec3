@@ -1,8 +1,6 @@
 #include "callbacks.h"
 
-Widget card1Widget;
-Widget card2Widget;
-int hide_next_move=NO;
+
 
 void quit(Widget w, void *d)
 {
@@ -34,18 +32,22 @@ void setSize(Widget w, void *d){
 	Fonction appelée lorsque l'utilisateur clique sur une carte.
 	Appelle les fonctions du module jeu pour jouer les coups. Affiche graphiquement 
 	le resultat de chaque coup.
-	Quand deux cartes sont révélées, l'utilisateur peut observer leur valeur.
-	Au prochain clic, le coup est verifié. Si la paire est juste, les cartes restent retournées, 
+	Quand deux cartes sont révélées, le coup est verifié est l'infobox est mise à jour.
+	Si la paire est juste, les cartes restent face visible. Sinon, elles seront retournées face cachée au prochain coup
 	sinon la paire est remise face cachée. 
+	Si la derniére paire à été retournée, l'ecran de fin s'affiche au prochain clic.
 
-	*data : pointeur sur type Carte, contient la carte du Widget qui à été cliqué.
+	*data : pointeur sur type Carte, contient la carte associée au Widget qui à été cliqué.
 */
 void retournerCarte(Widget w, int which_button, int x, int y, void *data){
-	//Si la partie est terminée, afiche la fenêtre de fin
+
+	//Si le clic n'est pas un clic gauche, aucune action.
+	if (which_button != 1)
+		return;
+
+	//Si la partie est terminée et que l'utilisateur a cliqué a nouveau, afiche la fenêtre de fin.
     if (screen->game->etape == TERMINE){
     	fenetreDeFin();
-    	// updateInfoBox("You won! \nclick again to save your score");
-    	// screen->game->etape=EXIT;
         return;
     }
 
@@ -53,16 +55,17 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
     int areaWidth, areaHeight;
     GetDrawAreaSize(&areaWidth,&areaHeight);
 
-    if(hide_next_move){
-		SetDrawArea(card1Widget);
+    //Si deu cartes ont été retournées et doivent être remises face cachée
+    if(screen->hide_next_move){
+		SetDrawArea(screen->card1Widget);
 		hide(areaWidth,areaHeight);
-		SetDrawArea(card2Widget);
+		SetDrawArea(screen->card2Widget);
 		hide(areaWidth,areaHeight);
 		SetDrawArea(w);   
-		hide_next_move=NO; 	
+		screen->hide_next_move=NO; 	
     }
 
-    /*La partie est toujours*/
+    /*La partie est toujours en cours*/
 
     //Si la carte est déjà decouverte: pas d'action
     if (((Card *)data)->mode == DECOUVERTE){
@@ -83,30 +86,35 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
     	et n'est pas déjà retournée.
 		L'utilisateur a donc cliqué une carte valide : on joue le coup
     */
+
+    //Affichage de la carte correspondante
 	show(w,areaWidth,areaHeight, data);
+
 	//Enregistrement du widget cliqué
-    if (screen->game->etape == CARTE1) 
-    	card1Widget=w;
+    if (screen->game->etape == CARTE1)
+    	//La carte cliquée est la premiére des deux cartes 
+    	screen->card1Widget=w;
     else 
-    	card2Widget=w;
+    	//Lacarte cliquée est la deuxiéme carte
+    	screen->card2Widget=w;
+
     jouerCoup(screen->game,data);
-     //Si deux cartes ont déjà été révélées, effectue la verification avant tout autre action
+    
+
+    //Si deux cartes ont été révélées, effectue la verification.
     if (screen->game->etape == VERIFICATION){
     	//Verification de la paire selectionnée
     	if (verifierCoup(screen->game)){
     		updateInfoBox("You found a pair !");
     	}
     	else{
-	     hide_next_move=YES;
-	     updateInfoBox("Wrong pair !");
+	    	screen->hide_next_move=YES;
+	    	updateInfoBox("Wrong pair !");
 	    }
-    }
-        //Si la partie est terminée, afiche la fenêtre de fin
-    if (screen->game->etape == TERMINE){
-    	// fenetreDeFin();
-    	updateInfoBox("Game is finished! \nclick again\nto see your score");
-    	// screen->game->etape=EXIT;
-        return;
-    }
-
+    
+	    //Aprés verification du coup, si la partie est terminée, indique à l'utilisateur qu'il faut cliquer à nouveau pour finir la partie
+	    if (screen->game->etape == TERMINE){
+	    	updateInfoBox("Game is finished! \nClick again to see\nyour score");
+	    }
+	}
 }

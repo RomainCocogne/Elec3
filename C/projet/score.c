@@ -48,19 +48,7 @@ void getScore(Liste *joueurs){
 	if((fscore=fopen(FILE_NAME,"r+"))==NULL) {
 		perror(FILE_NAME); exit(errno);
 	}
-	// size_t sizebuff=0;
-	// char* buffer=0;
-	// ssize_t lenbuff=0;
-	// while ((lenbuff=getdelim(&buffer, &sizebuff, ':',fscore)>0)) {
-	// 	buffer[strlen(buffer)-1]='\0';
-	// 	strcpy(jtemp->name,buffer);
-	// 	lenbuff=getline(&buffer, &sizebuff,fscore);
-	// 	jtemp->score=atoi(buffer);
-	// 	free(buffer); 
-	// 	buffer=NULL;
-		
-	// }
-	// char test [20];
+	
 	char *bufferchar=malloc(sizeof(char)*MAX_NAME);
 	int bufferint;
 	while(fread(bufferchar,sizeof(char)*MAX_NAME,1,fscore)>0){
