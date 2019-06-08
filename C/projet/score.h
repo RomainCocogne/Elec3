@@ -8,7 +8,7 @@
 /****************************/
 //		  variables			//
 /****************************/
-#define FILE_NAME "./score.txt"
+#define FILE_NAME "./.score"
 
 /****************************/
 //		  fonctions			//

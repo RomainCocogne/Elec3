@@ -7,8 +7,8 @@ void addScore(Player joueur){
 		perror(FILE_NAME); exit(errno);
 	}
 	FILE *ftemp;
-	if((ftemp=fopen("file_temp","w"))==NULL) {
-		perror("file_temp"); exit(errno);
+	if((ftemp=fopen(".file_temp","w"))==NULL) {
+		perror(".file_temp"); exit(errno);
 	}
 	
 	Liste all_players;
@@ -31,7 +31,7 @@ void addScore(Player joueur){
 	// fprintf(ftemp,"%s:%d",((Player*)ieme(all_players,longueur(all_players)))->name,((Player*)ieme(all_players,longueur(all_players)))->score);
 	fclose(fscore);fclose(ftemp);
 	remove(FILE_NAME);
-	rename("file_temp",FILE_NAME);
+	rename(".file_temp",FILE_NAME);
 	// rmListe(&all_players);
 }
 
