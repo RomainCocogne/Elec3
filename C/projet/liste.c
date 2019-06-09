@@ -30,7 +30,15 @@ void initListe (Liste *l){
 		- l: Pointeur sur la liste a supprimer
 */
 void rmListe(Liste *l){
-	free(l);
+	struct noeud *s= *l;	
+	for (int i = 1; i <= longueur(*l); ++i)	//on parcourt toute la liste
+	{
+		struct noeud *suivant= s;			//on sauvegarde la position de l'eement suivant
+		free(s);							//on supprime l'element courant
+		s=suivant;							//on passa au suivant
+	}
+	free(s);
+
 }
 
 /*
@@ -92,6 +100,6 @@ void supprimer (Liste *l, int r){
 	assert(r>0 && r<=longueur(*l));	
 	while(--r) l=&(**l).suivant;		
 	struct noeud *suivant=(**l).suivant; //on sauvegarde la forme suivante pour ne pas la perdre
-	free(*l);							 //on supprime la forme
+	free(*l);							 //on supprime l'element
 	*l=suivant;			   				 //on racorde les deux bouts
 }

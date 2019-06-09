@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
       return EXIT_FAILURE;
   }
   
+  createFile();
   initGlobalDisplay();         //initalise la variable globale d'ecran
   initCouleurs();              //initalise les couleurs du jeu
   menu();                      //affiche le menu. tout le reste va s'afficher avec des callbacks
