@@ -8,6 +8,8 @@
 #include <time.h>
 #include <string.h>
 #include "carte.h"
+#include "player.h"
+#include "score.h"
 
 /****************************/
 // 		  Macros			//
@@ -108,3 +110,11 @@ extern void jouerCoup(Jeu *, Card *);
 		- Int donnant le resultat de la comparaison des deux cartes retournees (1 si identiques, 0 sinon)
 */
 extern int verifierCoup(Jeu *);
+
+/*
+	Sauvegarde le score de la partie dans le fichier des scores
+	@args:
+		- Pointeur sur char le nom du joueur
+		- int son score
+*/
+extern void saveScore(char*, int);

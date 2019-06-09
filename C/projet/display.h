@@ -163,8 +163,5 @@ extern void rules();
 	Cree et affiche la fenetre des scores.
 	Les scores sont tries du plus meilleur au pire.
 	Ferme la fenetre precedante.
-	@args:
-		- widget transmis si la fonction est utilisee en callback
-		- donnees transmises si la fonction est utilisee en callback
 */
-extern void printScores(Widget, void*);
+extern void printScores();

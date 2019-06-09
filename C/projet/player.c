@@ -24,7 +24,7 @@ int compare (Player j1, Player j2){
 		- j: Pointeur sur le Player a Initialiser
 */
 void initPlayer(Player *j){
-	j->name=malloc(MAX_NAME*sizeof(char));
+	j->name=calloc(MAX_NAME,sizeof(char));
 	j->score=0;
 }
 

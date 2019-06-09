@@ -16,10 +16,10 @@
 /*
   Callback pour quitter le programme
 */
-extern void quit(Widget , void *d);
+extern void quit();
 
 
-extern void saveScore(Widget , void *);
+extern void saveScoreCallback(Widget , void *);
 
 /*
 	Fonction appellée par les boutons de changement de difficulté

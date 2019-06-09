@@ -265,10 +265,11 @@ void fenetreDeFin(){
 
   Widget form_end_game, form_right_panel;
 
-  size_t sc=genereScore(screen->game->nbCoups, screen->game->nbCartes); //on recupere le score
+  int *sc=malloc(sizeof(int));  //on utilise un pointeur pour le callback
+  *sc=genereScore(screen->game->nbCoups, screen->game->nbCartes); //on recupere le score
 
   char str[4];
-  sprintf(str,"%ld",sc); //passage en char*
+  sprintf(str,"%d",*sc); //passage en char*
 
   	form_end_game=MakeForm(TOP_LEVEL_FORM);
   Widget congrats = MakeLabel("Your score is :");
@@ -277,13 +278,10 @@ void fenetreDeFin(){
   SetWidgetPos(score,PLACE_UNDER,congrats,NO_CARE,NULL);
 
   //Si le score est trop mauvais et qu'il n'y a plus de place, on ne propose pas d'enregistrer le score
-  if(sc>=getLastScore() || nbScores()<MAX_SCORE){
+  if(*sc>=getLastScore() || nbScores()<MAX_SCORE){
       Widget nomJoueur = MakeStringEntry("name",MAX_NAME,NULL,NULL);
       screen->strEntry=nomJoueur;
-      Player *joueur=malloc(sizeof(Player));
-      initPlayer(joueur);
-      setPlayerScore(joueur,sc);
-      Widget boutonEnregistrer = MakeButton("Save score",saveScore,joueur);
+      Widget boutonEnregistrer = MakeButton("Save score",saveScoreCallback,sc);
       SetWidgetPos(nomJoueur,PLACE_UNDER,score,NO_CARE,NULL);
       SetWidgetPos(boutonEnregistrer,PLACE_UNDER,nomJoueur,NO_CARE,NULL);
   }
@@ -326,11 +324,8 @@ void rules (Widget w,void *d){
   Cree et affiche la fenetre des scores.
   Les scores sont tries du plus meilleur au pire.
   Ferme la fenetre precedante.
-  @args:
-    - w: widget transmis si la fonction est utilisee en callback
-    - d: donnees transmises si la fonction est utilisee en callback
 */
-void printScores(Widget w, void *d){
+void printScores(){
 	newWindow("hight scores");
 
 	Widget label_scores, form_hight_score, form_right_panel;

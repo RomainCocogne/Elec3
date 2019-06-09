@@ -2,6 +2,7 @@
 
 Tab *couleurBg;
 Tab *couleurCard;
+
 void initBgColor(int *c, size_t size){
 	couleurBg=malloc(sizeof(Tab));
 	couleurBg->len=size;

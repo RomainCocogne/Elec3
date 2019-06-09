@@ -7,7 +7,7 @@
 /*
   Callback pour quitter le programme
 */
-void quit(Widget w, void *d)
+void quit()
 {
 	free(screen->game);
 	free(screen);
@@ -18,11 +18,9 @@ void quit(Widget w, void *d)
 	Fonction appellée par le bouton SaveScore. 
 	Enregistre le score sous le nom contenu dans strEntry
 */
-void saveScore(Widget w, void *d){
-    Player *j=(Player *)d;
-    setPlayerName(j,GetStringEntry(screen->strEntry));
-    addScore(*j);
-    printScores(NULL,NULL);
+void saveScoreCallback(Widget w, void *d){
+	saveScore(GetStringEntry(screen->strEntry),*((int*)d));
+    printScores();
 }
 
 /*
