@@ -9,6 +9,10 @@
 	Melange les N éléments du tableau array de maniére aléatoire. 
 	Utilisé pour melanger les cartes du tableau TabCartes
 	Fonction trouvée sur stack overflow : https://stackoverflow.com/questions/6127503/shuffle-array-in-c
+	@args:
+		- array: Pointeur sur void representant le tableau d'elements a melanger
+		- n: size_t le nombre d'elements dans le tableau
+		- size: size_t la taille d'un element du tableau
 */
 void shuffle(void *array, size_t n, size_t size) {
     srand(time(NULL));                                          //initialise le random
@@ -22,18 +26,20 @@ void shuffle(void *array, size_t n, size_t size) {
             size_t rnd = (size_t) rand();                       //genere le nombre aleatoire
             size_t j = i + rnd / (RAND_MAX / (n - i) + 1);      //pondere l'indice random
 
-            memcpy(tmp, arr + j * stride, size);                //permutation
-            memcpy(arr + j * stride, arr + i * stride, size);   //
-            memcpy(arr + i * stride, tmp, size);                //
+            memcpy(tmp, arr + j * stride, size);                /**/
+            memcpy(arr + j * stride, arr + i * stride, size);   // Permutation
+            memcpy(arr + i * stride, tmp, size);                /**/
         }
     }
 }
 
 /*
-	Initialise une tableau de type Card de taille nbCartes. Toutes les cartes sont initialisées
-	en mode CACHEE.
+	Initialise une tableau de type Card de taille nbCartes.
 	Genere des paires de cartes ayant le même id. Il y a donc nbCartes/2 paires différentes.
-	Mélange l'ordre des cartes dans le tableau en appelant la fonction du module "shuffle" 
+	Melange l'ordre des cartes dans le tableau en appelant la fonction du module "shuffle" 
+	@args:
+		- TabCartes: Pointeur sur Card representant un tableau de cartes
+		- nbCartes: int le nombre de cartes dans le tableau
 */
 void initTabCartes(Card *TabCartes,int nbCartes){
     int i, f;
@@ -45,13 +51,16 @@ void initTabCartes(Card *TabCartes,int nbCartes){
     	(TabCartes+2*i)->mode = CACHEE;
     	(TabCartes+2*i+1)->mode = CACHEE;
     }
-    //Mélange du tableau de carte
+    //Melange du tableau de carte
     shuffle(TabCartes,nbCartes,sizeof(Card));
 }
 
 /*
 	Initialise une strucutre Jeu déclarée au préalable. 
-	Doit être appelée en prmeier pour demarrer une partie. 
+	Doit être appelée en premeier pour demarrer une partie. 
+	@args:
+		- Jeu: Pointeur sur Jeu a initialiser
+		- nbCartes: int nombre de Card a ajouter au jeu
 */
 void initJeu(Jeu *jeu, int nbCartes){
 	jeu->nbCartes = nbCartes;
@@ -62,7 +71,6 @@ void initJeu(Jeu *jeu, int nbCartes){
 	initTabCartes(jeu->TabCartes,nbCartes);
 }
 
-
 /*
 	Fonction à apeller pour retourner une carte.
 	Si le jeu est à l'étape CARTE1 ou CARTE2, enregistre l'addresse de la 
@@ -70,6 +78,9 @@ void initJeu(Jeu *jeu, int nbCartes){
 	passée en paramètre. Si l'étape est CARTE1, avance le jeu à l'étape CARTE2.
 	Si le jeu est à l'étape VERIFICATION ou TERMINE, la fonction ne fait rien.
 	Il faut appeler verifierCoup() avant de pouvoir jouer un autre coup
+	@args:
+		- jeu: Pointeur sur le jeu actuel
+		- carteRetournee: Pointeur sur la carte a jouer
 */
 void jouerCoup(Jeu *jeu, Card *carteRetournee){
 	int etape = jeu->etape;
@@ -101,10 +112,10 @@ void jouerCoup(Jeu *jeu, Card *carteRetournee){
 	les variables carte1 et carte2 de la structure jeu.
 	Si la partie est terminée, fait avancer le jeu à l'étape TERMINE. 
 	Sinon, fait revenir à l'étape CARTE1 pour jouer le prochain coup.
-
-	Resultat : 
-		1 si les deux cartes sont identiques
-		0 sinon 
+	@args:
+		- jeu: Pointeur sur le jeu actuel
+	@return:
+		- Int donnant le resultat de la comparaison des deux cartes retournees (1 si identiques, 0 sinon)
 */
 int verifierCoup(Jeu *jeu){
 	//L'étape suivante du jeu aprés verification est CARTE1 par defaut. 

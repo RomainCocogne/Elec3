@@ -16,6 +16,8 @@ const Liste ListeVide=NULL;
 
 /*
 	cree un nouvel element qui pointe vers une liste
+	@args:
+		- l: Pointeur sur la liste a initialiser
 */
 void initListe (Liste *l){
 	*l=malloc(sizeof(struct noeud)); //allocation espace memoire
@@ -24,13 +26,19 @@ void initListe (Liste *l){
 
 /*
 	supprimer une liste
+	@args:
+		- l: Pointeur sur la liste a supprimer
 */
 void rmListe(Liste *l){
 	free(l);
 }
 
 /*
-	renvoie le nombre de formes dans la liste
+	renvoie le nombre d'elements dans la liste
+	@args:
+		- Liste dont on veut connaitre la longueur
+	@return:
+		- Int la taille de la liste
 */
 int longueur (Liste l){
 	int i=0;				//compteur 
@@ -43,7 +51,12 @@ int longueur (Liste l){
 }
 
 /*
-	renvoie l element a la ieme position
+	renvoie l'element a la ieme position
+	@args:
+		- l: Liste dont on veut chercher l'element
+		- r: Int representant la position de l'element, 1 etant le premier de la liste
+	@return:
+		- element de la liste
 */
 void *ieme (Liste l, int r){
 	assert(r>0 && r<=longueur(l));		//on verifie que r est valide
@@ -54,6 +67,10 @@ void *ieme (Liste l, int r){
 
 /*
 	insere element f au rang r
+	@args:
+		- l: Pointeur sur la liste que l'on veut modifier
+		- r: Int representant le rang d'insertion. 1 etant le debut de la liste
+		- f: Pointeur sur void sera l'element a ajouter a la liste
 */
 void inserer (Liste *l, int r, void *f){
 	assert(r>0 && r<=longueur(*l)+1);		//verfification (longueur+1 pour pouvoir ajouter un element a la fin)
@@ -67,6 +84,9 @@ void inserer (Liste *l, int r, void *f){
 
 /*
 	supprime l element f an rang r
+	@args:
+		- l: Pointeur sur la liste que l'on veut modifier
+		- r: Int representant le rang de suppression. 1 etant le debut de la liste
 */
 void supprimer (Liste *l, int r){
 	assert(r>0 && r<=longueur(*l));	

@@ -2,9 +2,7 @@
 	header du module de la gestion de joueurs
 */
 #pragma once
-#include <string.h>
-#include <limits.h>
-#include <stdlib.h>  
+#include <string.h> 
 #include "liste.h"
 
 typedef struct{

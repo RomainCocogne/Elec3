@@ -3,11 +3,7 @@
 */
 
 #pragma once
-#include <stdio.h>
-#include <stdlib.h>
 #include <libsx.h>
-#include <string.h>
-#include <assert.h>
 #include "display.h"
 #include "score.h"
 #include "couleur.h"

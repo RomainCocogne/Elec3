@@ -4,7 +4,6 @@
 */
 
 #pragma once
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
@@ -57,25 +56,31 @@ typedef struct
 	Melange les N éléments du tableau array de maniére aléatoire. 
 	Utilisé pour melanger les cartes du tableau TabCartes
 	Fonction trouvée sur stack overflow : https://stackoverflow.com/questions/6127503/shuffle-array-in-c
+	@args:
+		- Pointeur sur void representant le tableau d'elements a melanger
+		- size_t le nombre d'elements dans le tableau
+		- size_t la taille d'un element du tableau
 */
 extern void shuffle(void *, size_t , size_t);
-
 
 /*
 	Initialise une tableau de type Card de taille nbCartes.
 	Genere des paires de cartes ayant le même id. Il y a donc nbCartes/2 paires différentes.
-	Mélange l'ordre des cartes dans le tableau en appelant la fonction du module "shuffle" 
+	Melange l'ordre des cartes dans le tableau en appelant la fonction du module "shuffle" 
+	@args:
+		- Pointeur sur Card representant un tableau de cartes
+		- Int le nombre de cartes dans le tableau
 */
 extern void initTabCartes(Card *,int );
 
-
-
 /*
 	Initialise une strucutre Jeu déclarée au préalable. 
-	Doit être appelée en prmeier pour demarrer une partie. 
+	Doit être appelée en premeier pour demarrer une partie. 
+	@args:
+		- Pointeur sur Jeu a initialiser
+		- Int nombre de Card a ajouter au jeu
 */
 extern void initJeu(Jeu *, int );
-
 
 /*
 	Fonction à apeller pour retourner une carte.
@@ -84,6 +89,9 @@ extern void initJeu(Jeu *, int );
 	passée en paramètre. Si l'étape est CARTE1, avance le jeu à l'étape CARTE2.
 	Si le jeu est à l'étape VERIFICATION ou TERMINE, la fonction ne fait rien.
 	Il faut appeler verifierCoup() avant de pouvoir jouer un autre coup
+	@args:
+		- Pointeur sur le jeu actuel
+		- Pointeur sur la carte a jouer
 */
 extern void jouerCoup(Jeu *, Card *);
 
@@ -94,9 +102,9 @@ extern void jouerCoup(Jeu *, Card *);
 	les variables carte1 et carte2 de la structure jeu.
 	Si la partie est terminée, fait avancer le jeu à l'étape TERMINE. 
 	Sinon, fait revenir à l'étape CARTE1 pour jouer le prochain coup.
-
-	Resultat : 
-		1 si les deux cartes sont identiques
-		0 sinon 
+	@args:
+		- Pointeur sur le jeu actuel
+	@return:
+		- Int donnant le resultat de la comparaison des deux cartes retournees (1 si identiques, 0 sinon)
 */
 extern int verifierCoup(Jeu *);

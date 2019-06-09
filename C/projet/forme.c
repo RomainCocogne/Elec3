@@ -7,8 +7,12 @@
 /*
 	copie un ensemble de points dont le nombre est specifie
 	dans une autre chaine de points
-	la chaine receptrice doit etre plus grande
+	la chaine receptrice doit etre plus grande ou egale
 	et elle doit etre vide
+	@args: 
+		- f1: Pointeur sur XPoint correspond au tableau de points recepteur
+		- f2: Pointeur sur XPoint correspond au tableau a copier
+		- size: int correspond au nombre de points dans le tableau a copier
 */
 void arrayXPointcpy(XPoint *f1, XPoint *f2,int size){
 	for (int i = 0; i < size; ++i)
@@ -21,6 +25,8 @@ void arrayXPointcpy(XPoint *f1, XPoint *f2,int size){
 	cree une chaine de points dessinant la forme choisie
 	et la stock dans la Forme
 	l'objet Forme doit avoir f,h et w initialises
+	@args: 
+		- forme: Pointeur sur Forme dans laquelle on va initialiser le tableau de points et la taille
 */
 void createXPointArray(Forme *forme){
 
@@ -94,6 +100,11 @@ void createXPointArray(Forme *forme){
 	en lui assignant un tableau de points 
 	correspondant au nom de la forme fournie
 	la hauteur et la largeur doivent etre renseignes
+	@args: 
+		- forme: Pointeur sur Forme que l'on va initialiser avec les parametres suivants
+		- f: int correspondant au nom de la forme comme decrit dans enum FORME
+		- w: int correspondant a la longueur de la forme
+		- h: int correspondant a la hauteur de la forme
 */
 void genereforme(Forme *forme, int f, int w, int h){
 	forme->w=w/2; forme->h=h/2;									//on prend la taille d'une forme comme la moitie de la taille d'une carte

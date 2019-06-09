@@ -1,7 +1,6 @@
 #pragma once
 #include <errno.h>
 #include <stdio.h>
-#include <errno.h>
 #include "player.h"
 
 /****************************/
