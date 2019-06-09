@@ -4,9 +4,12 @@
 */
 
 #pragma once
+
+/****************************/
+//		 inclusions 		//
+/****************************/
 #include <libsx.h>
 #include "forme.h"
-#include "score.h"
 #include "couleur.h"
 #include "callbacks.h"
 #include "jeu.h"

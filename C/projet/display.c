@@ -121,7 +121,7 @@ void updateInfoBox(const char *infoBoxMsg){
   char strPairesRestantes[26];    //on prend 25 car le message fait 25 caracteres (plus 1 si on a un nombre a 2 chiffres de paires)
   sprintf(strPairesRestantes,"%d pair(s) left to match",screen->game->nbCartesRestantes/2);
   SetLabel(screen->pairesRestantesLabel,strPairesRestantes);
-SetLabel(screen->infoBoxLabel,(char *)infoBoxMsg); 
+  SetLabel(screen->infoBoxLabel,(char *)infoBoxMsg); 
 }
 void updateDiffBox(){
 	char diff[27]; //27 caracteres car le message en fait 27 (la difficultee n'est qu'a 1x1 chiffre)

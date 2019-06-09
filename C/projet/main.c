@@ -6,8 +6,9 @@
     @arguments: none
 
     Pour compiler faire make dans le dossier courant
-    Pour que l'affichage des scores fonctionne, lancer la commande d'execution depuis
-    le repertoire où se trouve le fichier "score.txt"
+
+    Le programme supporte le changement de taille standard de la fenetre,
+    mais pas des changements brusques ou des tailles improbable. 
 
 */
 #include "header.h"
@@ -19,7 +20,7 @@ int main(int argc, char *argv[])
       return EXIT_FAILURE;
   }
   
-  createFile();
+  createFile();                //si le fichier de stockage des scores n'existe pas, on le cree
   initGlobalDisplay();         //initalise la variable globale d'ecran
   initCouleurs();              //initalise les couleurs du jeu
   menu();                      //affiche le menu. tout le reste va s'afficher avec des callbacks

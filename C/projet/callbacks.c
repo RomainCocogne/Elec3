@@ -15,21 +15,26 @@ void quit()
 }
 
 /*
-	Fonction appellée par le bouton SaveScore. 
-	Enregistre le score sous le nom contenu dans strEntry
+	Callback pour enregistrer le score
+	@args:
+		- Widget du callback
+		- Pointeur sur void correspondant au score (int)
 */
 void saveScoreCallback(Widget w, void *d){
-	saveScore(GetStringEntry(screen->strEntry),*((int*)d));
+	saveScore(GetStringEntry(screen->strEntry),*((int*)d)); //appel de la fonction def dans jeu.h
     printScores();
 }
 
 /*
 	Fonction appellée par les boutons de changement de difficulté
 	Assigne la difficulté selectionnée à la partie.
+	@args:
+		- Widget du callback
+		- Pointeur sur void correspondant aux donnees transmises par le callback
 */
 void setSize(Widget w, void *d){
 	char *str=(char*)d;
-	assert(!(((str[0]-'0')*(str[1]-'0'))&1));
+	assert(!(((str[0]-'0')*(str[1]-'0'))&1)); //il faut que la taille soit paire
 	screen->grilleWidth=str[0]-'0';
 	screen->grilleHeight=str[1]-'0';
 	updateDiffBox();
@@ -45,8 +50,12 @@ void setSize(Widget w, void *d){
 	Si la paire est juste, les cartes restent face visible. Sinon, elles seront retournées face cachée au prochain coup
 	sinon la paire est remise face cachée. 
 	Si la derniére paire à été retournée, l'ecran de fin s'affiche au prochain clic.
-
-	*data : pointeur sur type Carte, contient la carte associée au Widget qui à été cliqué.
+	@args:
+		- Widget du callback qi correspond a la drawArea de la carte
+		- int donne si il s'agit d'un click gauche (1) ou pas
+		- int donne la position en x de la drawArea
+		- int donne la position en y de la drawArea
+		- Pointeur sur void correspond a la carte associée au Widget qui à été cliqué.
 */
 void retournerCarte(Widget w, int which_button, int x, int y, void *data){
 
@@ -64,12 +73,10 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
     int areaWidth, areaHeight;
     GetDrawAreaSize(&areaWidth,&areaHeight);
 
-    //Si deu cartes ont été retournées et doivent être remises face cachée
+    //Si deux cartes ont été retournées et doivent être remises face cachée
     if(screen->hide_next_move){
-		SetDrawArea(screen->card1Widget);
-		hideCard(areaWidth,areaHeight);
-		SetDrawArea(screen->card2Widget);
-		hideCard(areaWidth,areaHeight);
+		hideCard(screen->card1Widget,areaWidth,areaHeight);
+		hideCard(screen->card2Widget,areaWidth,areaHeight);
 		SetDrawArea(w);   
 		screen->hide_next_move=NO; 	
     }
@@ -128,19 +135,37 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
 	}
 }
 
-
-void hideCard(int width, int height){
+/*
+	Cette fonction remet une carte face cachee
+	/!\ Apres l'execution de cette fonction, Widget sera le widget courant
+	@args:
+		- Widget la carte 
+		- int la largeur d'une carte
+		- int la hauteur d'une carte
+*/
+void hideCard(Widget w, int width, int height){
+	SetDrawArea(w);
     SetColor(getBgColor(0));
     DrawFilledBox(0,0,width,height);
 }
 
+/*
+	Cette fonction decouvre une carte en generant une forme et une couleur d'apres son id
+	@args:
+		- Widget la carte 
+		- int la largeur d'une carte
+		- int la hauteur d'une carte
+*/
 void showCard(Widget w, int width, int height, void *data){
     SetColor(getBgColor(1));
     DrawFilledBox(0,0,width,height);
+
     SetColor(getBgColor(0));
     SetBgColor(w,getBgColor(1));
+
     Forme forme;
     genereforme(&forme,((Card *)data)->id%NB_FORMES,width,height);
+    
     SetFgColor(w,getLoopedCardColor(((Card *)data)->id));
     DrawFilledPolygon(forme.ptarray,forme.size);
     free(forme.ptarray);
@@ -150,13 +175,16 @@ void showCard(Widget w, int width, int height, void *data){
 	Fonction de callback des zones de dessin qui représentent les cartes. 
 	Appelée une premiére fois par chaque zone lors du premier affichage, puis rappelée à 
 	chaque fois que l'utilisateur change la taille de la fenêtre
-
-  data : pointeur vers la structure carte associée au widget ayant appelé cette fonction
+	@args:
+		- Widget correspondant a la carte
+		- int la largeur de la carte
+		- int le hauteur de la carte
+		- Pointeur sur void, pointeur vers la structure carte associée au widget ayant appelé cette fonction
 */
 void displayDrawArea(Widget w, int width, int height, void *data){
     if (((Card *)data)->mode >= RETOURNEE)
         showCard(w,width, height, data);
     else
-        hideCard(width,height);
+        hideCard(w,width,height);
 }
 
