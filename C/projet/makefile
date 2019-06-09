@@ -11,7 +11,9 @@ compile/main: $(OBJ)
 	@$(CC) -o $@ $^ $(LDFLAGS)
 	@rm -rf ./*.o
 
-compile/main.o: jeu.h
+compile/main.o: score.h
+compile/main.o: callbacks.h
+compile/main.o: display.h
 
 %.o: %.c
 	@$(CC) -o $@ -c $< $(CFLAGS)
