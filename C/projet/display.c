@@ -326,7 +326,7 @@ void rules (Widget w,void *d){
   Ferme la fenetre precedante.
 */
 void printScores(){
-	newWindow("hight scores");
+	newWindow("highest scores");
 
 	Widget label_scores, form_hight_score, form_right_panel;
 

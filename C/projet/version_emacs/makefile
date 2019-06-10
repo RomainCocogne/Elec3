@@ -1,19 +1,19 @@
 CC=gcc
 CFLAGS=-Wall -pedantic -g3
 LDFLAGS= -lm -lsx
-EXEC=compile/main
+EXEC=main
 SRC= $(wildcard *.c)
 OBJ= $(SRC:.c=.o)
 
 all: $(EXEC)
 
-compile/main: $(OBJ)
+main: $(OBJ)
 	@$(CC) -o $@ $^ $(LDFLAGS)
 	@rm -rf ./*.o
 
-compile/main.o: score.h
-compile/main.o: callbacks.h
-compile/main.o: display.h
+main.o: score.h
+main.o: callbacks.h
+main.o: display.h
 
 %.o: %.c
 	@$(CC) -o $@ -c $< $(CFLAGS)
@@ -21,8 +21,9 @@ compile/main.o: display.h
 .PHONY: clean mrproper
 
 clean:
-	@rm -rf compile/*.o
+	@rm -rf *.o
 
 
 mrproper: clean
 	@rm -rf $(EXEC)
+
