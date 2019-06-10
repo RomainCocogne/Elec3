@@ -9,6 +9,7 @@
 /****************************/
 #include <libsx.h>
 #include "display.h"
+#include "score.h"
 #include "couleur.h"
 
 
@@ -71,6 +72,7 @@ extern void hideCard(Widget, int, int);
 		- Widget la carte 
 		- int la largeur d'une carte
 		- int la hauteur d'une carte
+		- Pointeur sur void représentant la carte
 */
 extern void showCard(Widget, int, int, void *);
 

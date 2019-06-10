@@ -17,8 +17,8 @@ void quit()
 /*
 	Callback pour enregistrer le score
 	@args:
-		- Widget du callback
-		- Pointeur sur void correspondant au score (int)
+		- w: Widget du callback
+		- d: Pointeur sur void correspondant au score (int)
 */
 void saveScoreCallback(Widget w, void *d){
 	saveScore(GetStringEntry(screen->strEntry),*((int*)d)); 
@@ -29,8 +29,8 @@ void saveScoreCallback(Widget w, void *d){
 	Fonction appellée par les boutons de changement de difficulté
 	Assigne la difficulté selectionnée à la partie.
 	@args:
-		- Widget du callback
-		- Pointeur sur void correspondant aux donnees transmises par le callback
+		- w: Widget du callback
+		- d: Pointeur sur void correspondant aux donnees transmises par le callback
 */
 void setSize(Widget w, void *d){
 	char *str=(char*)d;
@@ -51,11 +51,11 @@ void setSize(Widget w, void *d){
 	sinon la paire est remise face cachée. 
 	Si la derniére paire à été retournée, l'ecran de fin s'affiche au prochain clic.
 	@args:
-		- Widget du callback qi correspond a la drawArea de la carte
-		- int donne si il s'agit d'un click gauche (1) ou pas
-		- int donne la position en x de la drawArea
-		- int donne la position en y de la drawArea
-		- Pointeur sur void correspond a la carte associée au Widget qui à été cliqué.
+		- w: Widget du callback qi correspond a la drawArea de la carte
+		- which_button: int donne si il s'agit d'un click gauche (1) ou pas
+		- x: int donne la position en x de la drawArea
+		- y: int donne la position en y de la drawArea
+		- data: Pointeur sur void correspond a la carte associée au Widget qui à été cliqué.
 */
 void retournerCarte(Widget w, int which_button, int x, int y, void *data){
 
@@ -137,11 +137,11 @@ void retournerCarte(Widget w, int which_button, int x, int y, void *data){
 
 /*
 	Cette fonction remet une carte face cachee
-	/!\ Apres l'execution de cette fonction, Widget sera le widget courant
+	/!\ Apres l'execution de cette fonction, w sera le widget courant
 	@args:
-		- Widget la carte 
-		- int la largeur d'une carte
-		- int la hauteur d'une carte
+		- w: Widget la carte 
+		- width: int la largeur d'une carte
+		- height: int la hauteur d'une carte
 */
 void hideCard(Widget w, int width, int height){
 	SetDrawArea(w);
@@ -152,9 +152,10 @@ void hideCard(Widget w, int width, int height){
 /*
 	Cette fonction decouvre une carte en generant une forme et une couleur d'apres son id
 	@args:
-		- Widget la carte 
-		- int la largeur d'une carte
-		- int la hauteur d'une carte
+		- w: Widget la carte 
+		- width: int la largeur d'une carte
+		- height: int la hauteur d'une carte
+		- data: Pointeur sur void représentant la carte
 */
 void showCard(Widget w, int width, int height, void *data){
     SetColor(getBgColor(1));
@@ -176,10 +177,10 @@ void showCard(Widget w, int width, int height, void *data){
 	Appelée une premiére fois par chaque zone lors du premier affichage, puis rappelée à 
 	chaque fois que l'utilisateur change la taille de la fenêtre
 	@args:
-		- Widget correspondant a la carte
-		- int la largeur de la carte
-		- int le hauteur de la carte
-		- Pointeur sur void, pointeur vers la structure carte associée au widget ayant appelé cette fonction
+		- w: Widget correspondant a la carte
+		- width: int la largeur de la carte
+		- height: int le hauteur de la carte
+		- data: Pointeur sur void, pointeur vers la structure carte associée au widget ayant appelé cette fonction
 */
 void displayDrawArea(Widget w, int width, int height, void *data){
     if (((Card *)data)->mode >= RETOURNEE)

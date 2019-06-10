@@ -6,7 +6,7 @@
 #pragma once
 
 /****************************/
-//		 inclusions 		//
+//	  inclusions 	    //
 /****************************/
 #include <libsx.h>
 #include "forme.h"
@@ -15,7 +15,7 @@
 #include "jeu.h"
 
 /****************************/
-// 		  Macros			//
+// 	  Macros	    //
 /****************************/
 
 /*
@@ -41,7 +41,7 @@
 #define NO 0
 
 /****************************/
-// 		   Types			//
+// 	    Types	    //
 /****************************/
 
 /*
@@ -68,7 +68,7 @@ typedef struct{
 
 
 /****************************/
-//		  Variables			//
+//	  Variables	    //
 /****************************/
 
 /*
@@ -78,7 +78,7 @@ extern display *screen;
 
 
 /****************************/
-// 		  fonctions			//
+//     fonctions	    //
 /****************************/
 
 /*
@@ -87,7 +87,7 @@ extern display *screen;
 extern void initGlobalDisplay();
 
 /*****************************
-		initialisation
+       initialisation
 *****************************/
 
 /*
@@ -122,7 +122,7 @@ extern void newWindow(char *);
 
 
 /*****************************
-		rafraichissement
+	rafraichissement
 *****************************/
 
 /*
@@ -135,7 +135,7 @@ extern void updateDiffBox();
 
 
 /*****************************
-			fenetres
+	   fenetres
 *****************************/
 
 /*
