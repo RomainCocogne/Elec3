@@ -21,7 +21,7 @@ void quit()
 		- Pointeur sur void correspondant au score (int)
 */
 void saveScoreCallback(Widget w, void *d){
-	saveScore(GetStringEntry(screen->strEntry),*((int*)d)); //appel de la fonction def dans jeu.h
+	saveScore(GetStringEntry(screen->strEntry),*((int*)d)); 
     printScores();
 }
 

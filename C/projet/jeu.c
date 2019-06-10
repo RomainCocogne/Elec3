@@ -136,18 +136,3 @@ int verifierCoup(Jeu *jeu){
 	jeu->carte2->mode = CACHEE;
 	return 0;
 }
-
-/*
-	Sauvegarde le score de la partie dans le fichier des scores
-	@args:
-		- name: Pointeur sur char le nom du joueur
-		- sc: int son score
-*/
-void saveScore(char *name, int sc){
-	Player *joueur=malloc(sizeof(Player));
-	initPlayer(joueur);
-	setPlayerScore(joueur,sc);
-	setPlayerName(joueur,name);
-	addScore(*joueur);
-	rmPlayer(joueur);
-}

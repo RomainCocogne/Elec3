@@ -33,10 +33,11 @@ extern void createFile();
 	ajoute un score (nom+score) dans le fichier.
 	le score est insere de facon a ce que le fichier soit trie dans l'ordre decroissant des scores
 	Cette procedure cree un fichier temporaire qui va etre renomme pour ecraser le fichier score
-	@args: 
-		- Player (de la structure definie dans player.h) a ajouter au fichier
+	@args:
+		- Pointeur sur char le nom du joueur
+		- int son score
 */
-extern void addScore(Player);
+extern void saveScore(char*, int);
 
 /*
 	Ajoute un joueur dans la liste de tout les joueurs contenus dans le fichier,

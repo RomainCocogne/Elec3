@@ -22,10 +22,16 @@ void createFile(){
 	ajoute un score (nom+score) dans le fichier.
 	le score est insere de facon a ce que le fichier soit trie dans l'ordre decroissant des scores
 	Cette procedure cree un fichier temporaire qui va etre renomme pour ecraser le fichier score
-	@args: 
-		- Player (de la structure definie dans player.h) a ajouter au fichier
+	@args:
+		- Pointeur sur char le nom du joueur
+		- int son score
 */
-void addScore(Player joueur){									
+void saveScore(char *name, int sc){	
+
+	Player joueur;									//initialise la variable Player
+	initPlayer(&joueur);
+	setPlayerScore(&joueur,sc);
+	setPlayerName(&joueur,name);								
 	
 	Liste all_players;								//liste de tout les joueurs dans le fichier
 	initListe(&all_players);

@@ -8,7 +8,7 @@
     Pour compiler faire make dans le dossier courant
 
     Le programme supporte le changement de taille standard de la fenetre,
-    mais pas des changements brusques ou des tailles improbable. 
+    mais pas des changements brusques ou des tailles improbables. 
 
 */
 #include "header.h"
