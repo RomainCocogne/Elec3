@@ -1266,8 +1266,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								3177,
+								3177
 							]
 						],
 						"settings":
@@ -1279,7 +1279,7 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/C++/C.sublime-syntax"
+							"syntax": "Packages/Deviot (Arduino IDE)/deviot.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 1584.0,
@@ -1791,7 +1791,7 @@
 		[
 			[
 				"",
-				"~/Bureau/Elec3/projet_trans/part2/code_c/arm_c.sublime-project"
+				"~/Bureau/PROJET_ELEC_2018-2021/voiture_auto.sublime-project"
 			],
 			[
 				"c",
